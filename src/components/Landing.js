@@ -20,15 +20,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  buttons: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-  button: {
-    background: '#1F51FF',
-    color: '#fff',
-  },
 }));
 
 const Landing = () => {
@@ -53,8 +44,13 @@ const Landing = () => {
         >
           TUM Chair of Digital Finance
         </Box>
-        <Box className={classes.buttons} textAlign='center' m={3}>
-          <Button component={Link} to='/test' className={classes.button}>
+        <Box textAlign='center' m={3}>
+          <Button
+            component={Link}
+            to='/test'
+            variant='contained'
+            color='primary'
+          >
             Get Started
           </Button>
         </Box>

@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -16,12 +16,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     padding: 5,
-    color: '#1F51FF',
     textDecoration: 'none',
     boxShadow: 'none',
-  },
-  button: {
-    color: '#1F51FF',
   },
 }));
 
@@ -36,6 +32,7 @@ const Navbar = () => {
             component={Link}
             to='/'
             variant='h6'
+            color='primary'
             className={classes.title}
           >
             Retail Investor Biases
@@ -45,7 +42,7 @@ const Navbar = () => {
               component={Link}
               to='/test'
               variant='inline'
-              className={classes.button}
+              color='primary'
             >
               Take the Test
             </Button>
@@ -53,7 +50,7 @@ const Navbar = () => {
               component={Link}
               to='/about-us'
               variant='inline'
-              className={classes.button}
+              color='primary'
             >
               About us
             </Button>
@@ -61,7 +58,7 @@ const Navbar = () => {
               component={Link}
               to='/contact-us'
               variant='inline'
-              className={classes.button}
+              color='primary'
             >
               Contact us
             </Button>

@@ -4,16 +4,22 @@ import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Landing from './components/Landing';
+import BiasEducation from './components/BiasEducation';
+import './App.css';
 
 function App() {
   return (
     <Router>
       <CssBaseline />
       <Navbar></Navbar>
-      <Box>
+      <Box className='App'>
         <Routes>
           <Route exact path='/' element={<Landing></Landing>}></Route>
-          <Route exact path='/test'></Route>
+          <Route
+            exact
+            path='/test'
+            element={<BiasEducation></BiasEducation>}
+          ></Route>
           <Route exact path='/about-us' element={<AboutUs></AboutUs>}></Route>
           <Route
             exact
