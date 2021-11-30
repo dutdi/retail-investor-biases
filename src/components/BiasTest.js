@@ -119,16 +119,16 @@ const BiasTest = (eventName, handler, element = window) => {
               </Typography>
               <Grid container className={classes.options}>
                 <Grid item xs={5}>
-                  <Typography variant='h3'>
+                  <Typography variant='h5'>
+                    Press E for{' '}
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Typography>
-                  <Typography variant='h6'>Press E</Typography>
                 </Grid>
                 <Grid item xs={5}>
-                  <Typography variant='h3'>
+                  <Typography variant='h5'>
+                    Press I for{' '}
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Typography>
-                  <Typography variant='h6'>Press I</Typography>
                 </Grid>
               </Grid>
 
