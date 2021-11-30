@@ -18,6 +18,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt:
@@ -26,6 +27,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt: 'Diamond Hands.',
@@ -33,6 +35,7 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt: 'Paper Hands.',
@@ -40,6 +43,7 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt:
@@ -48,6 +52,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt:
@@ -56,6 +61,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt:
@@ -64,6 +70,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
+        timeSpent: 0,
       },
       {
         prompt:
@@ -72,6 +79,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
+        timeSpent: 0,
       },
     ],
   },

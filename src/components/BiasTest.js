@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiasEducationCenter } from '../helpers/BiasEducationCenter';
@@ -41,8 +41,26 @@ const BiasTest = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showResult, setShowResult] = useState(false);
+  const [time, setTime] = useState(0);
+  const [startTime, setStartTime] = useState(false);
+
+  useEffect(() => {
+    let interval = null;
+    if (startTime) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 10);
+      }, 10);
+    } else {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [startTime]);
 
   const setSelectedAnswer = (answer) => {
+    //Save time
+    BiasEducationCenter[biasIndex].questions[questionIndex].timeSpent = time;
+    //Reset time
+    setTime(0);
     BiasEducationCenter[biasIndex].questions[questionIndex].userSelection =
       answer;
     if (questionIndex < BiasEducationCenter[biasIndex].questions.length - 1) {
@@ -53,10 +71,16 @@ const BiasTest = () => {
         setQuestionIndex(0);
       } else {
         console.log('END OF BIASES');
+        //Stop time
+        setStartTime(false);
         setShowResult(true);
       }
     }
-    console.log(biasIndex);
+  };
+
+  const nextButtonClicked = () => {
+    setShowQuestion(true);
+    setStartTime(true);
   };
 
   return (
@@ -134,7 +158,7 @@ const BiasTest = () => {
                 <Button
                   variant='contained'
                   color='primary'
-                  onClick={() => setShowQuestion(true)}
+                  onClick={nextButtonClicked}
                 >
                   Next
                 </Button>
