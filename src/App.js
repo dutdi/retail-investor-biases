@@ -11,13 +11,16 @@ import './App.css';
 
 function App() {
   const [biasIndex, setBiasIndex] = useState(0);
+  const [showResult, setShowResult] = useState(false);
 
   return (
     <Router>
       <CssBaseline />
       <Navbar></Navbar>
       <Box className='App'>
-        <BiasContext.Provider value={{ biasIndex, setBiasIndex }}>
+        <BiasContext.Provider
+          value={{ biasIndex, setBiasIndex, showResult, setShowResult }}
+        >
           <Routes>
             <Route exact path='/' element={<Landing></Landing>}></Route>
             <Route exact path='/test' element={<BiasTest></BiasTest>}></Route>
