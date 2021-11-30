@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiasEducationCenter } from '../helpers/BiasEducationCenter';
 import { BiasContext } from '../helpers/Context';
 import Result from './Result';
+import useEventListener from '@use-it/event-listener';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,15 +27,17 @@ const useStyles = makeStyles((theme) => ({
     padding: '2px',
     color: 'red',
   },
-  buttons: {
+  options: {
     '& > *': {
       margin: theme.spacing(1, 1),
     },
-    textAlign: 'center',
+    spacing: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
 
-const BiasTest = () => {
+const BiasTest = (eventName, handler, element = window) => {
   const classes = useStyles();
 
   const { biasIndex, setBiasIndex } = useContext(BiasContext);
@@ -83,6 +86,20 @@ const BiasTest = () => {
     setStartTime(true);
   };
 
+  const handleKeyPress = (event) => {
+    if (showQuestion) {
+      if (event.key === 'E' || event.key === 'e') {
+        console.log('e pressed');
+        setSelectedAnswer('A');
+      } else if (event.key === 'I' || event.key === 'i') {
+        console.log('i pressed');
+        setSelectedAnswer('B');
+      }
+    }
+  };
+
+  useEventListener('keydown', handleKeyPress);
+
   return (
     <div>
       {showResult ? (
@@ -92,7 +109,7 @@ const BiasTest = () => {
       ) : (
         <div className={classes.root}>
           {showQuestion ? (
-            <div>
+            <div tabIndex='0'>
               <Typography
                 variant='h4'
                 gutterBottom
@@ -100,7 +117,22 @@ const BiasTest = () => {
               >
                 {BiasEducationCenter[biasIndex].questions[questionIndex].prompt}
               </Typography>
-              <div className={classes.buttons}>
+              <Grid container className={classes.options}>
+                <Grid item xs={5}>
+                  <Typography variant='h3'>
+                    {BiasEducationCenter[biasIndex].questions[questionIndex].A}
+                  </Typography>
+                  <Typography variant='h6'>Press E</Typography>
+                </Grid>
+                <Grid item xs={5}>
+                  <Typography variant='h3'>
+                    {BiasEducationCenter[biasIndex].questions[questionIndex].B}
+                  </Typography>
+                  <Typography variant='h6'>Press I</Typography>
+                </Grid>
+              </Grid>
+
+              {/*
                 <Button
                   variant='contained'
                   color='primary'
@@ -115,7 +147,7 @@ const BiasTest = () => {
                 >
                   {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                 </Button>
-              </div>
+                */}
             </div>
           ) : (
             <div>
