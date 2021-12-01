@@ -38,28 +38,13 @@ const Navbar = () => {
             Retail Investor Biases
           </Typography>
           <div>
-            <Button
-              component={Link}
-              to='/test'
-              variant='inline'
-              color='primary'
-            >
+            <Button component={Link} to='/personal-details' color='primary'>
               Take the Test
             </Button>
-            <Button
-              component={Link}
-              to='/about-us'
-              variant='inline'
-              color='primary'
-            >
+            <Button component={Link} to='/about-us' color='primary'>
               About us
             </Button>
-            <Button
-              component={Link}
-              to='/contact-us'
-              variant='inline'
-              color='primary'
-            >
+            <Button component={Link} to='/contact-us' color='primary'>
               Contact us
             </Button>
           </div>

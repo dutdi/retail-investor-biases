@@ -7,22 +7,25 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Landing from './components/Landing';
 import BiasTest from './components/BiasTest';
+import PersonalDetails from './components/PersonalDetails';
 import './App.css';
 
 function App() {
   const [biasIndex, setBiasIndex] = useState(0);
-  const [showResult, setShowResult] = useState(false);
 
   return (
     <Router>
       <CssBaseline />
       <Navbar></Navbar>
       <Box className='App'>
-        <BiasContext.Provider
-          value={{ biasIndex, setBiasIndex, showResult, setShowResult }}
-        >
+        <BiasContext.Provider value={{ biasIndex, setBiasIndex }}>
           <Routes>
             <Route exact path='/' element={<Landing></Landing>}></Route>
+            <Route
+              exact
+              path='personal-details'
+              element={<PersonalDetails></PersonalDetails>}
+            ></Route>
             <Route exact path='/test' element={<BiasTest></BiasTest>}></Route>
             <Route exact path='/about-us' element={<AboutUs></AboutUs>}></Route>
             <Route

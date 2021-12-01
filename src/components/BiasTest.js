@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BiasTest = (eventName, handler, element = window) => {
+const BiasTest = () => {
   const classes = useStyles();
 
   const { biasIndex, setBiasIndex } = useContext(BiasContext);
@@ -60,9 +60,7 @@ const BiasTest = (eventName, handler, element = window) => {
   }, [startTime]);
 
   const setSelectedAnswer = (answer) => {
-    //Save time
     BiasEducationCenter[biasIndex].questions[questionIndex].timeSpent = time;
-    //Reset time
     setTime(0);
     BiasEducationCenter[biasIndex].questions[questionIndex].userSelection =
       answer;
@@ -74,7 +72,7 @@ const BiasTest = (eventName, handler, element = window) => {
         setQuestionIndex(0);
       } else {
         console.log('END OF BIASES');
-        //Stop time
+        //TODO: Save to DB
         setStartTime(false);
         setShowResult(true);
       }
@@ -131,23 +129,6 @@ const BiasTest = (eventName, handler, element = window) => {
                   </Typography>
                 </Grid>
               </Grid>
-
-              {/*
-                <Button
-                  variant='contained'
-                  color='primary'
-                  onClick={() => setSelectedAnswer('A')}
-                >
-                  {BiasEducationCenter[biasIndex].questions[questionIndex].A}
-                </Button>
-                <Button
-                  variant='contained'
-                  color='primary'
-                  onClick={() => setSelectedAnswer('B')}
-                >
-                  {BiasEducationCenter[biasIndex].questions[questionIndex].B}
-                </Button>
-                */}
             </div>
           ) : (
             <div>

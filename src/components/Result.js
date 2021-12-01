@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 import { BiasEducationCenter } from '../helpers/BiasEducationCenter';
 
 const Result = () => {
@@ -6,7 +7,9 @@ const Result = () => {
 
   return (
     <div>
-      <h1>Results</h1>
+      <Typography variant='h4' gutterBottom>
+        Result
+      </Typography>{' '}
     </div>
   );
 };

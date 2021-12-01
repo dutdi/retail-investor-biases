@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+//TODO: import image
 //import Image from '../img/background.jpeg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     height: '100vh',
     backgroundImage: `url(${Image})`,
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
   },
-}));
+});
 
 const Landing = () => {
   const classes = useStyles();
@@ -32,7 +33,7 @@ const Landing = () => {
           className={classes.text}
           fontSize='h2.fontSize'
           fontWeight='fontWeightBold'
-          fontFamily='Monospace'
+          fontFamily='Georgia'
         >
           The Only Tool You Need to Find & Combat Your Biases
         </Box>
@@ -42,12 +43,12 @@ const Landing = () => {
           fontStyle='italic'
           fontWeight='fontWeightLight'
         >
-          TUM Chair of Digital Finance
+          by TUM Chair of Digital Finance
         </Box>
         <Box textAlign='center' m={3}>
           <Button
             component={Link}
-            to='/test'
+            to='/personal-details'
             variant='contained'
             color='primary'
           >
