@@ -51,7 +51,7 @@ const Landing = () => {
         <Typography className={classes.text2} variant='h2' gutterBottom>
           Find & Combat Your Biases
         </Typography>
-        <Typography className={classes.text3} variant='italic' gutterBottom>
+        <Typography className={classes.text3} variant='h6' gutterBottom>
           by TUM Chair of Digital Finance
         </Typography>
         <Box textAlign='center' m={3}>

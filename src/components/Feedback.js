@@ -7,7 +7,7 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +33,18 @@ const Feedback = () => {
     accuracy: '',
     recommendation: '',
   });
+  const [hasError, setHasError] = useState(true);
+
+  useEffect(() => {
+    const checkAllEntered = () => {
+      if (feedback.accuracy === '' || feedback.recommendation === '') {
+        setHasError(true);
+      } else {
+        setHasError(false);
+      }
+    };
+    checkAllEntered();
+  }, [feedback]);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -75,7 +87,7 @@ const Feedback = () => {
           </Typography>
         </Grid>
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='accuracy'>Select</InputLabel>
             <Select
               native
@@ -99,7 +111,7 @@ const Feedback = () => {
           </Typography>
         </Grid>
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='recommendation'>Select</InputLabel>
             <Select
               native
@@ -121,15 +133,22 @@ const Feedback = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <Button
-        style={{ backgroundColor: '#0065bd', color: 'white' }}
-        component={Link}
-        to='/'
-        variant='contained'
-        onClick={sendFeedback}
-      >
-        Send
-      </Button>
+      {hasError ? (
+        <Typography variant='h6' gutterBottom style={{ color: 'red' }}>
+          Enter all the fields*
+        </Typography>
+      ) : (
+        <Button
+          style={{ backgroundColor: '#0065bd', color: 'white' }}
+          component={Link}
+          to='/'
+          variant='contained'
+          onClick={sendFeedback}
+        >
+          Send
+        </Button>
+      )}
+
       <Typography
         variant='h6'
         gutterBottom

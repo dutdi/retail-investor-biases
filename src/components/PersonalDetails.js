@@ -7,7 +7,7 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,6 +36,24 @@ const PersonalDetails = () => {
     investingDate: '',
     totalInvestments: '',
   });
+  const [hasError, setHasError] = useState(true);
+
+  useEffect(() => {
+    const checkAllEntered = () => {
+      if (
+        details.age === '' ||
+        details.country === '' ||
+        details.profession === '' ||
+        details.investingDate === '' ||
+        details.totalInvestments === ''
+      ) {
+        setHasError(true);
+      } else {
+        setHasError(false);
+      }
+    };
+    checkAllEntered();
+  }, [details]);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -73,7 +91,7 @@ const PersonalDetails = () => {
         alignItems='stretch'
       >
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='age'>Age</InputLabel>
             <Select
               native
@@ -92,7 +110,7 @@ const PersonalDetails = () => {
           </FormControl>
         </Grid>
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='country'>Country</InputLabel>
             <Select
               native
@@ -111,7 +129,7 @@ const PersonalDetails = () => {
           </FormControl>
         </Grid>
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='profession'>Profession</InputLabel>
             <Select
               native
@@ -130,7 +148,7 @@ const PersonalDetails = () => {
           </FormControl>
         </Grid>
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='investingDate'>
               When did you start investing?
             </InputLabel>
@@ -154,7 +172,7 @@ const PersonalDetails = () => {
           </FormControl>
         </Grid>
         <Grid item>
-          <FormControl className={classes.formControl}>
+          <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='totalInvestments'>
               Total current investments
             </InputLabel>
@@ -178,15 +196,21 @@ const PersonalDetails = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <Button
-        style={{ backgroundColor: '#0065bd', color: 'white' }}
-        component={Link}
-        to='/test'
-        variant='contained'
-        onClick={submitForm}
-      >
-        Next
-      </Button>
+      {hasError ? (
+        <Typography variant='h6' gutterBottom style={{ color: 'red' }}>
+          Enter all the fields*
+        </Typography>
+      ) : (
+        <Button
+          style={{ backgroundColor: '#0065bd', color: 'white' }}
+          component={Link}
+          to='/test'
+          variant='contained'
+          onClick={submitForm}
+        >
+          Next
+        </Button>
+      )}
     </div>
   );
 };
