@@ -116,14 +116,14 @@ const BiasTest = () => {
               </Typography>
               <Grid container className={classes.options}>
                 <Grid item xs={5}>
-                  <Typography variant='h5'>
-                    Press E for{' '}
+                  Press E for{' '}
+                  <Typography variant='h5' style={{ color: 'green' }}>
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Typography>
                 </Grid>
                 <Grid item xs={5}>
-                  <Typography variant='h5'>
-                    Press I for{' '}
+                  Press I for{' '}
+                  <Typography variant='h5' style={{ color: 'red' }}>
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Typography>
                 </Grid>
