@@ -50,6 +50,9 @@ const Navbar = () => {
             <Button component={Link} to='/contact-us' color='primary'>
               Contact us
             </Button>
+            <Button component={Link} to='/feedback' color='primary'>
+              Feedback
+            </Button>
           </div>
         </Toolbar>
       </AppBar>

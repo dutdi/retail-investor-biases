@@ -101,9 +101,7 @@ const BiasTest = () => {
   return (
     <div>
       {showResult ? (
-        <div>
-          <Result></Result>
-        </div>
+        <Result></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (

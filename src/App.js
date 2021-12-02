@@ -9,6 +9,7 @@ import Landing from './components/Landing';
 import BiasTest from './components/BiasTest';
 import PersonalDetails from './components/PersonalDetails';
 import './App.css';
+import Feedback from './components/Feedback';
 
 function App() {
   const [biasIndex, setBiasIndex] = useState(0);
@@ -32,6 +33,11 @@ function App() {
               exact
               path='/contact-us'
               element={<ContactUs></ContactUs>}
+            ></Route>
+            <Route
+              exact
+              path='/feedback'
+              element={<Feedback></Feedback>}
             ></Route>
           </Routes>
         </BiasContext.Provider>
