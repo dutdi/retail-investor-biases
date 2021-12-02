@@ -5,6 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Avatar } from '@material-ui/core';
+import Image from '../img/digital finance.png';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -28,6 +30,7 @@ const Navbar = () => {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position='static'>
         <Toolbar>
+          <Avatar variant='square' src={Image} />
           <Typography
             component={Link}
             to='/'
