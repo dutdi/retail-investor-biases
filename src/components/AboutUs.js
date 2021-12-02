@@ -18,7 +18,11 @@ const AboutUs = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography variant='h4' gutterBottom>
+      <Typography
+        variant='h4'
+        gutterBottom
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
+      >
         About us
       </Typography>
     </div>

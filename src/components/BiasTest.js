@@ -135,6 +135,7 @@ const BiasTest = () => {
                 variant='h2'
                 gutterBottom
                 className={classes.textBias}
+                style={{ backgroundColor: '#0065bd', color: 'white' }}
               >
                 {BiasEducationCenter[biasIndex].bias}
               </Typography>
@@ -168,8 +169,8 @@ const BiasTest = () => {
               </Typography>
               <div className={classes.buttons}>
                 <Button
+                  style={{ backgroundColor: '#0065bd', color: 'white' }}
                   variant='contained'
-                  color='primary'
                   onClick={nextButtonClicked}
                 >
                   Next

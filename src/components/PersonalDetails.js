@@ -59,7 +59,11 @@ const PersonalDetails = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant='h4' gutterBottom>
+      <Typography
+        variant='h4'
+        gutterBottom
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
+      >
         Enter your details
       </Typography>
       <Grid
@@ -175,10 +179,10 @@ const PersonalDetails = () => {
         </Grid>
       </Grid>
       <Button
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
         component={Link}
         to='/test'
         variant='contained'
-        color='primary'
         onClick={submitForm}
       >
         Next

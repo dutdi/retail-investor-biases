@@ -21,11 +21,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     textAlign: 'center',
   },
-  textThankYou: {
-    textAlign: 'center',
-    padding: '21px',
-    color: 'blue',
-  },
   formControl: {
     margin: theme.spacing(1),
     width: 400,
@@ -61,7 +56,11 @@ const Feedback = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant='h4' gutterBottom>
+      <Typography
+        variant='h4'
+        gutterBottom
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
+      >
         Give us a feedback
       </Typography>
       <Grid
@@ -123,15 +122,19 @@ const Feedback = () => {
         </Grid>
       </Grid>
       <Button
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
         component={Link}
         to='/'
         variant='contained'
-        color='primary'
         onClick={sendFeedback}
       >
         Send
       </Button>
-      <Typography className={classes.textThankYou} variant='h6' gutterBottom>
+      <Typography
+        variant='h6'
+        gutterBottom
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
+      >
         Thank you!
       </Typography>
     </div>

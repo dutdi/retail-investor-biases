@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
   },
   appBar: {
-    background: '#fff',
+    background: '#ffffff',
   },
   title: {
     flexGrow: 1,
@@ -35,22 +35,38 @@ const Navbar = () => {
             component={Link}
             to='/'
             variant='h6'
-            color='primary'
+            style={{ color: '#0065bd' }}
             className={classes.title}
           >
             Retail Investor Biases
           </Typography>
           <div>
-            <Button component={Link} to='/personal-details' color='primary'>
+            <Button
+              component={Link}
+              to='/personal-details'
+              style={{ color: '#0065bd' }}
+            >
               Take the Test
             </Button>
-            <Button component={Link} to='/about-us' color='primary'>
+            <Button
+              component={Link}
+              to='/about-us'
+              style={{ color: '#0065bd' }}
+            >
               About us
             </Button>
-            <Button component={Link} to='/contact-us' color='primary'>
+            <Button
+              component={Link}
+              to='/contact-us'
+              style={{ color: '#0065bd' }}
+            >
               Contact us
             </Button>
-            <Button component={Link} to='/feedback' color='primary'>
+            <Button
+              component={Link}
+              to='/feedback'
+              style={{ color: '#0065bd' }}
+            >
               Feedback
             </Button>
           </div>
