@@ -71,7 +71,7 @@ const Feedback = () => {
         alignItems='stretch'
       >
         <Grid item>
-          <Typography variant='h6' gutterBottom>
+          <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
             On a scale of 1-10 how accurate do you think your result was?
           </Typography>
         </Grid>
@@ -95,7 +95,7 @@ const Feedback = () => {
           </FormControl>
         </Grid>
         <Grid item>
-          <Typography variant='h6' gutterBottom>
+          <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
             How likely are you to recommend this tool to someone else?
           </Typography>
         </Grid>
@@ -122,7 +122,6 @@ const Feedback = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <br></br>
       <Button
         component={Link}
         to='/'

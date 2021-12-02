@@ -12,6 +12,9 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    '& > *': {
+      margin: theme.spacing(4, 0, 0, 0),
+    },
     width: '1000px',
     height: '500px',
     margin: '100px',
@@ -171,7 +174,6 @@ const PersonalDetails = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <br></br>
       <Button
         component={Link}
         to='/test'

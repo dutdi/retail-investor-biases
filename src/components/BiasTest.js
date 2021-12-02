@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   textBias: {
     textAlign: 'center',
     padding: '21px',
+    fontWeight: '600',
   },
   textDesc: {
     textAlign: 'center',
