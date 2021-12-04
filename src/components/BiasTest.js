@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Button, Grid, Typography } from '@material-ui/core';
+import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiasEducationCenter } from '../helpers/BiasEducationCenter';
 import { BiasContext } from '../helpers/Context';
@@ -8,29 +8,35 @@ import useEventListener from '@use-it/event-listener';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '1000px',
-    height: '500px',
-    margin: '100px',
+    width: '1200px',
+    height: '600px',
+    margin: '50px',
     backgroundColor: 'white',
     textAlign: 'center',
   },
   textBias: {
     textAlign: 'center',
-    padding: '21px',
+    padding: '15px',
     fontWeight: '600',
   },
   textDesc: {
     textAlign: 'center',
-    padding: '21px',
+    padding: '15px',
   },
   textWarning: {
     textAlign: 'center',
-    padding: '2px',
+    padding: '1px',
     color: 'red',
+  },
+  textPrompt: {
+    textAlign: 'center',
+    padding: '21px',
+    fontWeight: '600',
+    color: '#0065bd',
   },
   options: {
     '& > *': {
-      margin: theme.spacing(1, 1),
+      margin: theme.spacing(10, 5),
     },
     spacing: 0,
     alignItems: 'center',
@@ -110,20 +116,26 @@ const BiasTest = () => {
               <Typography
                 variant='h4'
                 gutterBottom
-                className={classes.textBias}
+                className={classes.textPrompt}
               >
                 {BiasEducationCenter[biasIndex].questions[questionIndex].prompt}
               </Typography>
               <Grid container className={classes.options}>
                 <Grid item xs={5}>
                   Press E for{' '}
-                  <Typography variant='h5' style={{ color: 'green' }}>
+                  <Typography
+                    variant='h5'
+                    style={{ color: 'green', fontWeight: 600 }}
+                  >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Typography>
                 </Grid>
                 <Grid item xs={5}>
                   Press I for{' '}
-                  <Typography variant='h5' style={{ color: 'red' }}>
+                  <Typography
+                    variant='h5'
+                    style={{ color: 'red', fontWeight: 600 }}
+                  >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Typography>
                 </Grid>
@@ -160,22 +172,24 @@ const BiasTest = () => {
               >
                 {BiasEducationCenter[biasIndex].instruction}
               </Typography>
-              <Typography
-                variant='h6'
-                gutterBottom
-                className={classes.textWarning}
+              <Paper>
+                <img
+                  style={{ width: '600px', height: '200px' }}
+                  alt={BiasEducationCenter[biasIndex].bias}
+                  src={BiasEducationCenter[biasIndex].categoriesAndItems}
+                />
+              </Paper>
+              <Button
+                style={{
+                  backgroundColor: '#0065bd',
+                  color: 'white',
+                  margin: '12px',
+                }}
+                variant='contained'
+                onClick={nextButtonClicked}
               >
-                {BiasEducationCenter[biasIndex].wrongAnswerWarning}
-              </Typography>
-              <div className={classes.buttons}>
-                <Button
-                  style={{ backgroundColor: '#0065bd', color: 'white' }}
-                  variant='contained'
-                  onClick={nextButtonClicked}
-                >
-                  Next
-                </Button>
-              </div>
+                Next
+              </Button>
             </div>
           )}
         </div>

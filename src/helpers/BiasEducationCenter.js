@@ -1,3 +1,5 @@
+import anchoringBiasItems from '../img/anchoring-bias-items.png';
+
 export const BiasEducationCenter = [
   {
     bias: 'Anchoring Bias',
@@ -7,9 +9,7 @@ export const BiasEducationCenter = [
       'Please, make sure you understand what this bias means, you will be needing this moving forward.',
     instruction:
       'For this test you will use E and I to categorize items as fast as you can.',
-    categoriesAndItems: 'url goes here',
-    wrongAnswerWarning:
-      'If you make a mistake, you will be notified. Press the other key to continue.',
+    categoriesAndItems: anchoringBiasItems,
     questions: [
       {
         prompt:

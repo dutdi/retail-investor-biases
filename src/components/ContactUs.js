@@ -6,9 +6,9 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(4, 0, 0, 0),
     },
-    width: '1000px',
-    height: '500px',
-    margin: '100px',
+    width: '1200px',
+    height: '600px',
+    margin: '50px',
     backgroundColor: 'white',
     textAlign: 'center',
   },

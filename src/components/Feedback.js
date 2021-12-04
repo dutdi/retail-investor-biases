@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   FormControl,
   Grid,
@@ -15,15 +16,15 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(4, 0, 0, 0),
     },
-    width: '1000px',
-    height: '500px',
-    margin: '100px',
+    width: '1200px',
+    height: '600px',
+    margin: '50px',
     backgroundColor: 'white',
     textAlign: 'center',
   },
   formControl: {
-    margin: theme.spacing(1),
-    width: 400,
+    margin: theme.spacing(3),
+    width: 500,
   },
 }));
 
@@ -148,9 +149,8 @@ const Feedback = () => {
           Send
         </Button>
       )}
-
       <Typography
-        variant='h6'
+        variant='h5'
         gutterBottom
         style={{ backgroundColor: '#0065bd', color: 'white' }}
       >
