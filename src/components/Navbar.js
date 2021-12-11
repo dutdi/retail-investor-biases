@@ -43,7 +43,7 @@ const Navbar = () => {
           <div>
             <Button
               component={Link}
-              to='/personal-details'
+              to='/study-info'
               style={{ color: '#0065bd' }}
             >
               Take the Test

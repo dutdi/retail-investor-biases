@@ -10,6 +10,7 @@ import BiasTest from './components/BiasTest';
 import PersonalDetails from './components/PersonalDetails';
 import './App.css';
 import Feedback from './components/Feedback';
+import StudyInfo from './components/StudyInfo';
 
 function App() {
   const [biasIndex, setBiasIndex] = useState(0);
@@ -22,6 +23,11 @@ function App() {
         <BiasContext.Provider value={{ biasIndex, setBiasIndex }}>
           <Routes>
             <Route exact path='/' element={<Landing></Landing>}></Route>
+            <Route
+              exact
+              path='study-info'
+              element={<StudyInfo></StudyInfo>}
+            ></Route>
             <Route
               exact
               path='personal-details'

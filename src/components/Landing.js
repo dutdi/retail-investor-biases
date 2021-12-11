@@ -57,7 +57,7 @@ const Landing = () => {
         <Box textAlign='center' m={3}>
           <Button
             component={Link}
-            to='/personal-details'
+            to='/study-info'
             variant='contained'
             style={{ backgroundColor: '#0065bd', color: 'white' }}
           >

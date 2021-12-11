@@ -14,21 +14,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     textAlign: 'center',
   },
-  textBias: {
+  text1: {
     textAlign: 'center',
     padding: '15px',
     fontWeight: '600',
   },
-  textDesc: {
+  text2: {
     textAlign: 'center',
     padding: '15px',
   },
-  textWarning: {
+  text3: {
     textAlign: 'center',
     padding: '1px',
     color: 'red',
   },
-  textPrompt: {
+  text4: {
     textAlign: 'center',
     padding: '21px',
     fontWeight: '600',
@@ -106,18 +106,14 @@ const BiasTest = () => {
   useEventListener('keydown', handleKeyPress);
 
   return (
-    <div>
+    <>
       {showResult ? (
         <Result></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (
             <div tabIndex='0'>
-              <Typography
-                variant='h4'
-                gutterBottom
-                className={classes.textPrompt}
-              >
+              <Typography variant='h4' gutterBottom className={classes.text4}>
                 {BiasEducationCenter[biasIndex].questions[questionIndex].prompt}
               </Typography>
               <Grid container className={classes.options}>
@@ -146,30 +142,18 @@ const BiasTest = () => {
               <Typography
                 variant='h2'
                 gutterBottom
-                className={classes.textBias}
+                className={classes.text1}
                 style={{ backgroundColor: '#0065bd', color: 'white' }}
               >
                 {BiasEducationCenter[biasIndex].bias}
               </Typography>
-              <Typography
-                variant='h5'
-                gutterBottom
-                className={classes.textDesc}
-              >
+              <Typography variant='h5' gutterBottom className={classes.text2}>
                 {BiasEducationCenter[biasIndex].description}
               </Typography>
-              <Typography
-                variant='h6'
-                gutterBottom
-                className={classes.textWarning}
-              >
+              <Typography variant='h6' gutterBottom className={classes.text3}>
                 {BiasEducationCenter[biasIndex].warning}
               </Typography>
-              <Typography
-                variant='h6'
-                gutterBottom
-                className={classes.textDesc}
-              >
+              <Typography variant='h6' gutterBottom className={classes.text2}>
                 {BiasEducationCenter[biasIndex].instruction}
               </Typography>
               <Paper>
@@ -194,7 +178,7 @@ const BiasTest = () => {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
