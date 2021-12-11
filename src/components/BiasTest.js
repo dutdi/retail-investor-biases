@@ -83,6 +83,8 @@ const BiasTest = () => {
         //TODO: Save to DB
         setStartTime(false);
         setShowResult(true);
+        setBiasIndex(0);
+        setQuestionIndex(0);
       }
     }
   };
@@ -159,7 +161,7 @@ const BiasTest = () => {
               </Typography>
               <Paper>
                 <img
-                  style={{ width: '500px', height: '300px' }}
+                  style={{ width: '450px', height: '270px' }}
                   alt={BiasEducationCenter[biasIndex].bias}
                   src={BiasEducationCenter[biasIndex].categoriesAndItems}
                 />
