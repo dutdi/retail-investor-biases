@@ -9,8 +9,8 @@ import useEventListener from '@use-it/event-listener';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '1200px',
-    height: '600px',
-    margin: '50px',
+    height: '700px',
+    margin: '20px',
     backgroundColor: 'white',
     textAlign: 'center',
   },
@@ -75,8 +75,9 @@ const BiasTest = () => {
       setQuestionIndex(questionIndex + 1);
     } else {
       if (biasIndex < BiasEducationCenter.length - 1) {
-        setBiasIndex(biasIndex + 1);
+        setShowQuestion(false);
         setQuestionIndex(0);
+        setBiasIndex(biasIndex + 1);
       } else {
         console.log('END OF BIASES');
         //TODO: Save to DB
@@ -140,14 +141,14 @@ const BiasTest = () => {
           ) : (
             <div>
               <Typography
-                variant='h2'
+                variant='h5'
                 gutterBottom
                 className={classes.text1}
                 style={{ backgroundColor: '#0065bd', color: 'white' }}
               >
                 {BiasEducationCenter[biasIndex].bias}
               </Typography>
-              <Typography variant='h5' gutterBottom className={classes.text2}>
+              <Typography variant='h6' gutterBottom className={classes.text2}>
                 {BiasEducationCenter[biasIndex].description}
               </Typography>
               <Typography variant='h6' gutterBottom className={classes.text3}>
@@ -158,7 +159,7 @@ const BiasTest = () => {
               </Typography>
               <Paper>
                 <img
-                  style={{ width: '600px', height: '200px' }}
+                  style={{ width: '500px', height: '300px' }}
                   alt={BiasEducationCenter[biasIndex].bias}
                   src={BiasEducationCenter[biasIndex].categoriesAndItems}
                 />

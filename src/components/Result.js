@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(4, 0, 0, 0),
     },
     width: '1200px',
-    height: '600px',
+    height: '700px',
     margin: '50px',
     backgroundColor: 'white',
     textAlign: 'center',
