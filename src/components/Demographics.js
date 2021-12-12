@@ -3,7 +3,6 @@ import {
   Checkbox,
   FormControl,
   Grid,
-  Input,
   InputLabel,
   ListItemText,
   makeStyles,
@@ -13,6 +12,8 @@ import {
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { genders } from '../helpers/GenderList';
+import { countries } from '../helpers/CountryList';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -42,21 +43,12 @@ const MenuProps = {
   },
 };
 
-const genders = [
-  'Male',
-  'Female',
-  'Trans male',
-  'Trans female',
-  'Genderqueer / Gender nonconforming',
-  'A different identity',
-];
-
 const Demographics = () => {
   const classes = useStyles();
   const [details, setDetails] = useState({
     age: '',
     gender: [],
-    country: '',
+    citizenship: '',
     profession: '',
     investingDate: '',
     totalInvestments: '',
@@ -68,7 +60,7 @@ const Demographics = () => {
       if (
         details.age === '' ||
         details.gender.length === 0 ||
-        details.country === '' ||
+        details.citizenship === '' ||
         details.profession === '' ||
         details.investingDate === '' ||
         details.totalInvestments === ''
@@ -160,20 +152,22 @@ const Demographics = () => {
         </Grid>
         <Grid item>
           <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor='country'>Country</InputLabel>
+            <InputLabel htmlFor='citizenship'>
+              What's your country/region of primary citizenship?
+            </InputLabel>
             <Select
               native
-              value={details.country}
+              value={details.citizenship}
               onChange={handleChange}
               inputProps={{
-                name: 'country',
-                id: 'country',
+                name: 'citizenship',
+                id: 'citizenship',
               }}
             >
               <option aria-label='None' value='' />
-              <option value='Germany'>Germany</option>
-              <option value='UK'>UK</option>
-              <option value='USA'>USA</option>
+              {countries.map((country) => (
+                <option value={country}>{country}</option>
+              ))}
             </Select>
           </FormControl>
         </Grid>
