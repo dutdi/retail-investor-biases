@@ -4,15 +4,14 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-//TODO: import image
-//import Image from '../img/background.jpeg';
+import Image from '../img/landing.png';
 
 const useStyles = makeStyles({
   root: {
-    height: '100vh',
     backgroundImage: `url(${Image})`,
+    backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
   },
   text1: {
     textAlign: 'center',
@@ -44,17 +43,17 @@ const Landing = () => {
 
   return (
     <div className={classes.root}>
-      <Box p={20}>
-        <Typography className={classes.text1} variant='h2' gutterBottom>
+      <Box p={5}>
+        <Typography className={classes.text1} variant='h5' gutterBottom>
           The Only Tool You Need to
         </Typography>
         <Typography className={classes.text2} variant='h2' gutterBottom>
           Find & Combat Your Biases
         </Typography>
-        <Typography className={classes.text3} variant='h6' gutterBottom>
-          by TUM Chair of Digital Finance
-        </Typography>
-        <Box textAlign='center' m={3}>
+        <Box textAlign='center' m={25}>
+          <Typography className={classes.text3} variant='h6' gutterBottom>
+            by TUM Chair of Digital Finance
+          </Typography>
           <Button
             component={Link}
             to='/study-info'

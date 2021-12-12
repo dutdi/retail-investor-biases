@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
   },
   appBar: {
-    background: '#ffffff',
+    backgroundColor: 'antiquewhite',
   },
   title: {
     flexGrow: 1,

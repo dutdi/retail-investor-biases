@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    backgroundColor: 'antiquewhite',
   },
 }));
 
