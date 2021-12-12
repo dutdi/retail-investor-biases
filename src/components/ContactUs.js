@@ -1,5 +1,6 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Paper, Typography } from '@material-ui/core';
 import React from 'react';
+import Image from '../img/landing.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,23 @@ const ContactUs = () => {
         style={{ backgroundColor: '#0065bd', color: 'white' }}
       >
         Contact us
+      </Typography>
+      <Typography variant='h6' gutterBottom>
+        Please, feel free to get in touch with us by <b>muneeb.ahmed@tum.de</b>
+      </Typography>
+      <Paper>
+        <img
+          style={{ maxWidth: '100%', maxHeight: '100%' }}
+          alt='background'
+          src={Image}
+        />
+      </Paper>
+      <Typography
+        variant='h5'
+        gutterBottom
+        style={{ backgroundColor: '#0065bd', color: 'white' }}
+      >
+        Thank you!
       </Typography>
     </div>
   );
