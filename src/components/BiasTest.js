@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { BiasEducationCenter } from '../helpers/BiasEducationCenter';
+import { BiasEducationCenter } from '../data/BiasEducationCenter';
 import Result from './Result';
 import useEventListener from '@use-it/event-listener';
 

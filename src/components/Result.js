@@ -1,6 +1,6 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import { BiasEducationCenter } from '../helpers/BiasEducationCenter';
+import { BiasEducationCenter } from '../data/BiasEducationCenter';
 
 const useStyles = makeStyles((theme) => ({
   root: {
