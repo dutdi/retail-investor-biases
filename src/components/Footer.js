@@ -26,8 +26,8 @@ const Footer = () => {
         variant='body1'
         gutterBottom
       >
-        Made with 💙 by Tunar Mahmudov & Muneeb Ahmed at TUM's Chair of Digital
-        Finance
+        Made with 💙 in Munich by Tunar Mahmudov & Muneeb Ahmed @ TUM's Chair of
+        Digital Finance
       </Typography>
       <div style={{ position: 'absolute', right: '0px' }}>
         <Typography

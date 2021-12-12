@@ -97,10 +97,8 @@ const BiasTest = () => {
   const handleKeyPress = (event) => {
     if (showQuestion) {
       if (event.key === 'E' || event.key === 'e') {
-        console.log('e pressed');
         setSelectedAnswer('A');
       } else if (event.key === 'I' || event.key === 'i') {
-        console.log('i pressed');
         setSelectedAnswer('B');
       }
     }
@@ -161,7 +159,7 @@ const BiasTest = () => {
               </Typography>
               <Paper>
                 <img
-                  style={{ width: '450px', height: '270px' }}
+                  style={{ maxWidth: '65%', maxHeight: '65%' }}
                   alt={BiasEducationCenter[biasIndex].bias}
                   src={BiasEducationCenter[biasIndex].categoriesAndItems}
                 />

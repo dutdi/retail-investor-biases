@@ -1,5 +1,6 @@
-import anchoringBiasItems from '../img/anchoring-bias-items.png';
-import representativenessBiasItems from '../img/representativeness-bias-items.png';
+import representativenessBiasTable from '../img/representativeness-bias-table.png';
+import anchoringBiasTable from '../img/anchoring-bias-table.png';
+import overconfidenceBiasTable from '../img/overconfidence-bias-table.png';
 
 export const BiasEducationCenter = [
   {
@@ -10,7 +11,7 @@ export const BiasEducationCenter = [
       'Please, make sure you understand what this bias means, you will be needing this moving forward.',
     instruction:
       'For this test you will use E and I to categorize items as fast as you can.',
-    categoriesAndItems: representativenessBiasItems,
+    categoriesAndItems: representativenessBiasTable,
     questions: [
       {
         prompt:
@@ -232,7 +233,7 @@ export const BiasEducationCenter = [
       'Please, make sure you understand what this bias means, you will be needing this moving forward.',
     instruction:
       'For this test you will use E and I to categorize items as fast as you can.',
-    categoriesAndItems: anchoringBiasItems,
+    categoriesAndItems: anchoringBiasTable,
     questions: [
       {
         prompt:
@@ -439,6 +440,228 @@ export const BiasEducationCenter = [
         prompt:
           'Twitter`s current price is €45, and Facebook`s is €300, however that alone is not a reason to buy Twitter.',
         A: 'Anchoring Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+    ],
+  },
+  {
+    bias: 'Bias #3: Overconfidence Bias',
+    description:
+      'The overconfidence bias refers to our belief or perception in our abilities to be higher than our `actual` or realized abilities. Investors with overconfidence bias often tend to believe that **they can pick the next big stock**. This often results in ill-advised attempts to time the market or build concentrations in risky investments they consider a sure thing.',
+    warning:
+      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
+    instruction:
+      'For this test you will use E and I to categorize items as fast as you can.',
+    categoriesAndItems: overconfidenceBiasTable,
+    questions: [
+      {
+        prompt:
+          'Since I invested in Amazon at it`s start, I have a high probability of identifying the next big company as well.',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am an ill-informed investor, therefore I am better off buying a single index fund than investing in individual stocks myself.',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'The S&P 500 Index averages about 6.6% a year, but I personally can perform way better than that.',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have made great returns in the past, but that was not based upon my own capabilities only',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have lost money on all my crypto investments, but I think I make decent investment decisions.',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I identified great web 2.0 stocks, but that does not mean I could do the same in the web 3.0 space.',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'To the moon.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Crash.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Diamond Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Paper Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Long.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Short.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Since I invested in Amazon at it`s start, I have a high probability of identifying the next big company as well.',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am an ill-informed investor, therefore I am better off buying a single index fund than investing in individual stocks myself.',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'The S&P 500 Index averages about 6.6% a year, but I personally can perform way better than that.',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have made great returns in the past, but that was not based upon my own capabilities only.',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have lost money on all my crypto investments, but I think I make decent investment decisions.',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I identified great web 2.0 stocks, but that does not mean I could do the same in the web 3.0 space.',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Since I invested in Amazon at it`s start, I have a high probability of identifying the next big company as well.',
+        A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am an ill-informed investor, therefore I am better off buying a single index fund than investing in individual stocks myself.',
+        A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'The S&P 500 Index averages about 6.6% a year, but I personally can perform way better than that.',
+        A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have made great returns in the past, but that was not based upon my own capabilities only.',
+        A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have lost money on all my crypto investments, but I think I make decent investment decisions.',
+        A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I identified great web 2.0 stocks, but that does not mean I could do the same in the web 3.0 space.',
+        A: 'Overconfidence Bias & Buy',
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
