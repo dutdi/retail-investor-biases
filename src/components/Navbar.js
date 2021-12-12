@@ -43,27 +43,6 @@ const Navbar = () => {
           <div>
             <Button
               component={Link}
-              to='/study-info'
-              style={{ color: '#0065bd' }}
-            >
-              Take the Test
-            </Button>
-            <Button
-              component={Link}
-              to='/about-us'
-              style={{ color: '#0065bd' }}
-            >
-              About us
-            </Button>
-            <Button
-              component={Link}
-              to='/contact-us'
-              style={{ color: '#0065bd' }}
-            >
-              Contact us
-            </Button>
-            <Button
-              component={Link}
               to='/feedback'
               style={{ color: '#0065bd' }}
             >

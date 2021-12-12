@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AboutUs = () => {
+const Privacy = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -23,10 +23,10 @@ const AboutUs = () => {
         gutterBottom
         style={{ backgroundColor: '#0065bd', color: 'white' }}
       >
-        About us
+        Privacy
       </Typography>
     </div>
   );
 };
 
-export default AboutUs;
+export default Privacy;
