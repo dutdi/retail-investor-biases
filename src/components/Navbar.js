@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Avatar } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import Image from '../img/digital finance.png';
 
 const useStyles = makeStyles(() => ({
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
   },
   appBar: {
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'white',
   },
   title: {
     flexGrow: 1,
@@ -29,12 +29,18 @@ const Navbar = () => {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position='static'>
         <Toolbar>
-          <Avatar variant='square' src={Image} />
+          <Paper>
+            <img
+              style={{ width: '70px', height: '70px' }}
+              alt='logo'
+              src={Image}
+            />
+          </Paper>
           <Typography
             component={Link}
             to='/'
-            variant='h6'
-            style={{ color: '#0065bd' }}
+            variant='h4'
+            style={{ textAlign: 'center', color: '#0065bd' }}
             className={classes.title}
           >
             Retail Investor Biases
