@@ -11,6 +11,7 @@ import Demographics from './components/Demographics';
 import './App.css';
 import Feedback from './components/Feedback';
 import StudyInfo from './components/StudyInfo';
+import Footer from './components/Footer';
 
 function App() {
   const [biasIndex, setBiasIndex] = useState(0);
@@ -48,6 +49,7 @@ function App() {
           </Routes>
         </BiasContext.Provider>
       </Box>
+      <Footer></Footer>
     </Router>
   );
 }
