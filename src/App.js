@@ -12,6 +12,7 @@ import './App.css';
 import Feedback from './components/Feedback';
 import StudyInfo from './components/StudyInfo';
 import Footer from './components/Footer';
+import Imprint from './components/Imprint';
 
 function App() {
   const [biasIndex, setBiasIndex] = useState(0);
@@ -35,6 +36,7 @@ function App() {
               element={<Demographics></Demographics>}
             ></Route>
             <Route exact path='/test' element={<BiasTest></BiasTest>}></Route>
+            <Route exact path='/imprint' element={<Imprint></Imprint>}></Route>
             <Route exact path='/privacy' element={<Privacy></Privacy>}></Route>
             <Route
               exact
