@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PersonalDetails = () => {
+const Demographics = () => {
   const classes = useStyles();
   const [details, setDetails] = useState({
     age: '',
@@ -68,13 +68,6 @@ const PersonalDetails = () => {
     console.log(details);
   };
 
-  function range(start, end) {
-    return Array(end - start + 1)
-      .fill()
-      .map((_, idx) => start + idx);
-  }
-  var ages = range(18, 100);
-
   return (
     <div className={classes.root}>
       <Typography
@@ -103,9 +96,11 @@ const PersonalDetails = () => {
               }}
             >
               <option aria-label='None' value='' />
-              {ages.map((item) => (
-                <option value={item}>{item}</option>
-              ))}
+              <option value='Under 18'>Under 18</option>
+              <option value='18-30'>18-30</option>
+              <option value='31-44'>31-44</option>
+              <option value='45-60'>45-60</option>
+              <option value='60+'>60+</option>
             </Select>
           </FormControl>
         </Grid>
@@ -215,4 +210,4 @@ const PersonalDetails = () => {
   );
 };
 
-export default PersonalDetails;
+export default Demographics;

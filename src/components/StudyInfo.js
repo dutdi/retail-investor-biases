@@ -54,7 +54,7 @@ const StudyInfo = () => {
       </Typography>
       <Button
         component={Link}
-        to='/personal-details'
+        to='/demographics'
         style={{
           backgroundColor: '#0065bd',
           color: 'white',

@@ -7,7 +7,7 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Landing from './components/Landing';
 import BiasTest from './components/BiasTest';
-import PersonalDetails from './components/PersonalDetails';
+import Demographics from './components/Demographics';
 import './App.css';
 import Feedback from './components/Feedback';
 import StudyInfo from './components/StudyInfo';
@@ -30,8 +30,8 @@ function App() {
             ></Route>
             <Route
               exact
-              path='personal-details'
-              element={<PersonalDetails></PersonalDetails>}
+              path='/demographics'
+              element={<Demographics></Demographics>}
             ></Route>
             <Route exact path='/test' element={<BiasTest></BiasTest>}></Route>
             <Route exact path='/about-us' element={<AboutUs></AboutUs>}></Route>
