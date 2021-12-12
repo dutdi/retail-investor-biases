@@ -673,7 +673,7 @@ export const BiasEducationCenter = [
     ],
   },
   {
-    bias: 'Bias #4: Herding Bias/Bandwagon effect',
+    bias: 'Bias #4: Herding Bias / Bandwagon effect',
     description:
       'The Bandwagon effect refers to our habit of adopting certain behaviors or beliefs because many other people do the same. In the world of investment, this can take the form of investors rationalizing that their course of action is the right one because "everybody else" is doing it.',
     warning:

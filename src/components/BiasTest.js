@@ -53,7 +53,11 @@ const BiasTest = () => {
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    for (let i = 0; i < BiasEducationCenter.length; i++) {
+      shuffle(BiasEducationCenter[i].questions);
+    }
+  }, []);
 
   useEffect(() => {
     let interval = null;
@@ -104,6 +108,15 @@ const BiasTest = () => {
       }
     }
   };
+
+  function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
 
   useEventListener('keydown', handleKeyPress);
 
