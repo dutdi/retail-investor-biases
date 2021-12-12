@@ -1,6 +1,7 @@
 import representativenessBiasTable from '../img/representativeness-bias-table.png';
 import anchoringBiasTable from '../img/anchoring-bias-table.png';
 import overconfidenceBiasTable from '../img/overconfidence-bias-table.png';
+import herdingBiasTable from '../img/herding-bias-table.png';
 
 export const BiasEducationCenter = [
   {
@@ -450,7 +451,7 @@ export const BiasEducationCenter = [
   {
     bias: 'Bias #3: Overconfidence Bias',
     description:
-      'The overconfidence bias refers to our belief or perception in our abilities to be higher than our `actual` or realized abilities. Investors with overconfidence bias often tend to believe that **they can pick the next big stock**. This often results in ill-advised attempts to time the market or build concentrations in risky investments they consider a sure thing.',
+      'The overconfidence bias refers to our belief or perception in our abilities to be higher than our `actual` or realized abilities. Investors with overconfidence bias often tend to believe that "they can pick the next big stock". This often results in ill-advised attempts to time the market or build concentrations in risky investments they consider a sure thing.',
     warning:
       'Please, make sure you understand what this bias means, you will be needing this moving forward.',
     instruction:
@@ -662,6 +663,229 @@ export const BiasEducationCenter = [
         prompt:
           'I identified great web 2.0 stocks, but that does not mean I could do the same in the web 3.0 space.',
         A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+    ],
+  },
+  {
+    bias: 'Bias #4: Herding Bias/Bandwagon effect',
+    description:
+      'The Bandwagon effect refers to our habit of adopting certain behaviors or beliefs because many other people do the same. In the world of investment, this can take the form of investors rationalizing that their course of action is the right one because "everybody else" is doing it.',
+    warning:
+      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
+    instruction:
+      'For this test you will use E and I to categorize items as fast as you can.',
+    categoriesAndItems: herdingBiasTable,
+    questions: [
+      {
+        prompt:
+          'People from my country believe that Wirecard, a local startup is primed to become a “global player”, therefore I should invest in it.',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My friends think Tesla is the best stock ever,  but I will not invest in it unless I am convinced about it myself.',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Everybody around me seems to be investing in the cryptocurrency Solana, therefore I should too.',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Everybody seems to be investing Bitcoin, but I would not until I understand what it is, and how it works.',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I personally cannot make sense out of Chamath`s IPOs, but since the entire reddit army is buying it, I should buy it too.',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'The reddit army is aiming to take GameStop to the moon, but I am wary of letting FOMO drive my decisions.',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'To the moon.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Crash.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Diamond Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Paper Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Long.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Short.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'People from my country believe that Wirecard, a local startup is primed to become a “global player”, therefore I should invest in it.',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My friends think Tesla is the best stock ever,  but I will not invest in it unless I am convinced about it myself.',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Everybody around me seems to be investing in the cryptocurrency Solana, therefore I should too.',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Everybody seems to be investing Bitcoin, but I would not until I understand what it is, and how it works.',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I personally cannot make sense out of Chamath`s IPOs, but since the entire reddit army is buying it, I should buy it too.',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'The reddit army is aiming to take GameStop to the moon, but I am wary of letting FOMO drive my decisions.',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+
+      {
+        prompt:
+          'People from my country believe that Wirecard, a local startup is primed to become a “global player”, therefore I should invest in it.',
+        A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My friends think Tesla is the best stock ever,  but I will not invest in it unless I am convinced about it myself.',
+        A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Everybody around me seems to be investing in the cryptocurrency Solana, therefore I should too.',
+        A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Everybody seems to be investing Bitcoin, but I would not until I understand what it is, and how it works.',
+        A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I personally cannot make sense out of Chamath`s IPOs, but since the entire reddit army is buying it, I should buy it too.',
+        A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'The reddit army is aiming to take GameStop to the moon, but I am wary of letting FOMO drive my decisions.',
+        A: 'Herding Bias & Buy',
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
