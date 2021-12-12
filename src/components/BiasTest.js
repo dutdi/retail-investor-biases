@@ -9,7 +9,7 @@ import useEventListener from '@use-it/event-listener';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '1200px',
-    height: '700px',
+    height: '750px',
     margin: '20px',
     backgroundColor: 'white',
     textAlign: 'center',

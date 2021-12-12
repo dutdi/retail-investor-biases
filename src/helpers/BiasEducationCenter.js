@@ -2,6 +2,8 @@ import representativenessBiasTable from '../img/representativeness-bias-table.pn
 import anchoringBiasTable from '../img/anchoring-bias-table.png';
 import overconfidenceBiasTable from '../img/overconfidence-bias-table.png';
 import herdingBiasTable from '../img/herding-bias-table.png';
+import dispositionEffectTable from '../img/disposition-effect-table.png';
+import actionBiasTable from '../img/action-bias-table.png';
 
 export const BiasEducationCenter = [
   {
@@ -886,6 +888,453 @@ export const BiasEducationCenter = [
         prompt:
           'The reddit army is aiming to take GameStop to the moon, but I am wary of letting FOMO drive my decisions.',
         A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+    ],
+  },
+  {
+    bias: 'Bias #5: Disposition effect',
+    description:
+      'The disposition effect refers to our tendency to prematurely sell assets that have made financial gains while holding on to assets that are losing money. While investing, this can take the form of selling winning investments in order to ensure a profit, but being averse to selling losing investments in hopes of turning them into gains.',
+    warning:
+      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
+    instruction:
+      'For this test you will use E and I to categorize items as fast as you can.',
+    categoriesAndItems: dispositionEffectTable,
+    questions: [
+      {
+        prompt:
+          'My Bitcoin just hit $60,000. I should sell it before it goes down again.',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Wirecard`s stock price is going down because of a fraud scandal, and I should sell it off without losing any more money.',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am losing money on my Wirecard stock due to an accused scandal, but I would not sell it until I recover my losses.',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have lost quite a lot of money on my Docusign stock in the past 6 months and future prospects do not look well, therefore I would sell it.',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Tesla stock just hit $1,000. I should sell it before Elon Musk tweets "Tesla stock price is too high in my opinion".',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My tesla stock has made over 300%, and the stock looks a bit overvalued, but I would continue betting on my winners.',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'To the moon.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Crash.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Diamond Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Paper Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Long.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Short.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Bitcoin just hit $60,000. I should sell it before it goes down again.',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Wirecard`s stock price is going down because of a fraud scandal, and I should sell it off without losing any more money.',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am losing money on my Wirecard stock due to an accused scandal, but I would not sell it until I recover my losses.',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have lost quite a lot of money on my Docusign stock in the past 6 months and future prospects do not look well, therefore I would sell it.',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Tesla stock just hit $1,000. I should sell it before Elon Musk tweets "Tesla stock price is too high in my opinion".',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My tesla stock has made over 300%, and the stock looks a bit overvalued, but I would continue betting on my winners.',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+
+      {
+        prompt:
+          'My Bitcoin just hit $60,000. I should sell it before it goes down again.',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Wirecard`s stock price is going down because of a fraud scandal, and I should sell it off without losing any more money.',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am losing money on my Wirecard stock due to an accused scandal, but I would not sell it until I recover my losses.',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I have lost quite a lot of money on my Docusign stock in the past 6 months and future prospects do not look well, therefore I would sell it.',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Tesla stock just hit $1,000. I should sell it before Elon Musk tweets "Tesla stock price is too high in my opinion".',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My tesla stock has made over 300%, and the stock looks a bit overvalued, but I would continue betting on my winners.',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+    ],
+  },
+  {
+    bias: 'Bias #6: Action Bias',
+    description:
+      'The action bias describes our tendency to favour action over inaction, often to our benefit. However, there are times when we feel compelled to act, even if there’s evidence that it will lead to a worse outcome than doing nothing would. In the world of investment, this can take the form of "investors panic selling when the market is going down or hastily investing after reading something positive about an asset online".',
+    warning:
+      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
+    instruction:
+      'For this test you will use E and I to categorize items as fast as you can.',
+    categoriesAndItems: actionBiasTable,
+    questions: [
+      {
+        prompt:
+          'My Bitcoin just went down $1,000; therefore I should sell it before I lose any more money.',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Bitcoin just went down $1,000; but I know Cryptocurrencies are highly volatile assets, and I should not be worried.',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Various instagram account have been hinting towards a dip at the end of the week, therefore I should sell my stocks right now.',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'There is market-wide sell off. By default, I should do nothing. Baking cookies might be a great idea at the moment.',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'A market-wide sell off just started, and I feel this is a perfect opportunity to buy my favorite stocks at discount.',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am down around 20% over the past weeks. Should I be doing something about it? No. I am in for the long run, and time smooths out all volatility.',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'To the moon.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Crash.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Diamond Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Paper Hands.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Long.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt: 'Short.',
+        A: 'Buy',
+        B: 'Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+
+      {
+        prompt:
+          'My Bitcoin just went down $1,000; therefore I should sell it before I lose any more money.',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Bitcoin just went down $1,000; but I know Cryptocurrencies are highly volatile assets, and I should not be worried.',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Various instagram account have been hinting towards a dip at the end of the week, therefore I should sell my stocks right now.',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'There is market-wide sell off. By default, I should do nothing. Baking cookies might be a great idea at the moment.',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'A market-wide sell off just started, and I feel this is a perfect opportunity to buy my favorite stocks at discount.',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am down around 20% over the past weeks. Should I be doing something about it? No. I am in for the long run, and time smooths out all volatility.',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+
+      {
+        prompt:
+          'My Bitcoin just went down $1,000; therefore I should sell it before I lose any more money.',
+        A: 'Action Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'My Bitcoin just went down $1,000; but I know Cryptocurrencies are highly volatile assets, and I should not be worried.',
+        A: 'Action Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'Various instagram account have been hinting towards a dip at the end of the week, therefore I should sell my stocks right now.',
+        A: 'Action Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'There is market-wide sell off. By default, I should do nothing. Baking cookies might be a great idea at the moment.',
+        A: 'Action Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'B',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'A market-wide sell off just started, and I feel this is a perfect opportunity to buy my favorite stocks at discount.',
+        A: 'Action Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: 'A',
+        userSelection: '',
+        timeSpent: 0,
+      },
+      {
+        prompt:
+          'I am down around 20% over the past weeks. Should I be doing something about it? No. I am in for the long run, and time smooths out all volatility.',
+        A: 'Action Bias & Buy',
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
