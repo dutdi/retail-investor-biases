@@ -1,15 +1,21 @@
 import {
   Button,
+  Checkbox,
   FormControl,
   Grid,
+  Input,
   InputLabel,
+  ListItemText,
   makeStyles,
+  MenuItem,
   Select,
   Typography,
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -22,15 +28,34 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   formControl: {
-    margin: theme.spacing(2),
+    margin: theme.spacing(1),
     width: 500,
   },
 }));
+
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+const genders = [
+  'Male',
+  'Female',
+  'Trans male',
+  'Trans female',
+  'Genderqueer / Gender nonconforming',
+  'A different identity',
+];
 
 const Demographics = () => {
   const classes = useStyles();
   const [details, setDetails] = useState({
     age: '',
+    gender: [],
     country: '',
     profession: '',
     investingDate: '',
@@ -42,6 +67,7 @@ const Demographics = () => {
     const checkAllEntered = () => {
       if (
         details.age === '' ||
+        details.gender.length === 0 ||
         details.country === '' ||
         details.profession === '' ||
         details.investingDate === '' ||
@@ -57,6 +83,7 @@ const Demographics = () => {
 
   const handleChange = (event) => {
     const name = event.target.name;
+    console.log(name);
     setDetails({
       ...details,
       [name]: event.target.value,
@@ -101,6 +128,33 @@ const Demographics = () => {
               <option value='31-44'>31-44</option>
               <option value='45-60'>45-60</option>
               <option value='60+'>60+</option>
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item>
+          <FormControl required className={classes.formControl}>
+            <InputLabel htmlFor='gender'>
+              Current Gender Identity (check all that apply)
+            </InputLabel>
+            <Select
+              labelId='gender'
+              id='gender-id'
+              multiple
+              value={details.gender}
+              onChange={handleChange}
+              inputProps={{
+                name: 'gender',
+                id: 'gender',
+              }}
+              renderValue={(selected) => selected.join(', ')}
+              MenuProps={MenuProps}
+            >
+              {genders.map((gender) => (
+                <MenuItem key={gender} value={gender}>
+                  <Checkbox checked={details.gender.indexOf(gender) > -1} />
+                  <ListItemText primary={gender} />
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>
