@@ -86,7 +86,6 @@ const Demographics = () => {
 
   const handleChange = (event) => {
     const name = event.target.name;
-    console.log(name);
     setDetails({
       ...details,
       [name]: event.target.value,
@@ -276,7 +275,7 @@ const Demographics = () => {
         <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='totalInvestments'>
-              Total current investments?
+              Total current investments
             </InputLabel>
             <Select
               native

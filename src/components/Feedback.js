@@ -9,6 +9,8 @@ import {
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { feedbackAccuracies } from '../helpers/FeedbackAccuracyList';
+import { feedbackRecommendations } from '../helpers/FeedbackRecommendationList';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,14 +32,17 @@ const useStyles = makeStyles((theme) => ({
 const Feedback = () => {
   const classes = useStyles();
   const [feedback, setFeedback] = useState({
-    accuracy: '',
-    recommendation: '',
+    feedbackAccuracy: '',
+    feedbackRecommendation: '',
   });
   const [hasError, setHasError] = useState(true);
 
   useEffect(() => {
     const checkAllEntered = () => {
-      if (feedback.accuracy === '' || feedback.recommendation === '') {
+      if (
+        feedback.feedbackAccuracy === '' ||
+        feedback.feedbackRecommendation === ''
+      ) {
         setHasError(true);
       } else {
         setHasError(false);
@@ -52,19 +57,13 @@ const Feedback = () => {
       ...feedback,
       [name]: event.target.value,
     });
+    console.log(feedback);
   };
 
   const sendFeedback = () => {
     //TODO: Save to DB
     console.log(feedback);
   };
-
-  function range(start, end) {
-    return Array(end - start + 1)
-      .fill()
-      .map((_, idx) => start + idx);
-  }
-  var accuracies = range(1, 10);
 
   return (
     <div className={classes.root}>
@@ -88,19 +87,19 @@ const Feedback = () => {
         </Grid>
         <Grid item>
           <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor='accuracy'>Select</InputLabel>
+            <InputLabel htmlFor='feedbackAccuracy'>Accuracy</InputLabel>
             <Select
               native
-              value={feedback.accuracy}
+              value={feedback.feedbackAccuracy}
               onChange={handleChange}
               inputProps={{
-                name: 'accuracy',
-                id: 'accuracy',
+                name: 'feedbackAccuracy',
+                id: 'feedbackAccuracy',
               }}
             >
               <option aria-label='None' value='' />
-              {accuracies.map((item) => (
-                <option value={item}>{item}</option>
+              {feedbackAccuracies.map((feedbackAccuracy) => (
+                <option value={feedbackAccuracy}>{feedbackAccuracy}</option>
               ))}
             </Select>
           </FormControl>
@@ -112,23 +111,24 @@ const Feedback = () => {
         </Grid>
         <Grid item>
           <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor='recommendation'>Select</InputLabel>
+            <InputLabel htmlFor='feedbackRecommendation'>
+              Recommendation
+            </InputLabel>
             <Select
               native
-              value={feedback.recommendation}
+              value={feedback.feedbackRecommendation}
               onChange={handleChange}
               inputProps={{
-                name: 'recommendation',
-                id: 'recommendation',
+                name: 'feedbackRecommendation',
+                id: 'feedbackRecommendation',
               }}
             >
               <option aria-label='None' value='' />
-              <option value='Strongly not recommended'>
-                Strongly not recommended
-              </option>
-              <option value='Not recommended'>Not recommended</option>
-              <option value='Recommended'>Recommended</option>
-              <option value='Strongly recommended'>Strongly recommended</option>
+              {feedbackRecommendations.map((feedbackRecommendation) => (
+                <option value={feedbackRecommendation}>
+                  {feedbackRecommendation}
+                </option>
+              ))}
             </Select>
           </FormControl>
         </Grid>
