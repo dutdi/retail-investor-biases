@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import { Avatar } from '@material-ui/core';
 import Image from '../img/digital finance.png';
 
@@ -40,15 +39,6 @@ const Navbar = () => {
           >
             Retail Investor Biases
           </Typography>
-          <div>
-            <Button
-              component={Link}
-              to='/feedback'
-              style={{ color: '#0065bd' }}
-            >
-              Feedback
-            </Button>
-          </div>
         </Toolbar>
       </AppBar>
     </div>
