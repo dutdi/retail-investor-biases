@@ -47,12 +47,14 @@ const useStyles = makeStyles((theme) => ({
 const BiasTest = () => {
   const classes = useStyles();
 
-  const { biasIndex, setBiasIndex } = useContext(BiasContext);
+  const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
     let interval = null;
