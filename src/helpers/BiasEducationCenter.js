@@ -10,10 +10,6 @@ export const BiasEducationCenter = [
     bias: 'Bias #1: Representativeness Heuristic Bias',
     description:
       'The representativeness bias describes the event in which people might confuse the probabilities of two things or events to be more correlated than they actually are. In the world of investment, this can take the form of investors making decisions based on their previous experiences, often wrongly judging that something is more representative than it actually is.',
-    warning:
-      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
-    instruction:
-      'For this test you will use E and I to categorize items as fast as you can.',
     categoriesAndItems: representativenessBiasTable,
     questions: [
       {
@@ -232,10 +228,6 @@ export const BiasEducationCenter = [
     bias: 'Bias #2: Anchoring Bias',
     description:
       'Anchoring bias is a cognitive bias that causes us to rely too heavily on the first piece of information we are given about a topic. When we are setting plans or making estimates about something, we interpret newer information from the reference point of our anchor, instead of seeing it objectively. In the world of investment, this can take the form of investors skewing their judgement based on their point of anchor, thereby failing to update plans or predictions as much as they should.',
-    warning:
-      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
-    instruction:
-      'For this test you will use E and I to categorize items as fast as you can.',
     categoriesAndItems: anchoringBiasTable,
     questions: [
       {
@@ -454,10 +446,6 @@ export const BiasEducationCenter = [
     bias: 'Bias #3: Overconfidence Bias',
     description:
       'The overconfidence bias refers to our belief or perception in our abilities to be higher than our `actual` or realized abilities. Investors with overconfidence bias often tend to believe that "they can pick the next big stock". This often results in ill-advised attempts to time the market or build concentrations in risky investments they consider a sure thing.',
-    warning:
-      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
-    instruction:
-      'For this test you will use E and I to categorize items as fast as you can.',
     categoriesAndItems: overconfidenceBiasTable,
     questions: [
       {
@@ -676,10 +664,6 @@ export const BiasEducationCenter = [
     bias: 'Bias #4: Herding Bias / Bandwagon effect',
     description:
       'The Bandwagon effect refers to our habit of adopting certain behaviors or beliefs because many other people do the same. In the world of investment, this can take the form of investors rationalizing that their course of action is the right one because "everybody else" is doing it.',
-    warning:
-      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
-    instruction:
-      'For this test you will use E and I to categorize items as fast as you can.',
     categoriesAndItems: herdingBiasTable,
     questions: [
       {
@@ -899,10 +883,6 @@ export const BiasEducationCenter = [
     bias: 'Bias #5: Disposition effect',
     description:
       'The disposition effect refers to our tendency to prematurely sell assets that have made financial gains while holding on to assets that are losing money. While investing, this can take the form of selling winning investments in order to ensure a profit, but being averse to selling losing investments in hopes of turning them into gains.',
-    warning:
-      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
-    instruction:
-      'For this test you will use E and I to categorize items as fast as you can.',
     categoriesAndItems: dispositionEffectTable,
     questions: [
       {
@@ -1122,10 +1102,6 @@ export const BiasEducationCenter = [
     bias: 'Bias #6: Action Bias',
     description:
       'The action bias describes our tendency to favour action over inaction, often to our benefit. However, there are times when we feel compelled to act, even if there’s evidence that it will lead to a worse outcome than doing nothing would. In the world of investment, this can take the form of "investors panic selling when the market is going down or hastily investing after reading something positive about an asset online".',
-    warning:
-      'Please, make sure you understand what this bias means, you will be needing this moving forward.',
-    instruction:
-      'For this test you will use E and I to categorize items as fast as you can.',
     categoriesAndItems: actionBiasTable,
     questions: [
       {

@@ -166,10 +166,12 @@ const BiasTest = () => {
                 {BiasEducationCenter[biasIndex].description}
               </Typography>
               <Typography variant='h6' gutterBottom className={classes.text3}>
-                {BiasEducationCenter[biasIndex].warning}
+                Please, make sure you understand what this bias means, you will
+                be needing this moving forward.
               </Typography>
               <Typography variant='h6' gutterBottom className={classes.text2}>
-                {BiasEducationCenter[biasIndex].instruction}
+                For this test you will use E and I to categorize items as fast
+                as you can.
               </Typography>
               <Paper>
                 <img
