@@ -14,6 +14,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { genders } from '../helpers/GenderList';
 import { countries } from '../helpers/CountryList';
+import { educations } from '../helpers/EducationList';
+import { ages } from '../helpers/AgeList';
+import { professions } from '../helpers/ProfessionList';
+import { investingDates } from '../helpers/InvestingDateList';
+import { totalInvestments } from '../helpers/TotalInvestmentList';
+import { ibts } from '../helpers/IBTList';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -29,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   formControl: {
-    margin: theme.spacing(1),
     width: 500,
   },
 }));
@@ -50,9 +55,11 @@ const Demographics = () => {
     gender: [],
     citizenship: '',
     residence: '',
-    profession: '',
+    education: '',
+    profession: [],
     investingDate: '',
     totalInvestments: '',
+    ibts: '',
   });
   const [hasError, setHasError] = useState(true);
 
@@ -63,9 +70,11 @@ const Demographics = () => {
         details.gender.length === 0 ||
         details.citizenship === '' ||
         details.residence === '' ||
-        details.profession === '' ||
+        details.education === '' ||
+        details.profession.length === 0 ||
         details.investingDate === '' ||
-        details.totalInvestments === ''
+        details.totalInvestments === '' ||
+        details.ibts === ''
       ) {
         setHasError(true);
       } else {
@@ -98,13 +107,8 @@ const Demographics = () => {
       >
         Enter your details
       </Typography>
-      <Grid
-        container
-        direction='column'
-        justifyContent='center'
-        alignItems='stretch'
-      >
-        <Grid item>
+      <Grid container spacing={12}>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='age'>Age</InputLabel>
             <Select
@@ -117,15 +121,13 @@ const Demographics = () => {
               }}
             >
               <option aria-label='None' value='' />
-              <option value='Under 18'>Under 18</option>
-              <option value='18-30'>18-30</option>
-              <option value='31-44'>31-44</option>
-              <option value='45-60'>45-60</option>
-              <option value='60+'>60+</option>
+              {ages.map((age) => (
+                <option value={age}>{age}</option>
+              ))}
             </Select>
           </FormControl>
         </Grid>
-        <Grid item>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='gender'>
               Current Gender Identity (check all that apply)
@@ -152,7 +154,9 @@ const Demographics = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item>
+      </Grid>
+      <Grid container spacing={24}>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='citizenship'>
               What's your country/region of primary citizenship?
@@ -173,7 +177,7 @@ const Demographics = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='residence'>
               What is your country/region of residence?
@@ -194,26 +198,61 @@ const Demographics = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item>
+      </Grid>
+      <Grid container spacing={24}>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor='profession'>Profession</InputLabel>
+            <InputLabel htmlFor='education'>
+              Highest level of education that you have completed
+            </InputLabel>
             <Select
               native
+              value={details.education}
+              onChange={handleChange}
+              inputProps={{
+                name: 'education',
+                id: 'education',
+              }}
+            >
+              <option aria-label='None' value='' />
+              {educations.map((education) => (
+                <option value={education}>{education}</option>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs>
+          <FormControl required className={classes.formControl}>
+            <InputLabel htmlFor='profession'>
+              Profession (check all that apply)
+            </InputLabel>
+            <Select
+              labelId='profession'
+              id='profession-id'
+              multiple
               value={details.profession}
               onChange={handleChange}
               inputProps={{
                 name: 'profession',
                 id: 'profession',
               }}
+              renderValue={(selected) => selected.join(', ')}
+              MenuProps={MenuProps}
             >
-              <option aria-label='None' value='' />
-              <option value='Doctor'>Doctor</option>
-              <option value='Engineer'>Engineer</option>
-              <option value='Student'>Student</option>
+              {professions.map((profession) => (
+                <MenuItem key={profession} value={profession}>
+                  <Checkbox
+                    checked={details.profession.indexOf(profession) > -1}
+                  />
+                  <ListItemText primary={profession} />
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>
-        <Grid item>
+      </Grid>
+      <Grid container spacing={24}>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='investingDate'>
               When did you start investing?
@@ -228,19 +267,16 @@ const Demographics = () => {
               }}
             >
               <option aria-label='None' value='' />
-              <option value='This year'>This year</option>
-              <option value='Last year'>Last year</option>
-              <option value='2 years ago'>2 years ago</option>
-              <option value='3 years ago'>3 years ago</option>
-              <option value='4 years ago'>4 years ago</option>
-              <option value='Way Before'>Way Before</option>
+              {investingDates.map((investingDate) => (
+                <option value={investingDate}>{investingDate}</option>
+              ))}
             </Select>
           </FormControl>
         </Grid>
-        <Grid item>
+        <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='totalInvestments'>
-              Total current investments
+              Total current investments?
             </InputLabel>
             <Select
               native
@@ -252,12 +288,32 @@ const Demographics = () => {
               }}
             >
               <option aria-label='None' value='' />
-              <option value='Less than 100'>Less than 100</option>
-              <option value='100-500'>100-500</option>
-              <option value='500-1000'>500-1000</option>
-              <option value='1000-2000'>1000-2000</option>
-              <option value='2000-5000'>2000-5000</option>
-              <option value='5000+'>5000+</option>
+              {totalInvestments.map((totalInvestment) => (
+                <option value={totalInvestment}>{totalInvestment}</option>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+      </Grid>
+      <Grid container spacing={24}>
+        <Grid item xs>
+          <FormControl required className={classes.formControl}>
+            <InputLabel htmlFor='ibts'>
+              Total Investor Bias Tests previously performed on our platform
+            </InputLabel>
+            <Select
+              native
+              value={details.ibts}
+              onChange={handleChange}
+              inputProps={{
+                name: 'ibts',
+                id: 'ibts',
+              }}
+            >
+              <option aria-label='None' value='' />
+              {ibts.map((ibt) => (
+                <option value={ibt}>{ibt}</option>
+              ))}
             </Select>
           </FormControl>
         </Grid>
