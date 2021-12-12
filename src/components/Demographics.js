@@ -49,6 +49,7 @@ const Demographics = () => {
     age: '',
     gender: [],
     citizenship: '',
+    residence: '',
     profession: '',
     investingDate: '',
     totalInvestments: '',
@@ -61,6 +62,7 @@ const Demographics = () => {
         details.age === '' ||
         details.gender.length === 0 ||
         details.citizenship === '' ||
+        details.residence === '' ||
         details.profession === '' ||
         details.investingDate === '' ||
         details.totalInvestments === ''
@@ -162,6 +164,27 @@ const Demographics = () => {
               inputProps={{
                 name: 'citizenship',
                 id: 'citizenship',
+              }}
+            >
+              <option aria-label='None' value='' />
+              {countries.map((country) => (
+                <option value={country}>{country}</option>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item>
+          <FormControl required className={classes.formControl}>
+            <InputLabel htmlFor='residence'>
+              What is your country/region of residence?
+            </InputLabel>
+            <Select
+              native
+              value={details.residence}
+              onChange={handleChange}
+              inputProps={{
+                name: 'residence',
+                id: 'residence',
               }}
             >
               <option aria-label='None' value='' />
