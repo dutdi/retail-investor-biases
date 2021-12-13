@@ -110,12 +110,20 @@ const BiasTest = () => {
   };
 
   function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+    var start = 0;
+    var end = 6;
+    while (end <= array.length) {
+      for (var i = end - 1; i >= start; i--) {
+        var j = Math.floor(Math.random() * (i - start + 1));
+        j += start;
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      start += 6;
+      end += 6;
     }
+    return array;
   }
 
   useEventListener('keydown', handleKeyPress);
