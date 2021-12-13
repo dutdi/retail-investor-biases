@@ -128,6 +128,13 @@ const BiasTest = () => {
         <div className={classes.root}>
           {showQuestion ? (
             <div tabIndex='0'>
+              <Typography
+                variant='h4'
+                gutterBottom
+                style={{ backgroundColor: '#0065bd', color: 'white' }}
+              >
+                {BiasEducationCenter[biasIndex].questions[questionIndex].part}
+              </Typography>
               <Typography variant='h4' gutterBottom className={classes.text4}>
                 {BiasEducationCenter[biasIndex].questions[questionIndex].prompt}
               </Typography>
