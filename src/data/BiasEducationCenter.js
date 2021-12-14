@@ -11,6 +11,9 @@ export const BiasEducationCenter = [
     description:
       'The representativeness bias describes the event in which people might confuse the probabilities of two things or events to be more correlated than they actually are. In the world of investment, this can take the form of investors making decisions based on their previous experiences, often wrongly judging that something is more representative than it actually is.',
     categoriesAndItems: representativenessBiasTable,
+    tips: '1. Categorization is fundamental to our perception of the world, and therefore, it is very difficult to completely avoid the representativeness bias. However, being aware of it is a good start: research has shown that when people become aware that they are using a heuristic, they often correct their judgment.\n2.  Pointing out other people’s reliance on representativeness, and asking them to do the same for you, provides useful feedback that might help to avoid representative bias.\n3. Other researchers have tried to reduce the effects of the representativeness bias by encouraging people to “think like statisticians”. These nudges do seem to help, but the problem is that without an obvious cue, people don’t think to use their statistical knowledge - not even educated people, such as graduate students.',
+    part3TimeSpent: 0,
+    part4TimeSpent: 0,
     questions: [
       {
         part: 'Part 1',
@@ -253,6 +256,9 @@ export const BiasEducationCenter = [
     description:
       'Anchoring bias is a cognitive bias that causes us to rely too heavily on the first piece of information we are given about a topic. When we are setting plans or making estimates about something, we interpret newer information from the reference point of our anchor, instead of seeing it objectively. In the world of investment, this can take the form of investors skewing their judgement based on their point of anchor, thereby failing to update plans or predictions as much as they should.',
     categoriesAndItems: anchoringBiasTable,
+    tips: '1. One strategy to combat anchoring bias that is evidence-based, and pretty straightforward, is to come up with reasons why that anchor is inappropriate for the situation. In one study, car experts were asked to judge whether a resale price of a certain car (the anchor) was too high or too low, after which they were asked to provide a better estimate. However, before giving their own price, half of the experts were also asked to come up with arguments against the anchor price. These participants showed a weaker anchoring effect, compared to those who hadn’t come up with counterarguments.\n2. Secondly, considering alternative options is always a good idea to aid decision making. This strategy is similar to that of red teaming, which involves designating people to oppose and challenge the ideas of a group. By building a step into the decision-making process that is specifically dedicated to exposing the weaknesses of a plan, and considering alternatives, it might be possible to reduce the influence of an anchor.',
+    part3TimeSpent: 0,
+    part4TimeSpent: 0,
     questions: [
       {
         part: 'Part 1',
@@ -495,6 +501,9 @@ export const BiasEducationCenter = [
     description:
       'The overconfidence bias refers to our belief or perception in our abilities to be higher than our `actual` or realized abilities. Investors with overconfidence bias often tend to believe that "they can pick the next big stock". This often results in ill-advised attempts to time the market or build concentrations in risky investments they consider a sure thing.',
     categoriesAndItems: overconfidenceBiasTable,
+    tips: '1. Trade less and invest more - Understand that by entering into trading activities you are trading against computers, institutional investors and others around the world with better data and more experience than you. The odds are overwhelmingly in their favour. By increasing your time frame, mirroring indexes, and taking advantage of dividends, you will likely build wealth over time.\n 2. Think of the consequences - While making a decision, think of the consequences. For example, when you believe you have found the next best stock and decide to put a big sum of money in it, calculate what would happen if you went wrong. When you realize how badly a decision can hurt you, you will have a reality check.\n3. Act as your own devil`s advocate - When estimating your abilities, challenge yourself. When you play the role of the devil`s advocate, you will ask yourself the right questions. Resist the urge to believe that your information and intuition are better than others in the market.\n4. Have an open mind - Have an open mind about the possibility of making a mistake. When you have the humility to admit your weaknesses, you will also gain the insight to overcome them.',
+    part3TimeSpent: 0,
+    part4TimeSpent: 0,
     questions: [
       {
         part: 'Part 1',
@@ -737,6 +746,9 @@ export const BiasEducationCenter = [
     description:
       'The Bandwagon effect refers to our habit of adopting certain behaviors or beliefs because many other people do the same. In the world of investment, this can take the form of investors rationalizing that their course of action is the right one because "everybody else" is doing it.',
     categoriesAndItems: herdingBiasTable,
+    tips: '1. While it is impossible to completely rid ourselves of the bandwagon effect, we may be able to counteract our tendency to automatically use social cues as a driving factor when making influential decisions. This can be achieved by first slowing down our decision-making process. Allowing some time to pass between when we notice the social signal and our final decision, can allow for critical thinking and prevent us from quickly adopting a popular idea.\n2. Second, try to make decisions in an environment where you don’t feel pressured by other people.\n3. Lastly, consider alternative options that go against the majority view. They may prove to be more beneficial or at least mitigate the appeal of going with the prevailing sentiment.',
+    part3TimeSpent: 0,
+    part4TimeSpent: 0,
     questions: [
       {
         part: 'Part 1',
@@ -980,6 +992,9 @@ export const BiasEducationCenter = [
     description:
       'The disposition effect refers to our tendency to prematurely sell assets that have made financial gains while holding on to assets that are losing money. While investing, this can take the form of selling winning investments in order to ensure a profit, but being averse to selling losing investments in hopes of turning them into gains.',
     categoriesAndItems: dispositionEffectTable,
+    tips: 'So what can we do to prevent the disposition effect from causing us to make poor decisions and poor investments? Simply, the answer is to stop holding on to losing investments for too long and selling winners too soon. But that is easier said than done, so we can walk through a cognitive mechanism that helps facilitate this.\nOne tool is broad framing, or, trying to view our decisions in the scheme of the many financial decisions we make rather than in isolation. Here`s an excerpt of Kahneman`s “sermon” on broad framing from his book "Thinking Fast and Slow":\n“You will do yourself a large financial favour if you are able to see each of these gambles as a part of a bundle of small gambles and rehearse the mantra that will get you significantly closer to economic rationality: you win a few, you lose a few”.\nThis quote is worth internalizing. Broadframing is a tool that experienced traders use to fight the emotional reactions surrounding gain and loss.',
+    part3TimeSpent: 0,
+    part4TimeSpent: 0,
     questions: [
       {
         part: 'Part 1',
@@ -1221,8 +1236,11 @@ export const BiasEducationCenter = [
   {
     bias: 'Bias #6: Action Bias',
     description:
-      'The action bias describes our tendency to favour action over inaction, often to our benefit. However, there are times when we feel compelled to act, even if there’s evidence that it will lead to a worse outcome than doing nothing would. In the world of investment, this can take the form of "investors panic selling when the market is going down or hastily investing after reading something positive about an asset online".',
+      'The action bias describes our tendency to favour action over inaction, often to our benefit. However, there are times when we feel compelled to act, even if there`s evidence that it will lead to a worse outcome than doing nothing would. In the world of investment, this can take the form of "investors panic selling when the market is going down or hastily investing after reading something positive about an asset online".',
     categoriesAndItems: actionBiasTable,
+    tips: '1. Choosing inaction over an action does not mean giving up. As a matter of fact, it`s frequently more productive to do so. Consequently, it`s necessary to avoid the action bias, so that action does not continue to be our default response. Choosing a lack of action is a good practice in patience, which can be challenging to develop. Self-control is a skill that needs to be cultivated and the more we work on it, the stronger it gets.\n2. Learning to avoid the action bias is a long-term process that involves going against ingrained impulses and predispositions. Unless the situation demands immediate action, it`s often better to take a step back and evaluate the pros and cons of each possible response. To refer back to the example of being stuck in traffic, instead of becoming frustrated and getting off the highway at the first possible exit, sit for a moment and rationalize your situation. Taking a pause to think through the consequences of action versus inaction can help you support, or find fault with, your initial urge to act.\n3. Remember, the goal here is not to eliminate action as a response altogether. The point is to give equal consideration to inaction as a possible response, and to avoid automatically resorting to action. Doing so will allow for more effective decision-making and more profitable outcomes.',
+    part3TimeSpent: 0,
+    part4TimeSpent: 0,
     questions: [
       {
         part: 'Part 1',

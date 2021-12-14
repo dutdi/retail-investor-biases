@@ -52,6 +52,7 @@ const BiasTest = () => {
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
+  const [biases, setBiases] = useState([]);
 
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
@@ -72,10 +73,23 @@ const BiasTest = () => {
   }, [startTime]);
 
   const setSelectedAnswer = (answer) => {
-    BiasEducationCenter[biasIndex].questions[questionIndex].timeSpent = time;
-    setTime(0);
+    const timeSpent = time;
+    if (
+      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 3'
+    ) {
+      BiasEducationCenter[biasIndex].part3TimeSpent += timeSpent;
+    } else if (
+      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 4'
+    ) {
+      BiasEducationCenter[biasIndex].part4TimeSpent += timeSpent;
+    }
+
+    BiasEducationCenter[biasIndex].questions[questionIndex].timeSpent =
+      timeSpent;
     BiasEducationCenter[biasIndex].questions[questionIndex].userSelection =
       answer;
+    setTime(0);
+
     if (questionIndex < BiasEducationCenter[biasIndex].questions.length - 1) {
       setQuestionIndex(questionIndex + 1);
     } else {
@@ -87,9 +101,10 @@ const BiasTest = () => {
         console.log('END OF BIASES');
         //TODO: Save to DB
         setStartTime(false);
-        setShowResult(true);
         setBiasIndex(0);
         setQuestionIndex(0);
+        setShowResult(true);
+        checkBiases();
       }
     }
   };
@@ -126,12 +141,25 @@ const BiasTest = () => {
     return array;
   }
 
+  function checkBiases() {
+    var index = 0;
+    while (index < BiasEducationCenter.length) {
+      if (
+        BiasEducationCenter[index].part3TimeSpent >
+        BiasEducationCenter[index].part4TimeSpent
+      ) {
+        setBiases((biases) => [...biases, index]);
+      }
+      index++;
+    }
+  }
+
   useEventListener('keydown', handleKeyPress);
 
   return (
     <>
       {showResult ? (
-        <Result></Result>
+        <Result biases={biases}></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (
