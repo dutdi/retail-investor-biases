@@ -27,7 +27,10 @@ const ContactUs = () => {
         Contact us
       </Typography>
       <Typography variant='h6' gutterBottom>
-        Please, feel free to get in touch with us by <b>muneeb.ahmed@tum.de</b>
+        Please, feel free to get in touch with us by{' '}
+        <b>
+          <a href='mailto:muneeb.ahmed@tum.de'>muneeb.ahmed@tum.de</a>
+        </b>
       </Typography>
       <Paper>
         <img

@@ -179,6 +179,7 @@ const Imprint = () => {
           Dieses Impressum wurde mit Hilfe des{' '}
           <a
             target='_blank'
+            rel='noopener noreferrer'
             href='http://www.hensche.de/impressum-generator.html'
           >
             Impressum-Generators
@@ -186,6 +187,7 @@ const Imprint = () => {
           von{' '}
           <a
             target='_blank'
+            rel='noopener noreferrer'
             href='http://www.hensche.de/Rechtsanwalt_Arbeitsrecht_Muenchen.html'
           >
             HENSCHE Rechtsanwälte, Kanzlei für Arbeitsrecht
