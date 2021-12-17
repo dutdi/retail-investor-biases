@@ -20,6 +20,7 @@ import { professions } from '../helpers/lists/ProfessionList';
 import { investingDates } from '../helpers/lists/InvestingDateList';
 import { totalInvestments } from '../helpers/lists/TotalInvestmentList';
 import { ibts } from '../helpers/lists/IBTList';
+import { db } from '../helpers/Firebase';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -95,6 +96,28 @@ const Demographics = () => {
   const submitForm = () => {
     //TODO: Save to DB
     console.log(details);
+    db.collection('users')
+      .add(details)
+      .then(() => {
+        alert('User saved successfully!');
+        console.log('User saved successfully!');
+      })
+      .catch((error) => {
+        alert(error.message);
+        console.log('Not saved');
+      });
+
+    setDetails({
+      age: '',
+      gender: [],
+      citizenship: '',
+      residence: '',
+      education: '',
+      profession: [],
+      investingDate: '',
+      totalInvestments: '',
+      ibts: '',
+    });
   };
 
   return (
@@ -106,7 +129,7 @@ const Demographics = () => {
       >
         Enter your details
       </Typography>
-      <Grid container spacing={12}>
+      <Grid container spacing={3}>
         <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='age'>Age</InputLabel>
@@ -121,7 +144,9 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {ages.map((age) => (
-                <option value={age}>{age}</option>
+                <option key={age} value={age}>
+                  {age}
+                </option>
               ))}
             </Select>
           </FormControl>
@@ -154,7 +179,7 @@ const Demographics = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <Grid container spacing={24}>
+      <Grid container spacing={3}>
         <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='citizenship'>
@@ -171,7 +196,9 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {countries.map((country) => (
-                <option value={country}>{country}</option>
+                <option key={country} value={country}>
+                  {country}
+                </option>
               ))}
             </Select>
           </FormControl>
@@ -192,13 +219,15 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {countries.map((country) => (
-                <option value={country}>{country}</option>
+                <option key={country} value={country}>
+                  {country}
+                </option>
               ))}
             </Select>
           </FormControl>
         </Grid>
       </Grid>
-      <Grid container spacing={24}>
+      <Grid container spacing={3}>
         <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='education'>
@@ -215,7 +244,9 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {educations.map((education) => (
-                <option value={education}>{education}</option>
+                <option key={education} value={education}>
+                  {education}
+                </option>
               ))}
             </Select>
           </FormControl>
@@ -250,7 +281,7 @@ const Demographics = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <Grid container spacing={24}>
+      <Grid container spacing={3}>
         <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='investingDate'>
@@ -267,7 +298,9 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {investingDates.map((investingDate) => (
-                <option value={investingDate}>{investingDate}</option>
+                <option key={investingDate} value={investingDate}>
+                  {investingDate}
+                </option>
               ))}
             </Select>
           </FormControl>
@@ -288,13 +321,15 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {totalInvestments.map((totalInvestment) => (
-                <option value={totalInvestment}>{totalInvestment}</option>
+                <option key={totalInvestment} value={totalInvestment}>
+                  {totalInvestment}
+                </option>
               ))}
             </Select>
           </FormControl>
         </Grid>
       </Grid>
-      <Grid container spacing={24}>
+      <Grid container spacing={3}>
         <Grid item xs>
           <FormControl required className={classes.formControl}>
             <InputLabel htmlFor='ibts'>
@@ -311,7 +346,9 @@ const Demographics = () => {
             >
               <option aria-label='None' value='' />
               {ibts.map((ibt) => (
-                <option value={ibt}>{ibt}</option>
+                <option key={ibt} value={ibt}>
+                  {ibt}
+                </option>
               ))}
             </Select>
           </FormControl>
@@ -324,8 +361,8 @@ const Demographics = () => {
       ) : (
         <Button
           style={{ backgroundColor: '#0065bd', color: 'white' }}
-          component={Link}
-          to='/test'
+          //component={Link}
+          //to='/test'
           variant='contained'
           onClick={submitForm}
         >
