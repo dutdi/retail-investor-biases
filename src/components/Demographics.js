@@ -21,6 +21,7 @@ import { investingDates } from '../helpers/lists/InvestingDateList';
 import { totalInvestments } from '../helpers/lists/TotalInvestmentList';
 import { ibts } from '../helpers/lists/IBTList';
 import { db } from '../helpers/Firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -63,6 +64,7 @@ const Demographics = () => {
     ibts: '',
   });
   const [hasError, setHasError] = useState(true);
+  const submissionsCollectionRef = collection(db, 'submissions');
 
   useEffect(() => {
     const checkAllEntered = () => {
@@ -93,30 +95,18 @@ const Demographics = () => {
     });
   };
 
-  const submitForm = () => {
-    //TODO: Save to DB
+  const submitForm = async () => {
     console.log(details);
-    db.collection('users')
-      .add(details)
-      .then(() => {
-        alert('User saved successfully!');
-        console.log('User saved successfully!');
-      })
-      .catch((error) => {
-        alert(error.message);
-        console.log('Not saved');
-      });
-
-    setDetails({
-      age: '',
-      gender: [],
-      citizenship: '',
-      residence: '',
-      education: '',
-      profession: [],
-      investingDate: '',
-      totalInvestments: '',
-      ibts: '',
+    await addDoc(submissionsCollectionRef, {
+      age: details.age,
+      gender: details.gender,
+      citizenship: details.citizenship,
+      residence: details.residence,
+      education: details.education,
+      profession: details.profession,
+      investingDate: details.investingDate,
+      totalInvestments: details.totalInvestments,
+      IBTsPerformedPreviously: details.ibts,
     });
   };
 
@@ -361,8 +351,8 @@ const Demographics = () => {
       ) : (
         <Button
           style={{ backgroundColor: '#0065bd', color: 'white' }}
-          //component={Link}
-          //to='/test'
+          component={Link}
+          to='/test'
           variant='contained'
           onClick={submitForm}
         >
