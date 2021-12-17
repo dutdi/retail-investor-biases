@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { feedbackAccuracies } from '../helpers/FeedbackAccuracyList';
-import { feedbackRecommendations } from '../helpers/FeedbackRecommendationList';
+import { feedbackAccuracies } from '../helpers/lists/FeedbackAccuracyList';
+import { feedbackRecommendations } from '../helpers/lists/FeedbackRecommendationList';
 
 const useStyles = makeStyles((theme) => ({
   root: {

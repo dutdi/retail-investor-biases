@@ -12,14 +12,14 @@ import {
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { genders } from '../helpers/GenderList';
-import { countries } from '../helpers/CountryList';
-import { educations } from '../helpers/EducationList';
-import { ages } from '../helpers/AgeList';
-import { professions } from '../helpers/ProfessionList';
-import { investingDates } from '../helpers/InvestingDateList';
-import { totalInvestments } from '../helpers/TotalInvestmentList';
-import { ibts } from '../helpers/IBTList';
+import { genders } from '../helpers/lists/GenderList';
+import { countries } from '../helpers/lists/CountryList';
+import { educations } from '../helpers/lists/EducationList';
+import { ages } from '../helpers/lists/AgeList';
+import { professions } from '../helpers/lists/ProfessionList';
+import { investingDates } from '../helpers/lists/InvestingDateList';
+import { totalInvestments } from '../helpers/lists/TotalInvestmentList';
+import { ibts } from '../helpers/lists/IBTList';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
