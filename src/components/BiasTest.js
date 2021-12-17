@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiasEducationCenter } from '../data/BiasEducationCenter';
 import Result from './Result';
 import Expire from '../helpers/Expire';
 import useEventListener from '@use-it/event-listener';
+import { Context } from '../helpers/Context';
+import { db } from '../helpers/Firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +51,7 @@ const biases = [];
 
 const BiasTest = () => {
   const classes = useStyles();
-
+  const { submissionId } = useContext(Context);
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
@@ -122,8 +125,7 @@ const BiasTest = () => {
         setQuestionIndex(0);
         setBiasIndex(biasIndex + 1);
       } else {
-        console.log('END OF BIASES');
-        //TODO: Save to DB
+        saveToDB();
         setStartTime(false);
         checkBiases();
         setBiasIndex(0);
@@ -131,6 +133,56 @@ const BiasTest = () => {
         setShowResult(true);
       }
     }
+  };
+
+  const saveToDB = async () => {
+    const submissionDoc = doc(db, 'submissions', submissionId);
+    const newFields = {
+      bias0: {
+        name: BiasEducationCenter[0].bias,
+        part1TimeSpent: BiasEducationCenter[0].part1TimeSpent,
+        part2TimeSpent: BiasEducationCenter[0].part2TimeSpent,
+        part3TimeSpent: BiasEducationCenter[0].part3TimeSpent,
+        part4TimeSpent: BiasEducationCenter[0].part4TimeSpent,
+      },
+      bias1: {
+        name: BiasEducationCenter[1].bias,
+        part1TimeSpent: BiasEducationCenter[1].part1TimeSpent,
+        part2TimeSpent: BiasEducationCenter[1].part2TimeSpent,
+        part3TimeSpent: BiasEducationCenter[1].part3TimeSpent,
+        part4TimeSpent: BiasEducationCenter[1].part4TimeSpent,
+      },
+      bias2: {
+        name: BiasEducationCenter[2].bias,
+        part1TimeSpent: BiasEducationCenter[2].part1TimeSpent,
+        part2TimeSpent: BiasEducationCenter[2].part2TimeSpent,
+        part3TimeSpent: BiasEducationCenter[2].part3TimeSpent,
+        part4TimeSpent: BiasEducationCenter[2].part4TimeSpent,
+      },
+      bias3: {
+        name: BiasEducationCenter[3].bias,
+        part1TimeSpent: BiasEducationCenter[3].part1TimeSpent,
+        part2TimeSpent: BiasEducationCenter[3].part2TimeSpent,
+        part3TimeSpent: BiasEducationCenter[3].part3TimeSpent,
+        part4TimeSpent: BiasEducationCenter[3].part4TimeSpent,
+      },
+      bias4: {
+        name: BiasEducationCenter[4].bias,
+        part1TimeSpent: BiasEducationCenter[4].part1TimeSpent,
+        part2TimeSpent: BiasEducationCenter[4].part2TimeSpent,
+        part3TimeSpent: BiasEducationCenter[4].part3TimeSpent,
+        part4TimeSpent: BiasEducationCenter[4].part4TimeSpent,
+      },
+      bias5: {
+        name: BiasEducationCenter[5].bias,
+        part1TimeSpent: BiasEducationCenter[5].part1TimeSpent,
+        part2TimeSpent: BiasEducationCenter[5].part2TimeSpent,
+        part3TimeSpent: BiasEducationCenter[5].part3TimeSpent,
+        part4TimeSpent: BiasEducationCenter[5].part4TimeSpent,
+      },
+    };
+
+    await setDoc(submissionDoc, newFields, { merge: true });
   };
 
   const nextButtonClicked = () => {

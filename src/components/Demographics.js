@@ -10,7 +10,7 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { genders } from '../helpers/lists/GenderList';
 import { countries } from '../helpers/lists/CountryList';
@@ -20,6 +20,7 @@ import { professions } from '../helpers/lists/ProfessionList';
 import { investingDates } from '../helpers/lists/InvestingDateList';
 import { totalInvestments } from '../helpers/lists/TotalInvestmentList';
 import { ibts } from '../helpers/lists/IBTList';
+import { Context } from '../helpers/Context';
 import { db } from '../helpers/Firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
@@ -52,6 +53,7 @@ const MenuProps = {
 
 const Demographics = () => {
   const classes = useStyles();
+  const { setSubmissionId } = useContext(Context);
   const [details, setDetails] = useState({
     age: '',
     gender: [],
@@ -97,7 +99,7 @@ const Demographics = () => {
 
   const submitForm = async () => {
     console.log(details);
-    await addDoc(submissionsCollectionRef, {
+    const user = {
       age: details.age,
       gender: details.gender,
       citizenship: details.citizenship,
@@ -107,7 +109,9 @@ const Demographics = () => {
       investingDate: details.investingDate,
       totalInvestments: details.totalInvestments,
       IBTsPerformedPreviously: details.ibts,
-    });
+    };
+    const newSubmission = await addDoc(submissionsCollectionRef, user);
+    setSubmissionId(newSubmission.id);
   };
 
   return (
