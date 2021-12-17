@@ -39,7 +39,6 @@ function createData(biasName, biasTips) {
 const Result = ({ biases }) => {
   const classes = useStyles();
   console.log(JSON.stringify(BiasEducationCenter));
-  console.log('biases: ' + biases);
   const rows = [];
   for (var i = 0; i < biases.length; i++) {
     const name = BiasEducationCenter[biases[i]].bias.slice(

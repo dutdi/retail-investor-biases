@@ -3,6 +3,7 @@ import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { BiasEducationCenter } from '../data/BiasEducationCenter';
 import Result from './Result';
+import Expire from '../helpers/Expire';
 import useEventListener from '@use-it/event-listener';
 
 const useStyles = makeStyles((theme) => ({
@@ -51,6 +52,8 @@ const BiasTest = () => {
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
+  const [showWrongAnswer, setShowWrongAnswer] = useState(false);
+  const [showWrongButton, setShowWrongButton] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
@@ -75,6 +78,16 @@ const BiasTest = () => {
 
   const setSelectedAnswer = (answer) => {
     const timeSpent = time;
+    //Check if chose correct answer
+    if (
+      BiasEducationCenter[biasIndex].questions[questionIndex].answer === answer
+    ) {
+      setShowWrongAnswer(false);
+    } else {
+      setShowWrongAnswer(true);
+    }
+
+    //Add time to the correct part
     if (
       BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 1'
     ) {
@@ -98,6 +111,7 @@ const BiasTest = () => {
     BiasEducationCenter[biasIndex].questions[questionIndex].userSelection =
       answer;
 
+    //Increment bias index and question index
     if (questionIndex < BiasEducationCenter[biasIndex].questions.length - 1) {
       setTime(0);
       setQuestionIndex(questionIndex + 1);
@@ -127,9 +141,13 @@ const BiasTest = () => {
   const handleKeyPress = (event) => {
     if (showQuestion) {
       if (event.key === 'E' || event.key === 'e') {
+        setShowWrongButton(false);
         setSelectedAnswer('A');
       } else if (event.key === 'I' || event.key === 'i') {
+        setShowWrongButton(false);
         setSelectedAnswer('B');
+      } else {
+        setShowWrongButton(true);
       }
     }
   };
@@ -204,6 +222,22 @@ const BiasTest = () => {
                   </Typography>
                 </Grid>
               </Grid>
+              {showWrongAnswer && (
+                <div>
+                  <Expire delay='1000'>
+                    <Typography variant='h5' gutterBottom>
+                      Wrong answer! ❌
+                    </Typography>
+                  </Expire>
+                </div>
+              )}
+              {showWrongButton && (
+                <div>
+                  <Typography variant='h5' gutterBottom>
+                    You can only press E and I keys
+                  </Typography>
+                </div>
+              )}
             </div>
           ) : (
             <div>
