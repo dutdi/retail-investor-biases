@@ -8,7 +8,6 @@ import Landing from './components/Landing';
 import BiasTest from './components/BiasTest';
 import Demographics from './components/Demographics';
 import './App.css';
-import Feedback from './components/Feedback';
 import StudyInfo from './components/StudyInfo';
 import Footer from './components/Footer';
 import Imprint from './components/Imprint';
@@ -39,7 +38,6 @@ function App() {
             path='/contact-us'
             element={<ContactUs></ContactUs>}
           ></Route>
-          <Route exact path='/feedback' element={<Feedback></Feedback>}></Route>
         </Routes>
       </Box>
       <Footer></Footer>
