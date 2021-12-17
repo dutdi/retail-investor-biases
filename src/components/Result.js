@@ -38,15 +38,15 @@ function createData(biasName, biasTips) {
 
 const Result = ({ biases }) => {
   const classes = useStyles();
-  //console.log(JSON.stringify(BiasEducationCenter));
+  console.log(JSON.stringify(BiasEducationCenter));
   console.log('biases: ' + biases);
   const rows = [];
   for (var i = 0; i < biases.length; i++) {
-    const name = BiasEducationCenter[i].bias.slice(
+    const name = BiasEducationCenter[biases[i]].bias.slice(
       9,
-      BiasEducationCenter[i].bias.length
+      BiasEducationCenter[biases[i]].bias.length
     );
-    const tips = BiasEducationCenter[i].tips
+    const tips = BiasEducationCenter[biases[i]].tips
       .split('\n')
       .map((str) => <p>{str}</p>);
     rows.push(createData(name, tips));

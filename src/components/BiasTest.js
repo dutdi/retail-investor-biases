@@ -43,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const biases = [];
+
 const BiasTest = () => {
   const classes = useStyles();
 
@@ -52,7 +54,6 @@ const BiasTest = () => {
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
-  const [biases, setBiases] = useState([]);
 
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
@@ -75,6 +76,14 @@ const BiasTest = () => {
   const setSelectedAnswer = (answer) => {
     const timeSpent = time;
     if (
+      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 1'
+    ) {
+      BiasEducationCenter[biasIndex].part1TimeSpent += timeSpent;
+    } else if (
+      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 2'
+    ) {
+      BiasEducationCenter[biasIndex].part2TimeSpent += timeSpent;
+    } else if (
       BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 3'
     ) {
       BiasEducationCenter[biasIndex].part3TimeSpent += timeSpent;
@@ -88,12 +97,13 @@ const BiasTest = () => {
       timeSpent;
     BiasEducationCenter[biasIndex].questions[questionIndex].userSelection =
       answer;
-    setTime(0);
 
     if (questionIndex < BiasEducationCenter[biasIndex].questions.length - 1) {
+      setTime(0);
       setQuestionIndex(questionIndex + 1);
     } else {
       if (biasIndex < BiasEducationCenter.length - 1) {
+        setStartTime(false);
         setShowQuestion(false);
         setQuestionIndex(0);
         setBiasIndex(biasIndex + 1);
@@ -101,10 +111,10 @@ const BiasTest = () => {
         console.log('END OF BIASES');
         //TODO: Save to DB
         setStartTime(false);
+        checkBiases();
         setBiasIndex(0);
         setQuestionIndex(0);
         setShowResult(true);
-        checkBiases();
       }
     }
   };
@@ -148,7 +158,7 @@ const BiasTest = () => {
         BiasEducationCenter[index].part3TimeSpent >
         BiasEducationCenter[index].part4TimeSpent
       ) {
-        setBiases((biases) => [...biases, index]);
+        biases.push(index);
       }
       index++;
     }
