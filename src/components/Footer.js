@@ -6,7 +6,10 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   footerRoot: {
     display: 'flex',
-    position: 'relative',
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    right: 0,
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     backgroundColor: 'white',

@@ -4,11 +4,11 @@ import React from 'react';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
-      margin: theme.spacing(4, 0, 0, 0),
+      margin: theme.spacing(2, 0, 0, 0),
     },
     width: '1200px',
     height: '700px',
-    margin: '50px',
+    margin: '30px',
     backgroundColor: 'white',
     textAlign: 'center',
   },

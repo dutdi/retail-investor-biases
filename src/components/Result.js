@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     width: '1200px',
     height: '700px',
-    margin: '50px',
+    margin: '30px',
     backgroundColor: 'white',
     textAlign: 'center',
   },
@@ -47,6 +47,9 @@ const Result = ({ biases }) => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
+    removeDuplicates(biases);
+    setRows([]);
+    console.log('Biases: ' + biases);
     for (var i = 0; i < biases.length; i++) {
       const name = BiasEducationCenter[biases[i]].bias.slice(
         9,
@@ -82,6 +85,10 @@ const Result = ({ biases }) => {
     await setDoc(submissionDoc, resultFields, { merge: true });
   };
 
+  function removeDuplicates(array) {
+    return [...new Set(array)];
+  }
+
   return (
     <>
       {showFeedback ? (
@@ -103,8 +110,16 @@ const Result = ({ biases }) => {
               <Table sx={{ minWidth: 50 }} aria-label='simple table'>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Bias</TableCell>
-                    <TableCell align='center'>Tips</TableCell>
+                    <TableCell>
+                      <Typography style={{ color: 'black', fontWeight: 600 }}>
+                        Bias
+                      </Typography>
+                    </TableCell>
+                    <TableCell align='center'>
+                      <Typography style={{ color: 'black', fontWeight: 600 }}>
+                        Tips to combat
+                      </Typography>
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -114,7 +129,11 @@ const Result = ({ biases }) => {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        {row.biasName}
+                        {
+                          <Typography style={{ color: 'red', fontWeight: 600 }}>
+                            {row.biasName}
+                          </Typography>
+                        }
                       </TableCell>
                       <TableCell align='left'>{row.biasTips}</TableCell>
                     </TableRow>
