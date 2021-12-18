@@ -10,9 +10,12 @@ import {
   TableRow,
   Typography,
 } from '@material-ui/core';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Feedback from './Feedback';
 import { BiasEducationCenter } from '../data/BiasEducationCenter';
+import { Context } from '../helpers/Context';
+import { db } from '../helpers/Firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,11 +42,11 @@ function createData(biasName, biasTips) {
 
 const Result = ({ biases }) => {
   const classes = useStyles();
+  const { submissionId } = useContext(Context);
   const [showFeedback, setShowFeedback] = useState(false);
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    console.log(biases);
     for (var i = 0; i < biases.length; i++) {
       const name = BiasEducationCenter[biases[i]].bias.slice(
         9,
@@ -53,12 +56,29 @@ const Result = ({ biases }) => {
         .split('\n')
         .map((str) => <p>{str}</p>);
       setRows((rows) => [...rows, createData(name, tips)]);
+      saveToDB();
     }
   }, []);
 
   const feedbackClicked = () => {
     setRows([]);
     setShowFeedback(true);
+  };
+
+  const saveToDB = async () => {
+    const submissionDoc = doc(db, 'submissions', submissionId);
+    const resultFields = {
+      resultDetails: {},
+    };
+
+    for (var i = 0; i < biases.length; i++) {
+      const biasName = BiasEducationCenter[biases[i]].bias.slice(
+        9,
+        BiasEducationCenter[biases[i]].bias.length
+      );
+      resultFields.resultDetails['result' + i] = biasName;
+    }
+    await setDoc(submissionDoc, resultFields, { merge: true });
   };
 
   return (

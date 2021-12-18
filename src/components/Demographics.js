@@ -99,7 +99,7 @@ const Demographics = () => {
 
   const submitForm = async () => {
     console.log(details);
-    const user = {
+    const userFields = {
       userDetails: {
         age: details.age,
         gender: details.gender,
@@ -112,7 +112,7 @@ const Demographics = () => {
         IBTsPerformedPreviously: details.ibts,
       },
     };
-    const newSubmission = await addDoc(submissionsCollectionRef, user);
+    const newSubmission = await addDoc(submissionsCollectionRef, userFields);
     setSubmissionId(newSubmission.id);
   };
 

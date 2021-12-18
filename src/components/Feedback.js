@@ -76,7 +76,7 @@ const Feedback = () => {
   const saveToDB = async () => {
     const submissionDoc = doc(db, 'submissions', submissionId);
     const feedbackFields = {
-      feedback: {
+      feedbackDetails: {
         accuracy: feedback.feedbackAccuracy,
         recommendation: feedback.feedbackRecommendation,
       },
