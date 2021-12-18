@@ -12,8 +12,8 @@ import { doc, setDoc } from 'firebase/firestore';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '1200px',
-    height: '750px',
-    margin: '20px',
+    height: '700px',
+    margin: '30px',
     backgroundColor: 'white',
     textAlign: 'center',
   },
@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     padding: '1px',
     color: 'red',
+    fontWeight: 600,
   },
   text4: {
     textAlign: 'center',

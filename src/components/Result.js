@@ -149,7 +149,7 @@ const Result = ({ biases }) => {
             style={{ textDecoration: 'none', color: '#0065bd' }}
             onClick={feedbackClicked}
           >
-            Was this helpful? <b>Let us know what you think!</b>
+            Was this helpful? <b> Let us know what you think!</b>
           </Button>
         </div>
       )}
