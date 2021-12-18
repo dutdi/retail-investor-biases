@@ -7,7 +7,7 @@ import { Typography } from '@material-ui/core';
 import Image from '../img/landing.png';
 
 const useStyles = makeStyles({
-  root: {
+  image: {
     backgroundImage: `url(${Image})`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
@@ -42,29 +42,30 @@ const Landing = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Box p={5}>
-        <Typography className={classes.text1} variant='h5' gutterBottom>
-          The Only Tool You Need to
+    <Box m={5}>
+      <Typography className={classes.text1} variant='h5' gutterBottom>
+        The Only Tool You Need to
+      </Typography>
+      <Typography className={classes.text2} variant='h2' gutterBottom>
+        Find & Combat Your Biases
+      </Typography>
+      <Box textAlign='center' mt={10}>
+        <Typography className={classes.text3} variant='h6' gutterBottom>
+          by TUM Chair of Digital Finance
         </Typography>
-        <Typography className={classes.text2} variant='h2' gutterBottom>
-          Find & Combat Your Biases
-        </Typography>
-        <Box textAlign='center' m={25}>
-          <Typography className={classes.text3} variant='h6' gutterBottom>
-            by TUM Chair of Digital Finance
-          </Typography>
-          <Button
-            component={Link}
-            to='/study-info'
-            variant='contained'
-            style={{ backgroundColor: '#0065bd', color: 'white' }}
-          >
-            Get Started
-          </Button>
+        <Button
+          component={Link}
+          to='/study-info'
+          variant='contained'
+          style={{ backgroundColor: '#0065bd', color: 'white' }}
+        >
+          Get Started
+        </Button>
+        <Box className={classes.image} mt={10}>
+          <img alt='background' src={Image} />
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 };
 
