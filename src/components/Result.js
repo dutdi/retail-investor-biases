@@ -10,7 +10,7 @@ import {
   TableRow,
   Typography,
 } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Feedback from './Feedback';
 import { BiasEducationCenter } from '../data/BiasEducationCenter';
 
@@ -40,22 +40,24 @@ function createData(biasName, biasTips) {
 const Result = ({ biases }) => {
   const classes = useStyles();
   const [showFeedback, setShowFeedback] = useState(false);
-  const rows = [];
+  const [rows, setRows] = useState([]);
 
-  console.log(JSON.stringify(BiasEducationCenter));
-
-  for (var i = 0; i < biases.length; i++) {
-    const name = BiasEducationCenter[biases[i]].bias.slice(
-      9,
-      BiasEducationCenter[biases[i]].bias.length
-    );
-    const tips = BiasEducationCenter[biases[i]].tips
-      .split('\n')
-      .map((str) => <p>{str}</p>);
-    rows.push(createData(name, tips));
-  }
+  useEffect(() => {
+    console.log(biases);
+    for (var i = 0; i < biases.length; i++) {
+      const name = BiasEducationCenter[biases[i]].bias.slice(
+        9,
+        BiasEducationCenter[biases[i]].bias.length
+      );
+      const tips = BiasEducationCenter[biases[i]].tips
+        .split('\n')
+        .map((str) => <p>{str}</p>);
+      setRows((rows) => [...rows, createData(name, tips)]);
+    }
+  }, []);
 
   const feedbackClicked = () => {
+    setRows([]);
     setShowFeedback(true);
   };
 

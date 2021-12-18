@@ -66,6 +66,10 @@ const Feedback = () => {
 
   const sendFeedback = () => {
     saveToDB();
+    setFeedback({
+      feedbackAccuracy: '',
+      feedbackRecommendation: '',
+    });
     setSubmissionId('');
   };
 

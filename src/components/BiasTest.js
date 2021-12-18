@@ -47,8 +47,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const biases = [];
-
 const BiasTest = () => {
   const classes = useStyles();
   const { submissionId } = useContext(Context);
@@ -60,6 +58,7 @@ const BiasTest = () => {
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
+  const [biases, setBiases] = useState([]);
 
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
@@ -224,15 +223,14 @@ const BiasTest = () => {
   }
 
   function checkBiases() {
-    var index = 0;
-    while (index < BiasEducationCenter.length) {
+    for (var i = 0; i < BiasEducationCenter.length; i++) {
       if (
-        BiasEducationCenter[index].part3TimeSpent >
-        BiasEducationCenter[index].part4TimeSpent
+        BiasEducationCenter[i].part3TimeSpent >
+          BiasEducationCenter[i].part4TimeSpent &&
+        !biases.includes(i)
       ) {
-        biases.push(index);
+        setBiases((biases) => [...biases, i]);
       }
-      index++;
     }
   }
 
