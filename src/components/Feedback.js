@@ -61,7 +61,6 @@ const Feedback = () => {
       ...feedback,
       [name]: event.target.value,
     });
-    console.log(feedback);
   };
 
   const sendFeedback = () => {

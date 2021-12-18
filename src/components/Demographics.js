@@ -98,7 +98,6 @@ const Demographics = () => {
   };
 
   const submitForm = async () => {
-    console.log(details);
     const userFields = {
       userDetails: {
         age: details.age,
