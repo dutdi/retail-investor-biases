@@ -7,10 +7,13 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { feedbackAccuracies } from '../helpers/lists/FeedbackAccuracyList';
 import { feedbackRecommendations } from '../helpers/lists/FeedbackRecommendationList';
+import { Context } from '../helpers/Context';
+import { db } from '../helpers/Firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Feedback = () => {
   const classes = useStyles();
+  const { submissionId, setSubmissionId } = useContext(Context);
   const [feedback, setFeedback] = useState({
     feedbackAccuracy: '',
     feedbackRecommendation: '',
@@ -61,8 +65,19 @@ const Feedback = () => {
   };
 
   const sendFeedback = () => {
-    //TODO: Save to DB
-    console.log(feedback);
+    saveToDB();
+    setSubmissionId('');
+  };
+
+  const saveToDB = async () => {
+    const submissionDoc = doc(db, 'submissions', submissionId);
+    const feedbackFields = {
+      feedback: {
+        accuracy: feedback.feedbackAccuracy,
+        recommendation: feedback.feedbackRecommendation,
+      },
+    };
+    await setDoc(submissionDoc, feedbackFields, { merge: true });
   };
 
   return (

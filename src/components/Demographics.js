@@ -100,15 +100,17 @@ const Demographics = () => {
   const submitForm = async () => {
     console.log(details);
     const user = {
-      age: details.age,
-      gender: details.gender,
-      citizenship: details.citizenship,
-      residence: details.residence,
-      education: details.education,
-      profession: details.profession,
-      investingDate: details.investingDate,
-      totalInvestments: details.totalInvestments,
-      IBTsPerformedPreviously: details.ibts,
+      userDetails: {
+        age: details.age,
+        gender: details.gender,
+        citizenship: details.citizenship,
+        residence: details.residence,
+        education: details.education,
+        profession: details.profession,
+        investingDate: details.investingDate,
+        totalInvestments: details.totalInvestments,
+        IBTsPerformedPreviously: details.ibts,
+      },
     };
     const newSubmission = await addDoc(submissionsCollectionRef, user);
     setSubmissionId(newSubmission.id);

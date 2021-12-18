@@ -137,52 +137,54 @@ const BiasTest = () => {
 
   const saveToDB = async () => {
     const submissionDoc = doc(db, 'submissions', submissionId);
-    const newFields = {
-      bias0: {
-        name: BiasEducationCenter[0].bias,
-        part1TimeSpent: BiasEducationCenter[0].part1TimeSpent,
-        part2TimeSpent: BiasEducationCenter[0].part2TimeSpent,
-        part3TimeSpent: BiasEducationCenter[0].part3TimeSpent,
-        part4TimeSpent: BiasEducationCenter[0].part4TimeSpent,
-      },
-      bias1: {
-        name: BiasEducationCenter[1].bias,
-        part1TimeSpent: BiasEducationCenter[1].part1TimeSpent,
-        part2TimeSpent: BiasEducationCenter[1].part2TimeSpent,
-        part3TimeSpent: BiasEducationCenter[1].part3TimeSpent,
-        part4TimeSpent: BiasEducationCenter[1].part4TimeSpent,
-      },
-      bias2: {
-        name: BiasEducationCenter[2].bias,
-        part1TimeSpent: BiasEducationCenter[2].part1TimeSpent,
-        part2TimeSpent: BiasEducationCenter[2].part2TimeSpent,
-        part3TimeSpent: BiasEducationCenter[2].part3TimeSpent,
-        part4TimeSpent: BiasEducationCenter[2].part4TimeSpent,
-      },
-      bias3: {
-        name: BiasEducationCenter[3].bias,
-        part1TimeSpent: BiasEducationCenter[3].part1TimeSpent,
-        part2TimeSpent: BiasEducationCenter[3].part2TimeSpent,
-        part3TimeSpent: BiasEducationCenter[3].part3TimeSpent,
-        part4TimeSpent: BiasEducationCenter[3].part4TimeSpent,
-      },
-      bias4: {
-        name: BiasEducationCenter[4].bias,
-        part1TimeSpent: BiasEducationCenter[4].part1TimeSpent,
-        part2TimeSpent: BiasEducationCenter[4].part2TimeSpent,
-        part3TimeSpent: BiasEducationCenter[4].part3TimeSpent,
-        part4TimeSpent: BiasEducationCenter[4].part4TimeSpent,
-      },
-      bias5: {
-        name: BiasEducationCenter[5].bias,
-        part1TimeSpent: BiasEducationCenter[5].part1TimeSpent,
-        part2TimeSpent: BiasEducationCenter[5].part2TimeSpent,
-        part3TimeSpent: BiasEducationCenter[5].part3TimeSpent,
-        part4TimeSpent: BiasEducationCenter[5].part4TimeSpent,
+    const biasFields = {
+      biases: {
+        bias0: {
+          name: BiasEducationCenter[0].bias,
+          part1TimeSpent: BiasEducationCenter[0].part1TimeSpent,
+          part2TimeSpent: BiasEducationCenter[0].part2TimeSpent,
+          part3TimeSpent: BiasEducationCenter[0].part3TimeSpent,
+          part4TimeSpent: BiasEducationCenter[0].part4TimeSpent,
+        },
+        bias1: {
+          name: BiasEducationCenter[1].bias,
+          part1TimeSpent: BiasEducationCenter[1].part1TimeSpent,
+          part2TimeSpent: BiasEducationCenter[1].part2TimeSpent,
+          part3TimeSpent: BiasEducationCenter[1].part3TimeSpent,
+          part4TimeSpent: BiasEducationCenter[1].part4TimeSpent,
+        },
+        bias2: {
+          name: BiasEducationCenter[2].bias,
+          part1TimeSpent: BiasEducationCenter[2].part1TimeSpent,
+          part2TimeSpent: BiasEducationCenter[2].part2TimeSpent,
+          part3TimeSpent: BiasEducationCenter[2].part3TimeSpent,
+          part4TimeSpent: BiasEducationCenter[2].part4TimeSpent,
+        },
+        bias3: {
+          name: BiasEducationCenter[3].bias,
+          part1TimeSpent: BiasEducationCenter[3].part1TimeSpent,
+          part2TimeSpent: BiasEducationCenter[3].part2TimeSpent,
+          part3TimeSpent: BiasEducationCenter[3].part3TimeSpent,
+          part4TimeSpent: BiasEducationCenter[3].part4TimeSpent,
+        },
+        bias4: {
+          name: BiasEducationCenter[4].bias,
+          part1TimeSpent: BiasEducationCenter[4].part1TimeSpent,
+          part2TimeSpent: BiasEducationCenter[4].part2TimeSpent,
+          part3TimeSpent: BiasEducationCenter[4].part3TimeSpent,
+          part4TimeSpent: BiasEducationCenter[4].part4TimeSpent,
+        },
+        bias5: {
+          name: BiasEducationCenter[5].bias,
+          part1TimeSpent: BiasEducationCenter[5].part1TimeSpent,
+          part2TimeSpent: BiasEducationCenter[5].part2TimeSpent,
+          part3TimeSpent: BiasEducationCenter[5].part3TimeSpent,
+          part4TimeSpent: BiasEducationCenter[5].part4TimeSpent,
+        },
       },
     };
 
-    await setDoc(submissionDoc, newFields, { merge: true });
+    await setDoc(submissionDoc, biasFields, { merge: true });
   };
 
   const nextButtonClicked = () => {
