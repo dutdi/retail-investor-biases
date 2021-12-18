@@ -200,6 +200,7 @@ const BiasTest = () => {
           BiasEducationCenter[i].part4TimeSpent &&
         !biases.includes(i)
       ) {
+        // eslint-disable-next-line no-loop-func
         setBiases((biases) => [...biases, i]);
       }
     }

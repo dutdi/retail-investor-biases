@@ -58,6 +58,7 @@ const Result = ({ biases }) => {
       setRows((rows) => [...rows, createData(name, tips)]);
       saveToDB();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const feedbackClicked = () => {
