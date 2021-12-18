@@ -22,14 +22,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '21px',
     fontWeight: '600',
   },
-  options: {
-    '& > *': {
-      margin: theme.spacing(10, 5),
-    },
-    spacing: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 }));
 
 const StudyInfo = () => {
@@ -45,11 +37,11 @@ const StudyInfo = () => {
         demographic questions. This study should take about 10 minutes to
         complete.
       </Typography>
-      <Typography variant='h5' gutterBottom className={classes.text2}>
+      <Typography variant='h4' gutterBottom className={classes.text2}>
         In the end, you will receive a list of investment biases that you tend
         to have and some tips on how you can combat them.
       </Typography>
-      <Typography variant='h6' gutterBottom className={classes.text1}>
+      <Typography variant='h5' gutterBottom className={classes.text1}>
         We thank you for being here!
       </Typography>
       <Button
