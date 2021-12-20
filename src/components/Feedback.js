@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import {
+  Box,
   Button,
   FormControl,
   Grid,
@@ -92,65 +93,67 @@ const Feedback = () => {
       >
         Give us a feedback
       </Typography>
-      <Grid
-        container
-        direction='column'
-        justifyContent='center'
-        alignItems='stretch'
-      >
-        <Grid item>
-          <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
-            On a scale of 1-10 how accurate do you think your result was?
-          </Typography>
+      <Box pt={8}>
+        <Grid
+          container
+          direction='column'
+          justifyContent='center'
+          alignItems='stretch'
+        >
+          <Grid item>
+            <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
+              On a scale of 1-10 how accurate do you think your result was?
+            </Typography>
+          </Grid>
+          <Grid item>
+            <FormControl required className={classes.formControl}>
+              <InputLabel htmlFor='feedbackAccuracy'>Accuracy</InputLabel>
+              <Select
+                native
+                value={feedback.feedbackAccuracy}
+                onChange={handleChange}
+                inputProps={{
+                  name: 'feedbackAccuracy',
+                  id: 'feedbackAccuracy',
+                }}
+              >
+                <option aria-label='None' value='' />
+                {feedbackAccuracies.map((feedbackAccuracy) => (
+                  <option value={feedbackAccuracy}>{feedbackAccuracy}</option>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item>
+            <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
+              How likely are you to recommend this tool to someone else?
+            </Typography>
+          </Grid>
+          <Grid item>
+            <FormControl required className={classes.formControl}>
+              <InputLabel htmlFor='feedbackRecommendation'>
+                Recommendation
+              </InputLabel>
+              <Select
+                native
+                value={feedback.feedbackRecommendation}
+                onChange={handleChange}
+                inputProps={{
+                  name: 'feedbackRecommendation',
+                  id: 'feedbackRecommendation',
+                }}
+              >
+                <option aria-label='None' value='' />
+                {feedbackRecommendations.map((feedbackRecommendation) => (
+                  <option value={feedbackRecommendation}>
+                    {feedbackRecommendation}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
         </Grid>
-        <Grid item>
-          <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor='feedbackAccuracy'>Accuracy</InputLabel>
-            <Select
-              native
-              value={feedback.feedbackAccuracy}
-              onChange={handleChange}
-              inputProps={{
-                name: 'feedbackAccuracy',
-                id: 'feedbackAccuracy',
-              }}
-            >
-              <option aria-label='None' value='' />
-              {feedbackAccuracies.map((feedbackAccuracy) => (
-                <option value={feedbackAccuracy}>{feedbackAccuracy}</option>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item>
-          <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
-            How likely are you to recommend this tool to someone else?
-          </Typography>
-        </Grid>
-        <Grid item>
-          <FormControl required className={classes.formControl}>
-            <InputLabel htmlFor='feedbackRecommendation'>
-              Recommendation
-            </InputLabel>
-            <Select
-              native
-              value={feedback.feedbackRecommendation}
-              onChange={handleChange}
-              inputProps={{
-                name: 'feedbackRecommendation',
-                id: 'feedbackRecommendation',
-              }}
-            >
-              <option aria-label='None' value='' />
-              {feedbackRecommendations.map((feedbackRecommendation) => (
-                <option value={feedbackRecommendation}>
-                  {feedbackRecommendation}
-                </option>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-      </Grid>
+      </Box>
       {hasError ? (
         <Typography variant='h6' gutterBottom style={{ color: 'red' }}>
           Enter all the fields*
@@ -166,13 +169,15 @@ const Feedback = () => {
           Send
         </Button>
       )}
-      <Typography
-        variant='h5'
-        gutterBottom
-        style={{ backgroundColor: '#0065bd', color: 'white' }}
-      >
-        Thank you!
-      </Typography>
+      <Box pt={18}>
+        <Typography
+          variant='h5'
+          gutterBottom
+          style={{ backgroundColor: '#0065bd', color: 'white' }}
+        >
+          Thank you!
+        </Typography>
+      </Box>
     </div>
   );
 };
