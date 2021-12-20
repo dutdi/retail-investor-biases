@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Box, CssBaseline } from '@material-ui/core';
 import Navbar from './components/Navbar';
 import Privacy from './components/Privacy';
