@@ -48,14 +48,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-var showWrongAnswer = false;
-
 const BiasTest = () => {
   const classes = useStyles();
   const { submissionId } = useContext(Context);
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
+  const [showWrongAnswer, setShowWrongAnswer] = useState(false);
   const [showWrongButton, setShowWrongButton] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
@@ -109,8 +108,6 @@ const BiasTest = () => {
 
   const setSelectedAnswer = (answer) => {
     const timeSpent = time;
-    console.log('Bias index: ' + biasIndex);
-    console.log('Question index: ' + questionIndex);
     console.log('User selected: ' + answer);
     console.log(
       'Correct answer: ' +
@@ -120,12 +117,10 @@ const BiasTest = () => {
     if (
       BiasEducationCenter[biasIndex].questions[questionIndex].answer === answer
     ) {
-      showWrongAnswer = false;
+      setShowWrongAnswer(false);
     } else {
       console.log('SHOWWWWWWWWW');
-      console.log(showWrongAnswer);
-      showWrongAnswer = true;
-      console.log(showWrongAnswer);
+      setShowWrongAnswer(true);
     }
 
     //Add time to the correct part
@@ -302,13 +297,15 @@ const BiasTest = () => {
                 </Button>
               )}
               {showWrongAnswer && (
-                <div>
-                  <Expire delay='500'>
+                <Expire
+                  delay={1000}
+                  setShowWrongAnswer={setShowWrongAnswer}
+                  children={
                     <Typography variant='h5' gutterBottom>
                       Wrong answer! ❌
                     </Typography>
-                  </Expire>
-                </div>
+                  }
+                ></Expire>
               )}
               {showWrongButton && (
                 <div>

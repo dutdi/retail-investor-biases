@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
-const Expire = (props) => {
+const Expire = ({ setShowWrongAnswer, delay, children }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setVisible(false);
-    }, props.delay);
-  }, [props.delay]);
+      setShowWrongAnswer(false);
+    }, delay);
+  }, []);
 
-  return visible ? <div>{props.children}</div> : <div />;
+  return visible ? <div>{children}</div> : <div></div>;
 };
 
 export default Expire;
