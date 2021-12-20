@@ -7,11 +7,11 @@ import ContactUs from './components/ContactUs';
 import Landing from './components/Landing';
 import BiasTest from './components/BiasTest';
 import Demographics from './components/Demographics';
-import './App.css';
 import StudyInfo from './components/StudyInfo';
 import Footer from './components/Footer';
 import Imprint from './components/Imprint';
 import { Context } from './helpers/Context';
+import './App.css';
 
 function App() {
   const [submissionId, setSubmissionId] = useState('');

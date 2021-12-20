@@ -1,3 +1,6 @@
+import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { doc, setDoc } from 'firebase/firestore';
 import {
   Button,
   FormControl,
@@ -7,13 +10,10 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { feedbackAccuracies } from '../helpers/lists/FeedbackAccuracyList';
 import { feedbackRecommendations } from '../helpers/lists/FeedbackRecommendationList';
 import { Context } from '../helpers/Context';
 import { db } from '../helpers/Firebase';
-import { doc, setDoc } from 'firebase/firestore';
 
 const useStyles = makeStyles((theme) => ({
   root: {

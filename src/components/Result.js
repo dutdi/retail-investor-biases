@@ -1,3 +1,5 @@
+import React, { useState, useEffect, useContext } from 'react';
+import { doc, setDoc } from 'firebase/firestore';
 import {
   Button,
   makeStyles,
@@ -10,12 +12,10 @@ import {
   TableRow,
   Typography,
 } from '@material-ui/core';
-import React, { useState, useEffect, useContext } from 'react';
-import Feedback from './Feedback';
-import { BiasEducationCenter } from '../data/BiasEducationCenter';
 import { Context } from '../helpers/Context';
 import { db } from '../helpers/Firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import Feedback from './Feedback';
+import { BiasEducationCenter } from '../data/BiasEducationCenter';
 
 const useStyles = makeStyles((theme) => ({
   root: {

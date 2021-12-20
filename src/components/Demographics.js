@@ -1,3 +1,6 @@
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { collection, addDoc } from 'firebase/firestore';
 import {
   Button,
   Checkbox,
@@ -10,8 +13,6 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { genders } from '../helpers/lists/GenderList';
 import { countries } from '../helpers/lists/CountryList';
 import { educations } from '../helpers/lists/EducationList';
@@ -22,7 +23,6 @@ import { totalInvestments } from '../helpers/lists/TotalInvestmentList';
 import { ibts } from '../helpers/lists/IBTList';
 import { Context } from '../helpers/Context';
 import { db } from '../helpers/Firebase';
-import { collection, addDoc } from 'firebase/firestore';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;

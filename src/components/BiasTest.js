@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { doc, setDoc } from 'firebase/firestore';
 import { Button, Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { BiasEducationCenter } from '../data/BiasEducationCenter';
 import Result from './Result';
+import { BiasEducationCenter } from '../data/BiasEducationCenter';
 import Expire from '../helpers/Expire';
-import useEventListener from '@use-it/event-listener';
 import { Context } from '../helpers/Context';
 import { db } from '../helpers/Firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import useEventListener from '@use-it/event-listener';
 
 const useStyles = makeStyles((theme) => ({
   root: {

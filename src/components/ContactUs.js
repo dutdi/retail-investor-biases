@@ -1,5 +1,5 @@
-import { makeStyles, Paper, Typography } from '@material-ui/core';
 import React from 'react';
+import { makeStyles, Paper, Typography } from '@material-ui/core';
 import Image from '../img/landing.png';
 
 const useStyles = makeStyles((theme) => ({
