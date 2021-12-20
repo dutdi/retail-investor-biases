@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Box, CssBaseline } from '@material-ui/core';
 import Navbar from './components/Navbar';
 import Privacy from './components/Privacy';
@@ -16,7 +16,7 @@ import './App.css';
 function App() {
   const [submissionId, setSubmissionId] = useState('');
   return (
-    <Router>
+    <HashRouter>
       <CssBaseline />
       <Navbar></Navbar>
       <Context.Provider value={{ submissionId, setSubmissionId }}>
@@ -45,7 +45,7 @@ function App() {
         </Box>
       </Context.Provider>
       <Footer></Footer>
-    </Router>
+    </HashRouter>
   );
 }
 
