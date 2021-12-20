@@ -8,7 +8,7 @@ const Expire = ({ setShowWrongAnswer, delay, children }) => {
       setVisible(false);
       setShowWrongAnswer(false);
     }, delay);
-  }, []);
+  }, [delay, setShowWrongAnswer]);
 
   return visible ? <div>{children}</div> : <div></div>;
 };

@@ -276,7 +276,7 @@ export const BiasEducationCenter = [
         userSelection: '',
       },
     ],
-  } /*
+  },
   {
     bias: 'Bias #2: Anchoring Bias',
     description:
@@ -1631,5 +1631,5 @@ export const BiasEducationCenter = [
         userSelection: '',
       },
     ],
-  },*/,
+  },
 ];
