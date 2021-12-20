@@ -20,12 +20,23 @@ export const BiasEducationCenter = [
       {
         part: 'Part 1',
         prompt:
+          '1. Put a left finger on E key for items that belong to the category "Representative Bias"\n2.Put a right finger on I key for items that belong to the category "Not a Bias"',
+        A: 'Representativeness Bias',
+        B: 'Not a Bias',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
+      {
+        part: 'Part 1',
+        prompt:
           'Since Google`s stock has offered great returns in the past, it will continue doing so.',
         A: 'Representativeness Bias',
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -35,7 +46,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -45,7 +55,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -55,7 +64,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -65,7 +73,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -75,7 +82,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 2',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Buy"\n2.Put a right finger on I key for items that belong to the category "Sell"',
+        A: 'Buy',
+        B: 'Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 2',
@@ -84,7 +102,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -93,7 +110,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -102,7 +118,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -111,7 +126,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -120,7 +134,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -129,7 +142,18 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 3',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Representative Bias & Sell"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Buy"',
+        A: 'Representative Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 3',
@@ -139,7 +163,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -149,7 +172,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -159,7 +181,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -169,7 +190,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -179,7 +199,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -189,7 +208,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 4',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Representative Bias & Buy"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Sell"',
+        A: 'Representative Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 4',
@@ -199,7 +229,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -209,7 +238,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -219,7 +247,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -229,7 +256,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -239,7 +265,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -249,10 +274,9 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
     ],
-  },
+  } /*
   {
     bias: 'Bias #2: Anchoring Bias',
     description:
@@ -267,12 +291,23 @@ export const BiasEducationCenter = [
       {
         part: 'Part 1',
         prompt:
+          '1. Put a left finger on E key for items that belong to the category "Anchoring Bias"\n2.Put a right finger on I key for items that belong to the category "Not a Bias"',
+        A: 'Anchoring Bias',
+        B: 'Not a Bias',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
+      {
+        part: 'Part 1',
+        prompt:
           'Since the current price of Google is below the 52-week high, it is a good deal right now.',
         A: 'Anchoring Bias',
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -282,7 +317,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -292,7 +326,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -302,7 +335,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -312,7 +344,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -322,7 +353,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 2',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Buy"\n2.Put a right finger on I key for items that belong to the category "Sell"',
+        A: 'Buy',
+        B: 'Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 2',
@@ -331,7 +373,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -340,7 +381,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -349,7 +389,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -358,7 +397,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -367,7 +405,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -376,7 +413,18 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 3',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Anchoring Bias & Sell"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Buy"',
+        A: 'Anchoring Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 3',
@@ -386,7 +434,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -396,7 +443,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -406,7 +452,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -416,7 +461,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -426,7 +470,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -436,7 +479,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 4',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Anchoring Bias & Buy"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Sell"',
+        A: 'Anchoring Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 4',
@@ -446,7 +500,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -456,7 +509,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -466,7 +518,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -476,7 +527,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -486,7 +536,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -496,7 +545,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
     ],
   },
@@ -514,12 +562,23 @@ export const BiasEducationCenter = [
       {
         part: 'Part 1',
         prompt:
+          '1. Put a left finger on E key for items that belong to the category "Overconfidence Bias"\n2.Put a right finger on I key for items that belong to the category "Not a Bias"',
+        A: 'Overconfidence Bias',
+        B: 'Not a Bias',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
+      {
+        part: 'Part 1',
+        prompt:
           'Since I invested in Amazon at it`s start, I have a high probability of identifying the next big company as well.',
         A: 'Overconfidence Bias',
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -529,7 +588,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -539,7 +597,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -549,7 +606,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -559,7 +615,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -569,7 +624,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 2',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Buy"\n2.Put a right finger on I key for items that belong to the category "Sell"',
+        A: 'Buy',
+        B: 'Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 2',
@@ -578,7 +644,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -587,7 +652,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -596,7 +660,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -605,7 +668,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -614,7 +676,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -623,7 +684,18 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 3',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Overconfidence Bias & Sell"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Buy"',
+        A: 'Overconfidence Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 3',
@@ -633,7 +705,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -643,7 +714,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -653,7 +723,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -663,7 +732,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -673,7 +741,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -683,7 +750,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 4',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Overconfidence Bias & Buy"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Sell"',
+        A: 'Overconfidence Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 4',
@@ -693,7 +771,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -703,7 +780,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -713,7 +789,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -723,7 +798,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -733,7 +807,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -743,7 +816,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
     ],
   },
@@ -761,12 +833,23 @@ export const BiasEducationCenter = [
       {
         part: 'Part 1',
         prompt:
+          '1. Put a left finger on E key for items that belong to the category "Herding Bias"\n2.Put a right finger on I key for items that belong to the category "Not a Bias"',
+        A: 'Herding Bias',
+        B: 'Not a Bias',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
+      {
+        part: 'Part 1',
+        prompt:
           'People from my country believe that Wirecard, a local startup is primed to become a “global player”, therefore I should invest in it.',
         A: 'Herding Bias',
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -776,7 +859,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -786,7 +868,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -796,7 +877,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -806,7 +886,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -816,7 +895,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 2',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Buy"\n2.Put a right finger on I key for items that belong to the category "Sell"',
+        A: 'Buy',
+        B: 'Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 2',
@@ -825,7 +915,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -834,7 +923,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -843,7 +931,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -852,7 +939,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -861,7 +947,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -870,7 +955,18 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 3',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Herding Bias & Sell"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Buy"',
+        A: 'Herding Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 3',
@@ -880,7 +976,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -890,7 +985,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -900,7 +994,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -910,7 +1003,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -920,7 +1012,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -930,9 +1021,19 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
-
+      {
+        part: 'Part 4',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Herding Bias & Buy"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Sell"',
+        A: 'Herding Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
       {
         part: 'Part 4',
         prompt:
@@ -941,7 +1042,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -951,7 +1051,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -961,7 +1060,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -971,7 +1069,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -981,7 +1078,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -991,7 +1087,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
     ],
   },
@@ -1009,12 +1104,23 @@ export const BiasEducationCenter = [
       {
         part: 'Part 1',
         prompt:
+          '1. Put a left finger on E key for items that belong to the category "Disposition Effect"\n2.Put a right finger on I key for items that belong to the category "Not a Bias"',
+        A: 'Disposition Effect',
+        B: 'Not a Bias',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
+      {
+        part: 'Part 1',
+        prompt:
           'My Bitcoin just hit $60,000. I should sell it before it goes down again.',
         A: 'Disposition Effect',
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1024,7 +1130,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1034,7 +1139,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1044,7 +1148,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1054,7 +1157,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1064,7 +1166,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 2',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Buy"\n2.Put a right finger on I key for items that belong to the category "Sell"',
+        A: 'Buy',
+        B: 'Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 2',
@@ -1073,7 +1186,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1082,7 +1194,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1091,7 +1202,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1100,7 +1210,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1109,7 +1218,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1118,7 +1226,18 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 3',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Disposition Effect & Sell"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Buy"',
+        A: 'Disposition Effect & Sell',
+        B: 'Not a Bias & Buy',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 3',
@@ -1128,7 +1247,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1138,7 +1256,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1148,7 +1265,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1158,7 +1274,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1168,7 +1283,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1178,9 +1292,19 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
-
+      {
+        part: 'Part 4',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Disposition Effect & Buy"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Sell"',
+        A: 'Disposition Effect & Buy',
+        B: 'Not a Bias & Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
       {
         part: 'Part 4',
         prompt:
@@ -1189,7 +1313,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1199,7 +1322,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1209,7 +1331,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1219,7 +1340,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1229,7 +1349,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1239,7 +1358,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
     ],
   },
@@ -1257,12 +1375,23 @@ export const BiasEducationCenter = [
       {
         part: 'Part 1',
         prompt:
+          '1. Put a left finger on E key for items that belong to the category "Action Bias"\n2.Put a right finger on I key for items that belong to the category "Not a Bias"',
+        A: 'Action Bias',
+        B: 'Not a Bias',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
+      {
+        part: 'Part 1',
+        prompt:
           'My Bitcoin just went down $1,000; therefore I should sell it before I lose any more money.',
         A: 'Action Bias',
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1272,7 +1401,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1282,7 +1410,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1292,7 +1419,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1302,7 +1428,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 1',
@@ -1312,7 +1437,18 @@ export const BiasEducationCenter = [
         B: 'Not a Bias',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
+      },
+      {
+        part: 'Part 2',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Buy"\n2.Put a right finger on I key for items that belong to the category "Sell"',
+        A: 'Buy',
+        B: 'Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
       },
       {
         part: 'Part 2',
@@ -1321,7 +1457,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1330,7 +1465,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1339,7 +1473,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1348,7 +1481,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1357,7 +1489,6 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 2',
@@ -1366,9 +1497,19 @@ export const BiasEducationCenter = [
         B: 'Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
-
+      {
+        part: 'Part 3',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Action Bias & Sell"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Buy"',
+        A: 'Action Bias & Sell',
+        B: 'Not a Bias & Buy',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
       {
         part: 'Part 3',
         prompt:
@@ -1377,7 +1518,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1387,7 +1527,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1397,7 +1536,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1407,7 +1545,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1417,7 +1554,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 3',
@@ -1427,9 +1563,19 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Buy',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
-
+      {
+        part: 'Part 4',
+        prompt:
+          '1. Put a left finger on E key for items that belong to the category "Action Bias & Buy"\n2.Put a right finger on I key for items that belong to the category "Not a Bias & Sell"',
+        A: 'Action Bias & Buy',
+        B: 'Not a Bias & Sell',
+        answer: '-1',
+        userSelection: '',
+        isInstruction: true,
+        instructions:
+          'Go as fast as you can, while being accurate!\nIf you make a mistake, a red ❌ will appear.',
+      },
       {
         part: 'Part 4',
         prompt:
@@ -1438,7 +1584,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1448,7 +1593,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1458,7 +1602,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1468,7 +1611,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1478,7 +1620,6 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'A',
         userSelection: '',
-        timeSpent: 0,
       },
       {
         part: 'Part 4',
@@ -1488,8 +1629,7 @@ export const BiasEducationCenter = [
         B: 'Not a Bias & Sell',
         answer: 'B',
         userSelection: '',
-        timeSpent: 0,
       },
     ],
-  },
+  },*/,
 ];

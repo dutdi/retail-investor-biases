@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   options: {
     '& > *': {
-      margin: theme.spacing(10, 5),
+      margin: theme.spacing(6, 3),
     },
     spacing: 0,
     alignItems: 'center',
@@ -48,13 +48,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+var showWrongAnswer = false;
+
 const BiasTest = () => {
   const classes = useStyles();
   const { submissionId } = useContext(Context);
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
-  const [showWrongAnswer, setShowWrongAnswer] = useState(false);
   const [showWrongButton, setShowWrongButton] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
@@ -79,38 +80,81 @@ const BiasTest = () => {
     return () => clearInterval(interval);
   }, [startTime]);
 
+  const nextButtonClicked = () => {
+    setShowQuestion(true);
+  };
+
+  const continueButtonClicked = () => {
+    setShowQuestion(true);
+    setStartTime(true);
+    setSelectedAnswer('-1');
+  };
+
+  const handleKeyPress = (event) => {
+    if (
+      showQuestion &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
+    ) {
+      if (event.key === 'E' || event.key === 'e') {
+        setShowWrongButton(false);
+        setSelectedAnswer('A');
+      } else if (event.key === 'I' || event.key === 'i') {
+        setShowWrongButton(false);
+        setSelectedAnswer('B');
+      } else {
+        setShowWrongButton(true);
+      }
+    }
+  };
+
   const setSelectedAnswer = (answer) => {
     const timeSpent = time;
+    console.log('Bias index: ' + biasIndex);
+    console.log('Question index: ' + questionIndex);
+    console.log('User selected: ' + answer);
+    console.log(
+      'Correct answer: ' +
+        BiasEducationCenter[biasIndex].questions[questionIndex].answer
+    );
     //Check if chose correct answer
     if (
       BiasEducationCenter[biasIndex].questions[questionIndex].answer === answer
     ) {
-      setShowWrongAnswer(false);
+      showWrongAnswer = false;
     } else {
-      setShowWrongAnswer(true);
+      console.log('SHOWWWWWWWWW');
+      console.log(showWrongAnswer);
+      showWrongAnswer = true;
+      console.log(showWrongAnswer);
     }
 
     //Add time to the correct part
     if (
-      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 1'
+      BiasEducationCenter[biasIndex].questions[questionIndex].part ===
+        'Part 1' &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part1TimeSpent += timeSpent;
     } else if (
-      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 2'
+      BiasEducationCenter[biasIndex].questions[questionIndex].part ===
+        'Part 2' &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part2TimeSpent += timeSpent;
     } else if (
-      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 3'
+      BiasEducationCenter[biasIndex].questions[questionIndex].part ===
+        'Part 3' &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part3TimeSpent += timeSpent;
     } else if (
-      BiasEducationCenter[biasIndex].questions[questionIndex].part === 'Part 4'
+      BiasEducationCenter[biasIndex].questions[questionIndex].part ===
+        'Part 4' &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part4TimeSpent += timeSpent;
     }
 
-    BiasEducationCenter[biasIndex].questions[questionIndex].timeSpent =
-      timeSpent;
     BiasEducationCenter[biasIndex].questions[questionIndex].userSelection =
       answer;
 
@@ -158,28 +202,9 @@ const BiasTest = () => {
     await setDoc(submissionDoc, biasFields, { merge: true });
   };
 
-  const nextButtonClicked = () => {
-    setShowQuestion(true);
-    setStartTime(true);
-  };
-
-  const handleKeyPress = (event) => {
-    if (showQuestion) {
-      if (event.key === 'E' || event.key === 'e') {
-        setShowWrongButton(false);
-        setSelectedAnswer('A');
-      } else if (event.key === 'I' || event.key === 'i') {
-        setShowWrongButton(false);
-        setSelectedAnswer('B');
-      } else {
-        setShowWrongButton(true);
-      }
-    }
-  };
-
   function shuffle(array) {
-    var start = 0;
-    var end = 6;
+    var start = 1;
+    var end = 7;
     while (end <= array.length) {
       for (var i = end - 1; i >= start; i--) {
         var j = Math.floor(Math.random() * (i - start + 1));
@@ -188,8 +213,8 @@ const BiasTest = () => {
         array[i] = array[j];
         array[j] = temp;
       }
-      start += 6;
-      end += 6;
+      start += 7;
+      end += 7;
     }
     return array;
   }
@@ -224,9 +249,24 @@ const BiasTest = () => {
               >
                 {BiasEducationCenter[biasIndex].questions[questionIndex].part}
               </Typography>
+              {BiasEducationCenter[biasIndex].questions[questionIndex]
+                .isInstruction && <h1>Instructions</h1>}
               <Typography variant='h4' gutterBottom className={classes.text4}>
-                {BiasEducationCenter[biasIndex].questions[questionIndex].prompt}
+                {BiasEducationCenter[biasIndex].questions[questionIndex].prompt
+                  .split('\n')
+                  .map((str) => (
+                    <h6>{str}</h6>
+                  ))}
               </Typography>
+              {BiasEducationCenter[biasIndex].questions[questionIndex]
+                .isInstruction && (
+                <h2>
+                  {
+                    BiasEducationCenter[biasIndex].questions[questionIndex]
+                      .instructions
+                  }
+                </h2>
+              )}
               <Grid container className={classes.options}>
                 <Grid item xs={5}>
                   Press E for{' '}
@@ -247,9 +287,23 @@ const BiasTest = () => {
                   </Typography>
                 </Grid>
               </Grid>
+              {BiasEducationCenter[biasIndex].questions[questionIndex]
+                .isInstruction && (
+                <Button
+                  style={{
+                    backgroundColor: '#0065bd',
+                    color: 'white',
+                    margin: '12px',
+                  }}
+                  variant='contained'
+                  onClick={continueButtonClicked}
+                >
+                  Continue
+                </Button>
+              )}
               {showWrongAnswer && (
                 <div>
-                  <Expire delay='1000'>
+                  <Expire delay='500'>
                     <Typography variant='h5' gutterBottom>
                       Wrong answer! ❌
                     </Typography>
