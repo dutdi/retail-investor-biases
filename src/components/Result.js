@@ -49,7 +49,6 @@ const Result = ({ biases }) => {
   useEffect(() => {
     removeDuplicates(biases);
     setRows([]);
-    console.log('Biases: ' + biases);
     for (var i = 0; i < biases.length; i++) {
       const name = BiasEducationCenter[biases[i]].bias.slice(
         9,

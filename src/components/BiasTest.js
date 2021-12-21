@@ -108,18 +108,12 @@ const BiasTest = () => {
 
   const setSelectedAnswer = (answer) => {
     const timeSpent = time;
-    console.log('User selected: ' + answer);
-    console.log(
-      'Correct answer: ' +
-        BiasEducationCenter[biasIndex].questions[questionIndex].answer
-    );
     //Check if chose correct answer
     if (
       BiasEducationCenter[biasIndex].questions[questionIndex].answer === answer
     ) {
       setShowWrongAnswer(false);
     } else {
-      console.log('SHOWWWWWWWWW');
       setShowWrongAnswer(true);
     }
 
