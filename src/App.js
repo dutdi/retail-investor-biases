@@ -17,9 +17,9 @@ function App() {
   const [submissionId, setSubmissionId] = useState('');
   return (
     <HashRouter>
+      <Navbar></Navbar>
       <CssBaseline />
       <Context.Provider value={{ submissionId, setSubmissionId }}>
-        <Navbar></Navbar>
         <Box className='App'>
           <Routes>
             <Route exact path='/' element={<Landing></Landing>}></Route>
@@ -42,9 +42,9 @@ function App() {
               element={<ContactUs></ContactUs>}
             ></Route>
           </Routes>
-          <Footer></Footer>
         </Box>
       </Context.Provider>
+      <Footer></Footer>
     </HashRouter>
   );
 }
