@@ -1,4 +1,53 @@
-# Getting Started with Create React App
+# Retail Investor Biases
+
+This is the repository for the tool that allows people to recognize their investment biases and offer solutions to combat with them. The idea is to quantify the percentage of each bias present, and see how useful would retail investors find such a tool in combating their biases.
+
+This project is hosted at [Retail Investor Biases](retail-investor-biases.web.app)
+
+## Platform
+
+This website's logic is similar to [IAT](https://implicit.harvard.edu/implicit/takeatest.html).
+
+**What is the IAT?**
+
+- IAT tests how strongly the participant implicitly associates a concept (e.g. a Stock) with a category (e.g. good or bad, invest or sell)
+- The association strength is measured in relative comparison with association of a second concept (e.g. Cryptocurrencies) to the same category, which makes this method particularly applicable to decision contexts where choices are often made between contrasting categories (e.g. the decision to invest in either Stocks or Cryptocurrencies)
+- The test operates by presenting pairs of target concepts (e.g. Stocks & Cryptocurrencies) and attributes (e.g. good or bad, return or risk) in two opposing constellations, to find out whether one is more compatible with implicit associations in the respondent’s mind than the other.
+- How is a bias detected? If the participant is faster to react to a specific concept and attribute than the opposing constellations, they are biased towards the concept they were faster for.
+- For e.g. If participants are faster to react to Cryptocurrencies + Good (in the presence of a contrasting pair, e.g., Stocks + Bad) compared with the opposite pairings (e.g. Cryptocurrencies + Bad and Stocks + Good), they have a bias for Cryptocurrencies
+
+**How is the IAT conducted?**
+
+- The IAT has at max **2 concepts** (for e.g. Stocks & Cryptocurrencies) and **2 categories** (e.g. good or bad). The respondent is then presented with series of items (high return or low return, invest or sell) who must **sort them into the 2 categories**.
+- If the respondent is faster to make an association of a concept with a respective category in relative comparison with association of a second concept, they have a bias for the category they were faster for.
+
+---
+
+- An IAT usually has 7 parts:
+  1. 2x initial training rounds
+  2. 2x "easy” paired tests
+  3. 1x training round
+  4. 2x "hard" paired tests
+
+## Project Info
+
+**The project is using IAT to help retail investors recognize the following biases:**
+
+- Representativeness heuristic bias
+- Anchoring Bias
+- Overconfidence Bias
+- Herding Bias/Bandwagon effect
+- Disposition effect
+- Action Bias
+
+The same methodology i.e. 2 Concepts & 2 Categories is being applied. However, instead of items, series of scenarios are being presented to the respondent.
+If the respondent is faster to make an association of a concept with a respective category in relative comparison with association of a second concept, they have a bias for the category they were faster for.
+
+## Developers
+
+The website is developed by Tunar Mahmudov and all the logic, inputs, details, and designs are provided by Muneeb Ahmed.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,58 +62,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
