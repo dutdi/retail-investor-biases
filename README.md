@@ -2,7 +2,7 @@
 
 This is the repository for the tool that allows people to recognize their investment biases and offer solutions to combat with them. The idea is to quantify the percentage of each bias present, and see how useful would retail investors find such a tool in combating their biases.
 
-This project is hosted at [Retail Investor Biases](retail-investor-biases.web.app)
+This project is hosted at [Retail Investor Biases](https://retail-investor-biases.web.app)
 
 ## Platform
 
