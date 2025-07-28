@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import Image from "../img/landing.png";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   image: {
     backgroundImage: `url(${Image})`,
     backgroundSize: "contain",
@@ -36,21 +36,30 @@ const useStyles = makeStyles({
     justifyContent: "center",
     fontStyle: "italic",
   },
-});
+  main: {
+    fontSize: "2rem",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "3rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "3.5rem",
+    },
+  },
+}));
 
 const Landing = () => {
   const classes = useStyles();
 
   return (
-    <Box m={5}>
-      <Typography className={classes.text1} variant="h5" gutterBottom>
+    <Box m={5} className={classes.main}>
+      <Typography className={classes.text1} /* variant="h5" */ gutterBottom>
         The Only Tool You Need to
       </Typography>
-      <Typography className={classes.text2} variant="h2" gutterBottom>
+      <Typography className={classes.text2} /* variant="h2" */ gutterBottom>
         Find & Combat Your Biases
       </Typography>
       <Box textAlign="center" mt={10}>
-        <Typography className={classes.text3} variant="h6" gutterBottom>
+        <Typography className={classes.text3} /* variant="h6" */ gutterBottom>
           by TUM Chair of Digital Finance
         </Typography>
         <Button
@@ -61,9 +70,9 @@ const Landing = () => {
         >
           Get Started
         </Button>
-        <Box className={classes.image} mt={10}>
+        {/* <Box className={classes.image} mt={10}>
           <img alt="background" src={Image} />
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );

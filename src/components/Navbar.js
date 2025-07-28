@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 5,
     textDecoration: "none",
     boxShadow: "none",
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     [theme.breakpoints.up("md")]: {
       fontSize: "3rem",
     },
@@ -49,7 +49,7 @@ const Navbar = () => {
           <Typography
             component={Link}
             to="/"
-            variant="h4"
+            /* variant="h4" */
             className={classes.title}
           >
             Retail Investor Biases
