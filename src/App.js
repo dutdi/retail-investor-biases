@@ -14,44 +14,62 @@ import { Context } from "./helpers/Context";
 import "./App.css";
 
 const useStyles = makeStyles(() => ({
-  hashrouter: {
+  underHashRouter: {
     display: "flex",
     flexDirection: "column",
+    justifyContent: "space-between",
+    minHeight: "100vh",
   },
 }));
 function App() {
   const [submissionId, setSubmissionId] = useState("");
   const classes = useStyles();
   return (
-    <HashRouter className={classes.hashrouter}>
-      <Navbar></Navbar>
-      <CssBaseline />
-      <Context.Provider value={{ submissionId, setSubmissionId }}>
-        <Box className="App">
-          <Routes>
-            <Route exact path="/" element={<Landing></Landing>}></Route>
-            <Route
-              exact
-              path="study-info"
-              element={<StudyInfo></StudyInfo>}
-            ></Route>
-            <Route
-              exact
-              path="/demographics"
-              element={<Demographics></Demographics>}
-            ></Route>
-            <Route exact path="/test" element={<BiasTest></BiasTest>}></Route>
-            <Route exact path="/imprint" element={<Imprint></Imprint>}></Route>
-            <Route exact path="/privacy" element={<Privacy></Privacy>}></Route>
-            <Route
-              exact
-              path="/contact-us"
-              element={<ContactUs></ContactUs>}
-            ></Route>
-          </Routes>
+    <HashRouter>
+      <Box className={classes.underHashRouter}>
+        <Box>
+          <Navbar></Navbar>
+          <CssBaseline />
+          <Context.Provider value={{ submissionId, setSubmissionId }}>
+            <Box className="App">
+              <Routes>
+                <Route exact path="/" element={<Landing></Landing>}></Route>
+                <Route
+                  exact
+                  path="study-info"
+                  element={<StudyInfo></StudyInfo>}
+                ></Route>
+                <Route
+                  exact
+                  path="/demographics"
+                  element={<Demographics></Demographics>}
+                ></Route>
+                <Route
+                  exact
+                  path="/test"
+                  element={<BiasTest></BiasTest>}
+                ></Route>
+                <Route
+                  exact
+                  path="/imprint"
+                  element={<Imprint></Imprint>}
+                ></Route>
+                <Route
+                  exact
+                  path="/privacy"
+                  element={<Privacy></Privacy>}
+                ></Route>
+                <Route
+                  exact
+                  path="/contact-us"
+                  element={<ContactUs></ContactUs>}
+                ></Route>
+              </Routes>
+            </Box>
+          </Context.Provider>
         </Box>
-      </Context.Provider>
-      <Footer></Footer>
+        <Footer></Footer>
+      </Box>
     </HashRouter>
   );
 }
