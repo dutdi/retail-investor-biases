@@ -7,11 +7,24 @@ import { Typography } from "@material-ui/core";
 import Image from "../img/landing.png";
 
 const useStyles = makeStyles((theme) => ({
-  image: {
-    backgroundImage: `url(${Image})`,
-    backgroundSize: "contain",
+  imageDiv: {
+    /* backgroundImage: `url(${Image})`, */
+    /*  backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
+    backgroundPosition: "center center", */
+    width: "100%",
+    height: "auto",
+    display: "flex",
+    justifyContent: "center",
+  },
+  img: {
+    width: "600px",
+    [theme.breakpoints.up("md")]: {
+      width: "1200px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "1400px",
+    },
   },
   text1: {
     textAlign: "center",
@@ -19,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    fontSize: "18px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "20px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "24px",
+    },
   },
   text2: {
     textAlign: "center",
@@ -27,6 +47,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     fontWeight: "600",
+    fontSize: "36px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "48px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "60px",
+    },
   },
   text3: {
     textAlign: "center",
@@ -35,14 +62,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     fontStyle: "italic",
-  },
-  main: {
-    fontSize: "2rem",
+    fontSize: "16px",
     [theme.breakpoints.up("md")]: {
-      fontSize: "3rem",
+      fontSize: "18px",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "3.5rem",
+      fontSize: "20px",
     },
   },
 }));
@@ -51,7 +76,7 @@ const Landing = () => {
   const classes = useStyles();
 
   return (
-    <Box m={5} className={classes.main}>
+    <Box m={5}>
       <Typography className={classes.text1} /* variant="h5" */ gutterBottom>
         The Only Tool You Need to
       </Typography>
@@ -70,9 +95,9 @@ const Landing = () => {
         >
           Get Started
         </Button>
-        {/* <Box className={classes.image} mt={10}>
-          <img alt="background" src={Image} />
-        </Box> */}
+      </Box>
+      <Box className={classes.imageDiv} mt={10}>
+        <img className={classes.img} alt="background" src={Image} />
       </Box>
     </Box>
   );

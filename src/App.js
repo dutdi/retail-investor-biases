@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Box, CssBaseline } from "@material-ui/core";
+import { Box, CssBaseline, makeStyles } from "@material-ui/core";
 import Navbar from "./components/Navbar";
 import Privacy from "./components/Privacy";
 import ContactUs from "./components/ContactUs";
@@ -13,10 +13,17 @@ import Imprint from "./components/Imprint";
 import { Context } from "./helpers/Context";
 import "./App.css";
 
+const useStyles = makeStyles(() => ({
+  hashrouter: {
+    display: "flex",
+    flexDirection: "column",
+  },
+}));
 function App() {
   const [submissionId, setSubmissionId] = useState("");
+  const classes = useStyles();
   return (
-    <HashRouter>
+    <HashRouter className={classes.hashrouter}>
       <Navbar></Navbar>
       <CssBaseline />
       <Context.Provider value={{ submissionId, setSubmissionId }}>
