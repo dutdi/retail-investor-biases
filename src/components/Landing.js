@@ -18,13 +18,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   img: {
-    width: "600px",
-    [theme.breakpoints.up("md")]: {
-      width: "1200px",
-    },
-    [theme.breakpoints.up("lg")]: {
-      width: "1400px",
-    },
+    width: "100%",
   },
   text1: {
     textAlign: "center",
