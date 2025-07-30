@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: "1200px",
+    width: "50%",
     height: "700px",
     margin: "30px",
     backgroundColor: "white",

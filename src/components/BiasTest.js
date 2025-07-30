@@ -1,50 +1,50 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { doc, setDoc } from 'firebase/firestore';
-import { Button, Grid, Paper, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import Result from './Result';
-import { BiasEducationCenter } from '../data/BiasEducationCenter';
-import Expire from '../helpers/Expire';
-import { Context } from '../helpers/Context';
-import { db } from '../helpers/Firebase';
-import useEventListener from '@use-it/event-listener';
+import React, { useState, useEffect, useContext } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { Button, Grid, Paper, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Result from "./Result";
+import { BiasEducationCenter } from "../data/BiasEducationCenter";
+import Expire from "../helpers/Expire";
+import { Context } from "../helpers/Context";
+import { db } from "../helpers/Firebase";
+import useEventListener from "@use-it/event-listener";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '1200px',
-    height: '700px',
-    margin: '30px',
-    backgroundColor: 'white',
-    textAlign: 'center',
+    width: "80%",
+    height: "700px",
+    margin: "30px",
+    backgroundColor: "white",
+    textAlign: "center",
   },
   text1: {
-    textAlign: 'center',
-    padding: '15px',
-    fontWeight: '600',
+    textAlign: "center",
+    padding: "15px",
+    fontWeight: "600",
   },
   text2: {
-    textAlign: 'center',
-    padding: '15px',
+    textAlign: "center",
+    padding: "15px",
   },
   text3: {
-    textAlign: 'center',
-    padding: '1px',
-    color: 'red',
+    textAlign: "center",
+    padding: "1px",
+    color: "red",
     fontWeight: 600,
   },
   text4: {
-    textAlign: 'center',
-    padding: '21px',
-    fontWeight: '600',
-    color: '#0065bd',
+    textAlign: "center",
+    padding: "21px",
+    fontWeight: "600",
+    color: "#0065bd",
   },
   options: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(6, 3),
     },
     spacing: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 
@@ -86,7 +86,7 @@ const BiasTest = () => {
   const continueButtonClicked = () => {
     setShowQuestion(true);
     setStartTime(true);
-    setSelectedAnswer('-1');
+    setSelectedAnswer("-1");
   };
 
   const handleKeyPress = (event) => {
@@ -94,12 +94,12 @@ const BiasTest = () => {
       showQuestion &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
-      if (event.key === 'E' || event.key === 'e') {
+      if (event.key === "E" || event.key === "e") {
         setShowWrongButton(false);
-        setSelectedAnswer('A');
-      } else if (event.key === 'I' || event.key === 'i') {
+        setSelectedAnswer("A");
+      } else if (event.key === "I" || event.key === "i") {
         setShowWrongButton(false);
-        setSelectedAnswer('B');
+        setSelectedAnswer("B");
       } else {
         setShowWrongButton(true);
       }
@@ -120,25 +120,25 @@ const BiasTest = () => {
     //Add time to the correct part
     if (
       BiasEducationCenter[biasIndex].questions[questionIndex].part ===
-        'Part 1' &&
+        "Part 1" &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part1TimeSpent += timeSpent;
     } else if (
       BiasEducationCenter[biasIndex].questions[questionIndex].part ===
-        'Part 2' &&
+        "Part 2" &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part2TimeSpent += timeSpent;
     } else if (
       BiasEducationCenter[biasIndex].questions[questionIndex].part ===
-        'Part 3' &&
+        "Part 3" &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part3TimeSpent += timeSpent;
     } else if (
       BiasEducationCenter[biasIndex].questions[questionIndex].part ===
-        'Part 4' &&
+        "Part 4" &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
       BiasEducationCenter[biasIndex].part4TimeSpent += timeSpent;
@@ -169,7 +169,7 @@ const BiasTest = () => {
   };
 
   const saveToDB = async () => {
-    const submissionDoc = doc(db, 'submissions', submissionId);
+    const submissionDoc = doc(db, "submissions", submissionId);
     const biasFields = {
       biasDetails: {},
     };
@@ -185,7 +185,7 @@ const BiasTest = () => {
         part3TimeSpent: BiasEducationCenter[i].part3TimeSpent,
         part4TimeSpent: BiasEducationCenter[i].part4TimeSpent,
       };
-      biasFields.biasDetails['bias' + i] = biasData;
+      biasFields.biasDetails["bias" + i] = biasData;
     }
 
     await setDoc(submissionDoc, biasFields, { merge: true });
@@ -221,7 +221,7 @@ const BiasTest = () => {
     }
   }
 
-  useEventListener('keydown', handleKeyPress);
+  useEventListener("keydown", handleKeyPress);
 
   return (
     <>
@@ -230,19 +230,19 @@ const BiasTest = () => {
       ) : (
         <div className={classes.root}>
           {showQuestion ? (
-            <div tabIndex='0'>
+            <div tabIndex="0">
               <Typography
-                variant='h4'
+                variant="h4"
                 gutterBottom
-                style={{ backgroundColor: '#0065bd', color: 'white' }}
+                style={{ backgroundColor: "#0065bd", color: "white" }}
               >
                 {BiasEducationCenter[biasIndex].questions[questionIndex].part}
               </Typography>
               {BiasEducationCenter[biasIndex].questions[questionIndex]
                 .isInstruction && <h1>Instructions</h1>}
-              <Typography variant='h4' gutterBottom className={classes.text4}>
+              <Typography variant="h4" gutterBottom className={classes.text4}>
                 {BiasEducationCenter[biasIndex].questions[questionIndex].prompt
-                  .split('\n')
+                  .split("\n")
                   .map((str) => (
                     <h6>{str}</h6>
                   ))}
@@ -258,19 +258,19 @@ const BiasTest = () => {
               )}
               <Grid container className={classes.options}>
                 <Grid item xs={5}>
-                  Press E for{' '}
+                  Press E for{" "}
                   <Typography
-                    variant='h5'
-                    style={{ color: 'green', fontWeight: 600 }}
+                    variant="h5"
+                    style={{ color: "green", fontWeight: 600 }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Typography>
                 </Grid>
                 <Grid item xs={5}>
-                  Press I for{' '}
+                  Press I for{" "}
                   <Typography
-                    variant='h5'
-                    style={{ color: 'red', fontWeight: 600 }}
+                    variant="h5"
+                    style={{ color: "red", fontWeight: 600 }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Typography>
@@ -280,11 +280,11 @@ const BiasTest = () => {
                 .isInstruction && (
                 <Button
                   style={{
-                    backgroundColor: '#0065bd',
-                    color: 'white',
-                    margin: '12px',
+                    backgroundColor: "#0065bd",
+                    color: "white",
+                    margin: "12px",
                   }}
-                  variant='contained'
+                  variant="contained"
                   onClick={continueButtonClicked}
                 >
                   Continue
@@ -295,7 +295,7 @@ const BiasTest = () => {
                   delay={1000}
                   setShowWrongAnswer={setShowWrongAnswer}
                   children={
-                    <Typography variant='h5' gutterBottom>
+                    <Typography variant="h5" gutterBottom>
                       Wrong answer! ❌
                     </Typography>
                   }
@@ -303,7 +303,7 @@ const BiasTest = () => {
               )}
               {showWrongButton && (
                 <div>
-                  <Typography variant='h5' gutterBottom>
+                  <Typography variant="h5" gutterBottom>
                     You can only press E and I keys
                   </Typography>
                 </div>
@@ -312,38 +312,38 @@ const BiasTest = () => {
           ) : (
             <div>
               <Typography
-                variant='h5'
+                variant="h5"
                 gutterBottom
                 className={classes.text1}
-                style={{ backgroundColor: '#0065bd', color: 'white' }}
+                style={{ backgroundColor: "#0065bd", color: "white" }}
               >
                 {BiasEducationCenter[biasIndex].bias}
               </Typography>
-              <Typography variant='h6' gutterBottom className={classes.text2}>
+              <Typography variant="h6" gutterBottom className={classes.text2}>
                 {BiasEducationCenter[biasIndex].description}
               </Typography>
-              <Typography variant='h6' gutterBottom className={classes.text3}>
+              <Typography variant="h6" gutterBottom className={classes.text3}>
                 Please, make sure you understand what this bias means, you will
                 be needing this moving forward.
               </Typography>
-              <Typography variant='h6' gutterBottom className={classes.text2}>
+              <Typography variant="h6" gutterBottom className={classes.text2}>
                 For this test you will use E and I to categorize items as fast
                 as you can.
               </Typography>
               <Paper>
                 <img
-                  style={{ maxWidth: '65%', maxHeight: '65%' }}
+                  style={{ maxWidth: "65%", maxHeight: "65%" }}
                   alt={BiasEducationCenter[biasIndex].bias}
                   src={BiasEducationCenter[biasIndex].categoriesAndItems}
                 />
               </Paper>
               <Button
                 style={{
-                  backgroundColor: '#0065bd',
-                  color: 'white',
-                  margin: '12px',
+                  backgroundColor: "#0065bd",
+                  color: "white",
+                  margin: "12px",
                 }}
-                variant='contained'
+                variant="contained"
                 onClick={nextButtonClicked}
               >
                 Next
