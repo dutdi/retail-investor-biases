@@ -369,12 +369,21 @@ const Demographics = () => {
           </Grid>
         </Grid>
         {hasError ? (
-          <Typography variant="h6" gutterBottom style={{ color: "red" }}>
+          <Typography
+            variant="h6"
+            gutterBottom
+            style={{ color: "red", marginTop: "30px" }}
+          >
             Enter all the fields*
           </Typography>
         ) : (
           <Button
-            style={{ backgroundColor: "#0065bd", color: "white" }}
+            style={{
+              backgroundColor: "#0065bd",
+              color: "white",
+              marginTop: "30px",
+              marginBottom: "30px",
+            }}
             component={Link}
             to="/test"
             variant="contained"
