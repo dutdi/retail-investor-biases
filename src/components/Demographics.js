@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import {
   Box,
+  Tooltip, //For make hover
   Button,
   Checkbox,
   FormControl,
@@ -33,13 +34,21 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(2, 0, 0, 0),
     },
     width: "70%",
-    height: "700px",
+    /* height: "700px", */
     margin: "30px",
     backgroundColor: "white",
     textAlign: "center",
   },
   formControl: {
-    width: 500,
+    width: 400,
+    textOverflow: "ellipsis",
+    maxWidth: "100%",
+  },
+  labelEllipsis: {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    maxWidth: "100%",
   },
 }));
 
@@ -335,9 +344,11 @@ const Demographics = () => {
         <Grid container spacing={3}>
           <Grid item xs>
             <FormControl required className={classes.formControl}>
-              <InputLabel htmlFor="ibts">
-                Total Investor Bias Tests previously performed on our platform
-              </InputLabel>
+              <Tooltip title="Total Investor Bias Tests previously performed on our platform">
+                <InputLabel htmlFor="ibts" className={classes.labelEllipsis}>
+                  Total Investor Bias Tests previously performed on our platform
+                </InputLabel>
+              </Tooltip>
               <Select
                 native
                 value={details.ibts}

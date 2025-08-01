@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Box, CssBaseline, makeStyles } from "@material-ui/core";
+import { Box, CssBaseline } from "@material-ui/core";
 import Navbar from "./components/Navbar";
 import Privacy from "./components/Privacy";
 import ContactUs from "./components/ContactUs";
@@ -13,23 +13,16 @@ import Imprint from "./components/Imprint";
 import { Context } from "./helpers/Context";
 import "./App.css";
 
-const useStyles = makeStyles(() => ({
-  underHashRouter: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    minHeight: "100vh",
-  },
-}));
 function App() {
   const [submissionId, setSubmissionId] = useState("");
-  const classes = useStyles();
   return (
     <HashRouter>
-      <Box className={classes.underHashRouter}>
+      <Box className="UnderHashRouter">
+        <CssBaseline />
         <Box>
           <Navbar></Navbar>
-          <CssBaseline />
+        </Box>
+        <Box className="AppMain">
           <Context.Provider value={{ submissionId, setSubmissionId }}>
             <Box className="App">
               <Routes>
@@ -68,7 +61,9 @@ function App() {
             </Box>
           </Context.Provider>
         </Box>
-        <Footer></Footer>
+        <Box>
+          <Footer></Footer>
+        </Box>
       </Box>
     </HashRouter>
   );
