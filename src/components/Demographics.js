@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import {
@@ -33,11 +33,12 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: "70%",
-    /* height: "700px", */
+    /* width: "70%", */
     margin: "30px",
     backgroundColor: "white",
     textAlign: "center",
+    [theme.breakpoints.up("md")]: { width: "70%" },
+    [theme.breakpoints.up("lg")]: { width: "70%" },
   },
   formControl: {
     width: 400,
