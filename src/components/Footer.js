@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
   },
   textUnderFooterRoot: {
-    margin: "0 auto",
+    margin: "10px 10px",
     textAlign: "center",
     fontSize: "10px",
     [theme.breakpoints.up("md")]: { fontSize: "15px" },

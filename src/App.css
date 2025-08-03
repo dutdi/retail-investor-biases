@@ -8,10 +8,11 @@
   -moz-transform: scale(0.8, 0.8); /* Moz-browsers */
   zoom: 0.8; /* Other non-webkit browsers */
   zoom: 80%; /* Webkit browsers */
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 .AppMain {
   flex-grow: 1;
+  background-color: seashell;
 }
 .UnderHashRouter {
   display: flex;
