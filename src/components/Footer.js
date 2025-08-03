@@ -14,6 +14,20 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
     backgroundColor: "white",
   },
+  textUnderFooterRoot: {
+    margin: "0 auto",
+    textAlign: "center",
+    fontSize: "10px",
+    [theme.breakpoints.up("md")]: { fontSize: "15px" },
+    [theme.breakpoints.up("lg")]: { fontSize: "20px" },
+  },
+  linkUnderFooterRoot: {
+    fontSize: "15px",
+    [theme.breakpoints.up("md")]: { fontSize: "20px" },
+    [theme.breakpoints.up("lg")]: { fontSize: "25px" },
+    color: "#0065bd",
+    textDecoration: "none",
+  },
 }));
 
 const Footer = () => {
@@ -22,11 +36,9 @@ const Footer = () => {
   return (
     <div className={classes.footerRoot}>
       <Typography
-        style={{
-          margin: "0 auto",
-          textAlign: "center",
-        }}
-        variant="body1"
+        className={classes.textUnderFooterRoot}
+        style={{}}
+        /* variant="body1" */
         gutterBottom
       >
         Made with 💙 in Munich by Tunar Mahmudov & Muneeb Ahmed @ TUM's Chair of
@@ -36,16 +48,14 @@ const Footer = () => {
         <Typography
           component={Link}
           to="/imprint"
-          variant="h6"
-          style={{ color: "#0065bd", textDecoration: "none" }}
+          className={classes.linkUnderFooterRoot}
         >
           Imprint
         </Typography>
         <Typography
           component={Link}
           to="/privacy"
-          variant="h6"
-          style={{ color: "#0065bd", textDecoration: "none" }}
+          className={classes.linkUnderFooterRoot}
         >
           {" "}
           | Privacy |{" "}
@@ -53,8 +63,7 @@ const Footer = () => {
         <Typography
           component={Link}
           to="/contact-us"
-          variant="h6"
-          style={{ color: "#0065bd", textDecoration: "none" }}
+          className={classes.linkUnderFooterRoot}
         >
           Contact us
         </Typography>

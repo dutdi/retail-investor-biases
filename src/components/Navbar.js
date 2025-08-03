@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -22,12 +21,34 @@ const useStyles = makeStyles((theme) => ({
     padding: 5,
     textDecoration: "none",
     boxShadow: "none",
-    fontSize: "2rem",
+    fontSize: "1.2rem",
     [theme.breakpoints.up("md")]: {
       fontSize: "3rem",
     },
     [theme.breakpoints.up("lg")]: {
       fontSize: "3.5rem",
+    },
+  },
+  toolBar: {
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      justifyContent: "center",
+      position: "relative",
+    },
+    [theme.breakpoints.up("lg")]: {
+      display: "flex",
+      justifyContent: "center",
+      position: "relative",
+    },
+  },
+  linkUnderToolBar: {
+    [theme.breakpoints.up("md")]: {
+      position: "absolute",
+      left: "0",
+    },
+    [theme.breakpoints.up("lg")]: {
+      position: "absolute",
+      left: "0",
     },
   },
 }));
@@ -38,20 +59,18 @@ const Navbar = () => {
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
-        <Toolbar>
-          <Link to="/">
+        <Toolbar className={classes.toolBar}>
+          <Link to="/" className={classes.linkUnderToolBar}>
             <img
-              style={{ width: "70px", height: "70px" }}
+              style={{
+                width: "70px",
+                height: "70px",
+              }}
               alt="logo"
               src={Image}
             />
           </Link>
-          <Typography
-            component={Link}
-            to="/"
-            /* variant="h4" */
-            className={classes.title}
-          >
+          <Typography component={Link} to="/" className={classes.title}>
             Retail Investor Biases
           </Typography>
         </Toolbar>

@@ -77,7 +77,7 @@ const Landing = () => {
       <Typography className={classes.text2} /* variant="h2" */ gutterBottom>
         Find & Combat Your Biases
       </Typography>
-      <Box textAlign="center" mt={10}>
+      <Box textAlign="center">
         <Typography className={classes.text3} /* variant="h6" */ gutterBottom>
           by TUM Chair of Digital Finance
         </Typography>
@@ -90,7 +90,7 @@ const Landing = () => {
           Get Started
         </Button>
       </Box>
-      <Box className={classes.imageDiv} mt={10}>
+      <Box className={classes.imageDiv} mt={5}>
         <img className={classes.img} alt="background" src={Image} />
       </Box>
     </Box>

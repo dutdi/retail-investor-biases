@@ -381,8 +381,8 @@ const Demographics = () => {
             style={{
               backgroundColor: "#0065bd",
               color: "white",
-              marginTop: "30px",
-              marginBottom: "30px",
+              marginTop: "20px",
+              marginBottom: "20px",
             }}
             component={Link}
             to="/test"
