@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { Button, Grid, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,7 +7,6 @@ import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
 import { Context } from "../helpers/Context";
 import { db } from "../helpers/Firebase";
-import useEventListener from "@use-it/event-listener";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,10 +93,16 @@ const BiasTest = () => {
       showQuestion &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
-      if (event.key === "E" || event.key === "e") {
+      if (
+        event.target.textContent === "E" ||
+        event.target.textContent === "e"
+      ) {
         setShowWrongButton(false);
         setSelectedAnswer("A");
-      } else if (event.key === "I" || event.key === "i") {
+      } else if (
+        event.target.textContent === "I" ||
+        event.target.textContent === "i"
+      ) {
         setShowWrongButton(false);
         setSelectedAnswer("B");
       } else {
@@ -221,8 +226,6 @@ const BiasTest = () => {
     }
   }
 
-  useEventListener("keydown", handleKeyPress);
-
   return (
     <>
       {showResult ? (
@@ -258,7 +261,17 @@ const BiasTest = () => {
               )}
               <Grid container className={classes.options}>
                 <Grid item xs={5}>
-                  Press E for{" "}
+                  Press{" "}
+                  <Button
+                    onClick={(e) => handleKeyPress(e)}
+                    style={{
+                      backgroundColor: "#0065bd",
+                      color: "white",
+                      margin: "12px",
+                    }}
+                  >
+                    E
+                  </Button>
                   <Typography
                     variant="h5"
                     style={{ color: "green", fontWeight: 600 }}
@@ -267,7 +280,17 @@ const BiasTest = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs={5}>
-                  Press I for{" "}
+                  Press{" "}
+                  <Button
+                    onClick={(e) => handleKeyPress(e)}
+                    style={{
+                      backgroundColor: "#0065bd",
+                      color: "white",
+                      margin: "12px",
+                    }}
+                  >
+                    I
+                  </Button>
                   <Typography
                     variant="h5"
                     style={{ color: "red", fontWeight: 600 }}

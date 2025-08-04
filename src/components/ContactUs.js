@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       fontSize: "40px",
     },
-    margin: "10px",
   },
   text1: {
     color: "#0065bd",
