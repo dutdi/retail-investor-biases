@@ -244,11 +244,15 @@ const BiasTest = () => {
               {BiasEducationCenter[biasIndex].questions[questionIndex]
                 .isInstruction && <h1>Instructions</h1>}
               <Typography variant="h4" gutterBottom className={classes.text4}>
-                {BiasEducationCenter[biasIndex].questions[questionIndex].prompt
-                  .split("\n")
-                  .map((str) => (
-                    <h6>{str}</h6>
-                  ))}
+                <div>
+                  {BiasEducationCenter[biasIndex].questions[
+                    questionIndex
+                  ].prompt
+                    .split("\n")
+                    .map((str, index) => (
+                      <h6 key={str.id || index}>{str}</h6>
+                    ))}
+                </div>
               </Typography>
               {BiasEducationCenter[biasIndex].questions[questionIndex]
                 .isInstruction && (
