@@ -7,6 +7,7 @@ import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
 import { Context } from "../helpers/Context";
 import { db } from "../helpers/Firebase";
+/* import useEventListener from "@use-it/event-listener"; */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,10 +44,12 @@ const useStyles = makeStyles((theme) => ({
     },
     spacing: 0,
     alignItems: "center",
+    display: "flex",
     justifyContent: "center",
+    backgroundColor: "red",
   },
 }));
-
+/*  useEventListener("keydown", handleKeyPress); */
 const BiasTest = () => {
   const classes = useStyles();
   const { submissionId } = useContext(Context);
