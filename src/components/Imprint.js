@@ -1,16 +1,22 @@
-import React from 'react';
-import { makeStyles, Paper, Typography } from '@material-ui/core';
+import React from "react";
+import { makeStyles, Paper, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: '1200px',
-    height: '700px',
-    margin: '30px',
-    backgroundColor: 'white',
-    textAlign: 'center',
+    width: "80%",
+    height: "700px",
+    margin: "30px",
+    backgroundColor: "white",
+    textAlign: "center",
+    [theme.breakpoints.up("md")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "50%",
+    },
   },
 }));
 
@@ -19,18 +25,18 @@ const Imprint = () => {
   return (
     <div className={classes.root}>
       <Typography
-        variant='h4'
+        variant="h4"
         gutterBottom
-        style={{ backgroundColor: '#0065bd', color: 'white' }}
+        style={{ backgroundColor: "#0065bd", color: "white" }}
       >
         Imprint
       </Typography>
       <Paper
         style={{
           maxHeight: 550,
-          overflow: 'auto',
-          textAlign: 'left',
-          padding: '10px',
+          overflow: "auto",
+          textAlign: "left",
+          padding: "10px",
         }}
       >
         <h1>Impressum</h1>
@@ -43,11 +49,11 @@ const Imprint = () => {
           <br />
           Tel: 015143519711
           <br />
-          <a href='mailto:muneeb.ahmed@tum.de'>muneeb.ahmed@tum.de</a>
+          <a href="mailto:muneeb.ahmed@tum.de">muneeb.ahmed@tum.de</a>
         </p>
         <meta
-          name='generator'
-          content='Impressum-Generator der Kanzlei Hensche Rechtsanwälte'
+          name="generator"
+          content="Impressum-Generator der Kanzlei Hensche Rechtsanwälte"
         />
         <p> </p>
         <h1>Disclaimer - rechtliche Hinweise</h1>
@@ -176,22 +182,22 @@ const Imprint = () => {
         </p>
         <p> </p>
         <p>
-          Dieses Impressum wurde mit Hilfe des{' '}
+          Dieses Impressum wurde mit Hilfe des{" "}
           <a
-            target='_blank'
-            rel='noopener noreferrer nofollow'
-            href='http://www.hensche.de/impressum-generator.html'
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            href="http://www.hensche.de/impressum-generator.html"
           >
             Impressum-Generators
-          </a>{' '}
-          von{' '}
+          </a>{" "}
+          von{" "}
           <a
-            target='_blank'
-            rel='noopener noreferrer nofollow'
-            href='http://www.hensche.de/Rechtsanwalt_Arbeitsrecht_Muenchen.html'
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            href="http://www.hensche.de/Rechtsanwalt_Arbeitsrecht_Muenchen.html"
           >
             HENSCHE Rechtsanwälte, Kanzlei für Arbeitsrecht
-          </a>{' '}
+          </a>{" "}
           erstellt.
         </p>
       </Paper>

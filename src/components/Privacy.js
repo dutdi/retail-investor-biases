@@ -1,16 +1,22 @@
-import React from 'react';
-import { makeStyles, Paper, Typography } from '@material-ui/core';
+import React from "react";
+import { makeStyles, Paper, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: '1200px',
-    height: '700px',
-    margin: '30px',
-    backgroundColor: 'white',
-    textAlign: 'center',
+    width: "80%",
+    height: "700px",
+    margin: "30px",
+    backgroundColor: "white",
+    textAlign: "center",
+    [theme.breakpoints.up("md")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "50%",
+    },
   },
 }));
 
@@ -19,22 +25,22 @@ const Privacy = () => {
   return (
     <div className={classes.root}>
       <Typography
-        variant='h4'
+        variant="h4"
         gutterBottom
-        style={{ backgroundColor: '#0065bd', color: 'white' }}
+        style={{ backgroundColor: "#0065bd", color: "white" }}
       >
         Privacy
       </Typography>
       <Paper
         style={{
           maxHeight: 550,
-          overflow: 'auto',
-          textAlign: 'left',
-          padding: '10px',
+          overflow: "auto",
+          textAlign: "left",
+          padding: "10px",
         }}
       >
         <h1>Datenschutzerklärung</h1>
-        <h2 id='m14'>Einleitung</h2>
+        <h2 id="m14">Einleitung</h2>
         <p>
           Mit der folgenden Datenschutzerklärung möchten wir Sie darüber
           aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend
@@ -49,88 +55,88 @@ const Privacy = () => {
         <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
         <p>Stand: 17. Dezember 2021</p>
         <h2>Inhaltsübersicht</h2>
-        <ul class='index'>
+        <ul class="index">
           <li>
-            <a class='index-link' href='#m14'>
+            <a class="index-link" href="#m14">
               Einleitung
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m3'>
+            <a class="index-link" href="#m3">
               Verantwortlicher
             </a>
           </li>
           <li>
-            <a class='index-link' href='#mOverview'>
+            <a class="index-link" href="#mOverview">
               Übersicht der Verarbeitungen
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m13'>
+            <a class="index-link" href="#m13">
               Maßgebliche Rechtsgrundlagen
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m27'>
+            <a class="index-link" href="#m27">
               Sicherheitsmaßnahmen
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m25'>
+            <a class="index-link" href="#m25">
               Übermittlung von personenbezogenen Daten
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m24'>
+            <a class="index-link" href="#m24">
               Datenverarbeitung in Drittländern
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m12'>
+            <a class="index-link" href="#m12">
               Löschung von Daten
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m134'>
+            <a class="index-link" href="#m134">
               Einsatz von Cookies
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m225'>
+            <a class="index-link" href="#m225">
               Bereitstellung des Onlineangebotes und Webhosting
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m182'>
+            <a class="index-link" href="#m182">
               Kontakt- und Anfragenverwaltung
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m15'>
+            <a class="index-link" href="#m15">
               Änderung und Aktualisierung der Datenschutzerklärung
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m10'>
+            <a class="index-link" href="#m10">
               Rechte der betroffenen Personen
             </a>
           </li>
           <li>
-            <a class='index-link' href='#m42'>
+            <a class="index-link" href="#m42">
               Begriffsdefinitionen
             </a>
           </li>
         </ul>
-        <h2 id='m3'>Verantwortlicher</h2>
+        <h2 id="m3">Verantwortlicher</h2>
         <p>
           Muneeb, Ahmed<br></br>Helene-Mayer-Ring 7B, 1253<br></br>80809
           München, Deutschland
         </p>
         E-Mail-Adresse:
         <p>
-          <a href='mailto:muneeb.ahmed@tum.de'>muneeb.ahmed@tum.de</a>
+          <a href="mailto:muneeb.ahmed@tum.de">muneeb.ahmed@tum.de</a>
         </p>
-        <h2 id='mOverview'>Übersicht der Verarbeitungen</h2>
+        <h2 id="mOverview">Übersicht der Verarbeitungen</h2>
         <p>
           Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und
           die Zwecke ihrer Verarbeitung zusammen und verweist auf die
@@ -156,7 +162,7 @@ const Privacy = () => {
             Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.
           </li>
         </ul>
-        <h3 id='m13'>Maßgebliche Rechtsgrundlagen</h3>
+        <h3 id="m13">Maßgebliche Rechtsgrundlagen</h3>
         <p>
           Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der
           DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte
@@ -171,7 +177,7 @@ const Privacy = () => {
             <strong>
               Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1
               lit. b. DSGVO)
-            </strong>{' '}
+            </strong>{" "}
             - Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen
             Vertragspartei die betroffene Person ist, oder zur Durchführung
             vorvertraglicher Maßnahmen erforderlich, die auf Anfrage der
@@ -180,7 +186,7 @@ const Privacy = () => {
           <li>
             <strong>
               Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)
-            </strong>{' '}
+            </strong>{" "}
             - Die Verarbeitung ist zur Wahrung der berechtigten Interessen des
             Verantwortlichen oder eines Dritten erforderlich, sofern nicht die
             Interessen oder Grundrechte und Grundfreiheiten der betroffenen
@@ -205,7 +211,7 @@ const Privacy = () => {
           Beschäftigten. Ferner können Landesdatenschutzgesetze der einzelnen
           Bundesländer zur Anwendung gelangen.
         </p>
-        <h2 id='m27'>Sicherheitsmaßnahmen</h2>
+        <h2 id="m27">Sicherheitsmaßnahmen</h2>
         <p>
           Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter
           Berücksichtigung des Stands der Technik, der Implementierungskosten
@@ -228,7 +234,7 @@ const Privacy = () => {
           sowie Verfahren entsprechend dem Prinzip des Datenschutzes, durch
           Technikgestaltung und durch datenschutzfreundliche Voreinstellungen.
         </p>
-        <h2 id='m25'>Übermittlung von personenbezogenen Daten</h2>
+        <h2 id="m25">Übermittlung von personenbezogenen Daten</h2>
         <p>
           Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es
           vor, dass die Daten an andere Stellen, Unternehmen, rechtlich
@@ -240,7 +246,7 @@ const Privacy = () => {
           schließen insbesondere entsprechende Verträge bzw. Vereinbarungen, die
           dem Schutz Ihrer Daten dienen, mit den Empfängern Ihrer Daten ab.
         </p>
-        <h2 id='m24'>Datenverarbeitung in Drittländern</h2>
+        <h2 id="m24">Datenverarbeitung in Drittländern</h2>
         <p>
           Sofern wir Daten in einem Drittland (d.h., außerhalb der Europäischen
           Union (EU), des Europäischen Wirtschaftsraums (EWR)) verarbeiten oder
@@ -258,15 +264,15 @@ const Privacy = () => {
           verbindlicher internen Datenschutzvorschriften verarbeiten (Art. 44
           bis 49 DSGVO, Informationsseite der EU-Kommission:
           <a
-            href='https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de'
-            target='_blank'
-            rel='noopener noreferrer nofollow'
+            href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
           >
             https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de
           </a>
           ).
         </p>
-        <h2 id='m12'>Löschung von Daten</h2>
+        <h2 id="m12">Löschung von Daten</h2>
         <p>
           Die von uns verarbeiteten Daten werden nach Maßgabe der gesetzlichen
           Vorgaben gelöscht, sobald deren zur Verarbeitung erlaubten
@@ -289,7 +295,7 @@ const Privacy = () => {
           Aufbewahrung und Löschung von Daten beinhalten, die für die jeweiligen
           Verarbeitungen vorrangig gelten.
         </p>
-        <h2 id='m134'>Einsatz von Cookies</h2>
+        <h2 id="m134">Einsatz von Cookies</h2>
         <p>
           Cookies sind kleine Textdateien, bzw. sonstige Speichervermerke, die
           Informationen auf Endgeräten speichern und Informationen aus den
@@ -360,7 +366,7 @@ const Privacy = () => {
         </ul>
         <p>
           <strong>
-            Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out):{' '}
+            Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out):{" "}
           </strong>
           Nutzer können die von ihnen abgegebenen Einwilligungen jederzeit
           Widerrufen und zudem einen Widerspruch gegen die Verarbeitung
@@ -374,10 +380,10 @@ const Privacy = () => {
             Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:
           </strong>
         </p>
-        <ul class='m-elements'>
+        <ul class="m-elements">
           <li>
             <strong>
-              Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung:{' '}
+              Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung:{" "}
             </strong>
             Wir setzen ein Verfahren zum Cookie-Einwilligungs-Management ein, in
             dessen Rahmen die Einwilligungen der Nutzer in den Einsatz von
@@ -401,7 +407,7 @@ const Privacy = () => {
             gespeichert.
           </li>
         </ul>
-        <h2 id='m225'>Bereitstellung des Onlineangebotes und Webhosting</h2>
+        <h2 id="m225">Bereitstellung des Onlineangebotes und Webhosting</h2>
         <p>
           Um unser Onlineangebot sicher und effizient bereitstellen zu können,
           nehmen wir die Leistungen von einem oder mehreren Webhosting-Anbietern
@@ -420,7 +426,7 @@ const Privacy = () => {
           und alle innerhalb unseres Onlineangebotes oder von Webseiten
           getätigten Eingaben.
         </p>
-        <ul class='m-elements'>
+        <ul class="m-elements">
           <li>
             <strong>Verarbeitete Datenarten:</strong>
             Inhaltsdaten (z.B. Eingaben in Onlineformularen); Nutzungsdaten
@@ -445,7 +451,7 @@ const Privacy = () => {
             Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:
           </strong>
         </p>
-        <ul class='m-elements'>
+        <ul class="m-elements">
           <li>
             <strong>Erhebung von Zugriffsdaten und Logfiles: </strong>Wir selbst
             (bzw. unser Webhostinganbieter) erheben Daten zu jedem Zugriff auf
@@ -468,7 +474,7 @@ const Privacy = () => {
             ausgenommen.
           </li>
         </ul>
-        <h2 id='m182'>Kontakt- und Anfragenverwaltung</h2>
+        <h2 id="m182">Kontakt- und Anfragenverwaltung</h2>
         <p>
           Bei der Kontaktaufnahme mit uns (z.B. per Kontaktformular, E-Mail,
           Telefon oder via soziale Medien) sowie im Rahmen bestehender Nutzer-
@@ -484,7 +490,7 @@ const Privacy = () => {
           Grundlage der berechtigten Interessen an der Beantwortung der Anfragen
           und Pflege von Nutzer- bzw. Geschäftsbeziehungen.
         </p>
-        <ul class='m-elements'>
+        <ul class="m-elements">
           <li>
             <strong>Verarbeitete Datenarten:</strong>
             Bestandsdaten (z.B. Namen, Adressen); Kontaktdaten (z.B. E-Mail,
@@ -505,7 +511,7 @@ const Privacy = () => {
             DSGVO).
           </li>
         </ul>
-        <h2 id='m15'>Änderung und Aktualisierung der Datenschutzerklärung</h2>
+        <h2 id="m15">Änderung und Aktualisierung der Datenschutzerklärung</h2>
         <p>
           Wir bitten Sie, sich regelmäßig über den Inhalt unserer
           Datenschutzerklärung zu informieren. Wir passen die
@@ -521,7 +527,7 @@ const Privacy = () => {
           bitten wir zu beachten, dass die Adressen sich über die Zeit ändern
           können und bitten die Angaben vor Kontaktaufnahme zu prüfen.
         </p>
-        <h2 id='m10'>Rechte der betroffenen Personen</h2>
+        <h2 id="m10">Rechte der betroffenen Personen</h2>
         <p>
           Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu, die
           sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
@@ -589,7 +595,7 @@ const Privacy = () => {
             Vorgaben der DSGVO verstößt.
           </li>
         </ul>
-        <h2 id='m42'>Begriffsdefinitionen</h2>
+        <h2 id="m42">Begriffsdefinitionen</h2>
         <p>
           In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser
           Datenschutzerklärung verwendeten Begrifflichkeiten. Viele der Begriffe
@@ -598,7 +604,7 @@ const Privacy = () => {
           Erläuterungen sollen dagegen vor allem dem Verständnis dienen. Die
           Begriffe sind alphabetisch sortiert.
         </p>
-        <ul class='glossary'>
+        <ul class="glossary">
           <li>
             <strong>Personenbezogene Daten:</strong>
             "Personenbezogene Daten“ sind alle Informationen, die sich auf eine
@@ -628,18 +634,18 @@ const Privacy = () => {
             das Auswerten, das Speichern, das Übermitteln oder das Löschen.
           </li>
         </ul>
-        <p class='seal'>
+        <p class="seal">
           <a
-            href='https://datenschutz-generator.de/'
-            title='Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken.'
-            target='_blank'
-            rel='noopener noreferrer nofollow'
+            href="https://datenschutz-generator.de/"
+            title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
+            target="_blank"
+            rel="noopener noreferrer nofollow"
           >
             <img
-              src='https://datenschutz-generator.de/wp-content/plugins/ts-dsg/images/dsg-seal/dsg-seal-pp-de.png'
-              alt='Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken.'
-              width='250'
-              height='250'
+              src="https://datenschutz-generator.de/wp-content/plugins/ts-dsg/images/dsg-seal/dsg-seal-pp-de.png"
+              alt="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
+              width="250"
+              height="250"
             ></img>
           </a>
         </p>

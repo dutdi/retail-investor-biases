@@ -7,7 +7,13 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: "100%",
+    width: "80%",
+    [theme.breakpoints.up("md")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "50%",
+    },
     height: "700px",
     margin: "30px",
     backgroundColor: "white",
