@@ -12,8 +12,8 @@ import { db } from "../helpers/Firebase";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "80%",
-    height: "700px",
-    margin: "30px",
+    height: "80%",
+    /*   margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
   },
@@ -39,14 +39,32 @@ const useStyles = makeStyles((theme) => ({
     color: "#0065bd",
   },
   options: {
-    "& > *": {
-      margin: theme.spacing(6, 3),
+    [theme.breakpoints.up("md")]: {
+      "& > *": {
+        margin: theme.spacing(6, 3),
+      },
+    },
+    [theme.breakpoints.up("lg")]: {
+      "& > *": {
+        margin: theme.spacing(6, 3),
+      },
     },
     spacing: 0,
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "red",
+  },
+  ImgUnderPaper: {
+    maxWidth: "100%",
+    maxHeight: "65%",
+    [theme.breakpoints.up("md")]: {
+      maxWidth: "65%",
+      maxHeight: "65%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      maxWidth: "65%",
+      maxHeight: "65%",
+    },
   },
 }));
 /*  useEventListener("keydown", handleKeyPress); */
@@ -280,8 +298,11 @@ const BiasTest = () => {
                     E
                   </Button>
                   <Typography
-                    variant="h5"
-                    style={{ color: "green", fontWeight: 600 }}
+                    style={{
+                      color: "green",
+                      fontWeight: 600,
+                      fontSize: "11px",
+                    }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Typography>
@@ -299,8 +320,7 @@ const BiasTest = () => {
                     I
                   </Button>
                   <Typography
-                    variant="h5"
-                    style={{ color: "red", fontWeight: 600 }}
+                    style={{ color: "red", fontWeight: 600, fontSize: "11px" }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Typography>
@@ -362,7 +382,7 @@ const BiasTest = () => {
               </Typography>
               <Paper>
                 <img
-                  style={{ maxWidth: "65%", maxHeight: "65%" }}
+                  className={classes.ImgUnderPaper}
                   alt={BiasEducationCenter[biasIndex].bias}
                   src={BiasEducationCenter[biasIndex].categoriesAndItems}
                 />
