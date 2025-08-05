@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(2, 0, 0, 0),
     },
     width: "80%",
-    height: "700px",
-    margin: "30px",
+    height: "100%",
+    /*  margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
     [theme.breakpoints.up("md")]: {

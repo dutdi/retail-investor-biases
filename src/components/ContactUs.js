@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       width: "50%",
     },
-    height: "700px",
-    margin: "30px",
+    height: "100%",
+    /*    margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
   },
