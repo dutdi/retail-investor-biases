@@ -37,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     color: "#0065bd",
   },
+  text5: {
+    fontWeight: 600,
+    fontSize: "11px",
+    [theme.breakpoints.up("md")]: { fontWeight: 600, fontSize: "15px" },
+    [theme.breakpoints.up("lg")]: { fontWeight: 600, fontSize: "20px" },
+  },
   options: {
     [theme.breakpoints.up("md")]: {
       "& > *": {
@@ -284,8 +290,7 @@ const BiasTest = () => {
                 </h2>
               )}
               <Grid container className={classes.options}>
-                <Grid item xs={5}>
-                  Press{" "}
+                <Grid item xs={5} className={classes.text5}>
                   <Button
                     onClick={(e) => handleKeyPress(e)}
                     style={{
@@ -297,17 +302,13 @@ const BiasTest = () => {
                     E
                   </Button>
                   <Typography
-                    style={{
-                      color: "green",
-                      fontWeight: 600,
-                      fontSize: "11px",
-                    }}
+                    className={classes.text5}
+                    style={{ color: "green" }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Typography>
                 </Grid>
-                <Grid item xs={5}>
-                  Press{" "}
+                <Grid item xs={5} className={classes.text5}>
                   <Button
                     onClick={(e) => handleKeyPress(e)}
                     style={{
@@ -319,7 +320,8 @@ const BiasTest = () => {
                     I
                   </Button>
                   <Typography
-                    style={{ color: "red", fontWeight: 600, fontSize: "11px" }}
+                    className={classes.text5}
+                    style={{ color: "red" }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Typography>
