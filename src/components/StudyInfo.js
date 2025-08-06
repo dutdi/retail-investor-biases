@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
     },
     width: "80%px",
     height: "80%",
-    /* margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
   },

@@ -9,6 +9,7 @@
   zoom: 0.8; /* Other non-webkit browsers */
   zoom: 80%; /* Webkit browsers */
   /* min-height: 100vh; */
+  padding-top: 0px;
 }
 .AppMain {
   flex-grow: 1;

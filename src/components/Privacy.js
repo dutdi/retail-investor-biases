@@ -3,12 +3,8 @@ import { makeStyles, Paper, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
-      margin: theme.spacing(2, 0, 0, 0),
-    },
     width: "80%",
     height: "100%",
-    /*  margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
     [theme.breakpoints.up("md")]: {

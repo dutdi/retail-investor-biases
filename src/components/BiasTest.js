@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "80%",
     height: "80%",
-    /*   margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
   },

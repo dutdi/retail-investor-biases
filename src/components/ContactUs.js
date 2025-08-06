@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
       width: "50%",
     },
     height: "100%",
-    /*    margin: "30px", */
     backgroundColor: "white",
     textAlign: "center",
   },
