@@ -123,7 +123,7 @@ const BiasTest = () => {
     setSelectedAnswer("-1");
   };
 
-  const handleKeyPress = (event) => {
+  /*   const handleKeyPress = (event) => {
     if (
       showQuestion &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
@@ -137,6 +137,38 @@ const BiasTest = () => {
       } else if (
         event.target.textContent === "I" ||
         event.target.textContent === "i"
+      ) {
+        setShowWrongButton(false);
+        setSelectedAnswer("B");
+      } else {
+        setShowWrongButton(true);
+      }
+    }
+  }; */
+  const handle_key_green = () => {
+    if (
+      showQuestion &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
+    ) {
+      if (
+        showQuestion &&
+        !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
+      ) {
+        setShowWrongButton(false);
+        setSelectedAnswer("A");
+      } else {
+        setShowWrongButton(true);
+      }
+    }
+  };
+  const handle_key_red = () => {
+    if (
+      showQuestion &&
+      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
+    ) {
+      if (
+        showQuestion &&
+        !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
       ) {
         setShowWrongButton(false);
         setSelectedAnswer("B");
@@ -301,39 +333,39 @@ const BiasTest = () => {
               <Grid container className={classes.options}>
                 <Grid item xs={5} className={classes.text5}>
                   <Button
-                    onClick={(e) => handleKeyPress(e)}
+                    onClick={handle_key_green}
                     style={{
                       backgroundColor: "#0065bd",
                       color: "white",
                       margin: "12px",
                     }}
                   >
-                    E
+                    {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Button>
-                  <Typography
+                  {/* <Typography
                     className={classes.text5}
                     style={{ color: "green" }}
                   >
-                    {BiasEducationCenter[biasIndex].questions[questionIndex].A}
-                  </Typography>
+                    A
+                  </Typography> */}
                 </Grid>
                 <Grid item xs={5} className={classes.text5}>
                   <Button
-                    onClick={(e) => handleKeyPress(e)}
+                    onClick={handle_key_red}
                     style={{
                       backgroundColor: "#0065bd",
                       color: "white",
                       margin: "12px",
                     }}
                   >
-                    I
+                    {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Button>
-                  <Typography
+                  {/* <Typography
                     className={classes.text5}
                     style={{ color: "red" }}
                   >
-                    {BiasEducationCenter[biasIndex].questions[questionIndex].B}
-                  </Typography>
+                    B
+                  </Typography> */}
                 </Grid>
               </Grid>
               {BiasEducationCenter[biasIndex].questions[questionIndex]
