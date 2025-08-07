@@ -71,6 +71,15 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: "65%",
     },
   },
+  wrong_answer_text: {
+    fontSize: "10x",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "20px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "30px",
+    },
+  },
 }));
 /*  useEventListener("keydown", handleKeyPress); */
 const BiasTest = () => {
@@ -346,7 +355,10 @@ const BiasTest = () => {
                   delay={1000}
                   setShowWrongAnswer={setShowWrongAnswer}
                   children={
-                    <Typography variant="h5" gutterBottom>
+                    <Typography
+                      /* variant="h5" */ gutterBottom
+                      className={classes.wrong_answer_text}
+                    >
                       Wrong answer! ❌
                     </Typography>
                   }

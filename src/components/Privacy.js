@@ -14,17 +14,24 @@ const useStyles = makeStyles((theme) => ({
       width: "50%",
     },
   },
+  privacy_word: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "25px",
+    [theme.breakpoints.up("md")]: {
+      fonstSize: "35px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "40px",
+    },
+  },
 }));
 
 const Privacy = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography
-        variant="h4"
-        gutterBottom
-        style={{ backgroundColor: "#0065bd", color: "white" }}
-      >
+      <Typography variant="h4" gutterBottom className={classes.privacy_word}>
         Privacy
       </Typography>
       <Paper

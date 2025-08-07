@@ -4,9 +4,9 @@ import Image from "../img/landing.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
+    /*    "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
-    },
+    }, */
     width: "80%",
     [theme.breakpoints.up("md")]: {
       width: "70%",
@@ -51,12 +51,6 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: "10px",
   },
-  /* imgUnderBox: {
-    width: "100%",
-    height: "auto",
-    display: "flex",
-    justifyContent: "center",
-  }, */
 }));
 
 const ContactUs = () => {

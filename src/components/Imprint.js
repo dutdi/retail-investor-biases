@@ -14,17 +14,24 @@ const useStyles = makeStyles((theme) => ({
       width: "50%",
     },
   },
+  word_imprint: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "25px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "35px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "40px",
+    },
+  },
 }));
 
 const Imprint = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography
-        variant="h4"
-        gutterBottom
-        style={{ backgroundColor: "#0065bd", color: "white" }}
-      >
+      <Typography variant="h4" gutterBottom className={classes.word_imprint}>
         Imprint
       </Typography>
       <Paper

@@ -141,7 +141,7 @@ const Demographics = () => {
         Enter your details
       </Typography>
       <Box>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           <Grid item xs>
             <FormControl required className={classes.formControl}>
               <InputLabel htmlFor="age">Age</InputLabel>
@@ -191,7 +191,7 @@ const Demographics = () => {
             </FormControl>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           <Grid item xs>
             <FormControl required className={classes.formControl}>
               <InputLabel htmlFor="citizenship">
@@ -239,7 +239,7 @@ const Demographics = () => {
             </FormControl>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           <Grid item xs>
             <FormControl required className={classes.formControl}>
               <InputLabel htmlFor="education">
@@ -293,7 +293,7 @@ const Demographics = () => {
             </FormControl>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           <Grid item xs>
             <FormControl required className={classes.formControl}>
               <InputLabel htmlFor="investingDate">
@@ -341,7 +341,7 @@ const Demographics = () => {
             </FormControl>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           <Grid item xs>
             <FormControl required className={classes.formControl}>
               <Tooltip title="Total Investor Bias Tests previously performed on our platform">
