@@ -7,7 +7,6 @@ import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
 import { Context } from "../helpers/Context";
 import { db } from "../helpers/Firebase";
-/* import useEventListener from "@use-it/event-listener"; */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
     },
     spacing: 0,
     alignItems: "center",
-    display: "flex",
     justifyContent: "center",
   },
   ImgUnderPaper: {
@@ -81,7 +79,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-/*  useEventListener("keydown", handleKeyPress); */
 const BiasTest = () => {
   const classes = useStyles();
   const { submissionId } = useContext(Context);
@@ -89,17 +86,26 @@ const BiasTest = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showWrongAnswer, setShowWrongAnswer] = useState(false);
-  const [showWrongButton, setShowWrongButton] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
   const [startTime, setStartTime] = useState(false);
   const [biases, setBiases] = useState([]);
+  const [hideButtons, setHideButtons] = useState(false);
 
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
       shuffle(BiasEducationCenter[i].questions);
     }
   }, []);
+
+  useEffect(() => {
+    const isInstruction =
+      BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction;
+
+    if (isInstruction) {
+      setHideButtons(true);
+    }
+  }, [biasIndex, questionIndex]);
 
   useEffect(() => {
     let interval = null;
@@ -121,30 +127,8 @@ const BiasTest = () => {
     setShowQuestion(true);
     setStartTime(true);
     setSelectedAnswer("-1");
+    setHideButtons(false);
   };
-
-  /*   const handleKeyPress = (event) => {
-    if (
-      showQuestion &&
-      !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
-    ) {
-      if (
-        event.target.textContent === "E" ||
-        event.target.textContent === "e"
-      ) {
-        setShowWrongButton(false);
-        setSelectedAnswer("A");
-      } else if (
-        event.target.textContent === "I" ||
-        event.target.textContent === "i"
-      ) {
-        setShowWrongButton(false);
-        setSelectedAnswer("B");
-      } else {
-        setShowWrongButton(true);
-      }
-    }
-  }; */
   const handle_key_green = () => {
     if (
       showQuestion &&
@@ -154,10 +138,7 @@ const BiasTest = () => {
         showQuestion &&
         !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
       ) {
-        setShowWrongButton(false);
         setSelectedAnswer("A");
-      } else {
-        setShowWrongButton(true);
       }
     }
   };
@@ -170,10 +151,7 @@ const BiasTest = () => {
         showQuestion &&
         !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
       ) {
-        setShowWrongButton(false);
         setSelectedAnswer("B");
-      } else {
-        setShowWrongButton(true);
       }
     }
   };
@@ -330,7 +308,11 @@ const BiasTest = () => {
                   }
                 </h2>
               )}
-              <Grid container className={classes.options}>
+              <Grid
+                container
+                className={classes.options}
+                style={{ display: hideButtons ? "none" : "flex" }}
+              >
                 <Grid item xs={5} className={classes.text5}>
                   <Button
                     onClick={handle_key_green}
@@ -388,20 +370,13 @@ const BiasTest = () => {
                   setShowWrongAnswer={setShowWrongAnswer}
                   children={
                     <Typography
-                      /* variant="h5" */ gutterBottom
+                      gutterBottom
                       className={classes.wrong_answer_text}
                     >
                       Wrong answer! ❌
                     </Typography>
                   }
                 ></Expire>
-              )}
-              {showWrongButton && (
-                <div>
-                  <Typography variant="h5" gutterBottom>
-                    You can only press E and I keys
-                  </Typography>
-                </div>
               )}
             </div>
           ) : (
