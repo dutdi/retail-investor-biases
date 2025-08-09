@@ -80,10 +80,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   answer_buttons: {
-    fontSize: "10px",
+    fontSize: "14px",
     [theme.breakpoints.up("md")]: { fontSize: "14px" },
     [theme.breakpoints.up("lg")]: { fontSize: "18px" },
-    [theme.breakpoints.down("sm")]: { whiteSpace: "nowrap" },
+    [theme.breakpoints.down("sm")]: { whiteSpace: "nowrap", width: "auto" },
   },
   part_text: {
     backgroundColor: "#0065bd",
