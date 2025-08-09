@@ -43,13 +43,20 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: { fontWeight: 600, fontSize: "20px" },
   },
   options: {
-    "& > *": {
-      margin: theme.spacing(6, 3),
-    },
     spacing: 0,
     alignItems: "center",
     justifyContent: "center",
-    [theme.breakpoints.down("sm")]: { flexDirection: "column" },
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      "& > *": {
+        margin: theme.spacing(2, 2),
+      },
+    },
+    [theme.breakpoints.up("sm")]: {
+      "& > *": {
+        margin: theme.spacing(6, 3),
+      },
+    },
   },
   ImgUnderPaper: {
     maxWidth: "100%",
@@ -76,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "10px",
     [theme.breakpoints.up("md")]: { fontSize: "14px" },
     [theme.breakpoints.up("lg")]: { fontSize: "18px" },
-    /* [theme.breakpoints.down("sm")]: { margin: "18px" }, */
+    [theme.breakpoints.down("sm")]: { whiteSpace: "nowrap" },
   },
   part_text: {
     backgroundColor: "#0065bd",
