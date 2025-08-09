@@ -43,15 +43,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: { fontWeight: 600, fontSize: "20px" },
   },
   options: {
-    [theme.breakpoints.up("md")]: {
-      "& > *": {
-        margin: theme.spacing(6, 3),
-      },
-    },
-    [theme.breakpoints.up("lg")]: {
-      "& > *": {
-        margin: theme.spacing(6, 3),
-      },
+    "& > *": {
+      margin: theme.spacing(6, 3),
     },
     spacing: 0,
     alignItems: "center",
@@ -77,6 +70,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       fontSize: "30px",
     },
+  },
+  answer_buttons: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "10px",
+    [theme.breakpoints.up("md")]: { fontSize: "14px" },
+    [theme.breakpoints.up("lg")]: { fontSize: "18px" },
   },
 }));
 const BiasTest = () => {
@@ -309,45 +309,28 @@ const BiasTest = () => {
                 </h2>
               )}
               <Grid
-                container
+                alignItems="stretch"
+                spacing={2}
                 className={classes.options}
                 style={{ display: hideButtons ? "none" : "flex" }}
               >
                 <Grid item xs={5} className={classes.text5}>
                   <Button
+                    fullWidth
                     onClick={handle_key_green}
-                    style={{
-                      backgroundColor: "#0065bd",
-                      color: "white",
-                      margin: "12px",
-                    }}
+                    className={classes.answer_buttons}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Button>
-                  {/* <Typography
-                    className={classes.text5}
-                    style={{ color: "green" }}
-                  >
-                    A
-                  </Typography> */}
                 </Grid>
                 <Grid item xs={5} className={classes.text5}>
                   <Button
+                    fullWidth
                     onClick={handle_key_red}
-                    style={{
-                      backgroundColor: "#0065bd",
-                      color: "white",
-                      margin: "12px",
-                    }}
+                    className={classes.answer_buttons}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Button>
-                  {/* <Typography
-                    className={classes.text5}
-                    style={{ color: "red" }}
-                  >
-                    B
-                  </Typography> */}
                 </Grid>
               </Grid>
               {BiasEducationCenter[biasIndex].questions[questionIndex]
