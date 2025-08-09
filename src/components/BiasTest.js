@@ -10,6 +10,7 @@ import { db } from "../helpers/Firebase";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    padding: "21px",
     width: "80%",
     height: "80%",
     backgroundColor: "white",
@@ -32,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
   },
   text4: {
     textAlign: "center",
-    padding: "21px",
     fontWeight: "600",
     color: "#0065bd",
   },
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     spacing: 0,
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.down("sm")]: { flexDirection: "column" },
   },
   ImgUnderPaper: {
     maxWidth: "100%",
@@ -72,9 +73,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   answer_buttons: {
-    fontSize: "8px",
+    fontSize: "10px",
     [theme.breakpoints.up("md")]: { fontSize: "14px" },
     [theme.breakpoints.up("lg")]: { fontSize: "18px" },
+    /* [theme.breakpoints.down("sm")]: { margin: "18px" }, */
   },
   part_text: {
     backgroundColor: "#0065bd",
