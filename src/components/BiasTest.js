@@ -11,7 +11,7 @@ import { db } from "../helpers/Firebase";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "21px",
-    width: "80%",
+    width: "90%",
     height: "80%",
     backgroundColor: "white",
     textAlign: "center",
