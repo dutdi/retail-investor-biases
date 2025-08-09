@@ -79,8 +79,7 @@ const useStyles = makeStyles((theme) => ({
   part_text: {
     backgroundColor: "#0065bd",
     color: "white",
-    fontSize: "20px",
-    [theme.breakpoints.up("md")]: { fontSize: "30px" },
+    fontSize: "30px",
     [theme.breakpoints.up("lg")]: { fontSize: "40px" },
   },
 }));
