@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: "80%px",
+    width: "90%",
     height: "80%",
     backgroundColor: "white",
     textAlign: "center",

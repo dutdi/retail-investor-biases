@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(2, 2),
       },
     },
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       "& > *": {
         margin: theme.spacing(6, 3),
       },
