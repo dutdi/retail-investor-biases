@@ -72,11 +72,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   answer_buttons: {
-    backgroundColor: "#0065bd",
-    color: "white",
-    fontSize: "10px",
+    fontSize: "8px",
     [theme.breakpoints.up("md")]: { fontSize: "14px" },
     [theme.breakpoints.up("lg")]: { fontSize: "18px" },
+  },
+  part_text: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "20px",
+    [theme.breakpoints.up("md")]: { fontSize: "30px" },
+    [theme.breakpoints.up("lg")]: { fontSize: "40px" },
   },
 }));
 const BiasTest = () => {
@@ -282,7 +287,7 @@ const BiasTest = () => {
               <Typography
                 variant="h4"
                 gutterBottom
-                style={{ backgroundColor: "#0065bd", color: "white" }}
+                className={classes.part_text}
               >
                 {BiasEducationCenter[biasIndex].questions[questionIndex].part}
               </Typography>
@@ -319,6 +324,10 @@ const BiasTest = () => {
                     fullWidth
                     onClick={handle_key_green}
                     className={classes.answer_buttons}
+                    style={{
+                      backgroundColor: "#0065bd",
+                      color: "white",
+                    }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Button>
@@ -328,6 +337,7 @@ const BiasTest = () => {
                     fullWidth
                     onClick={handle_key_red}
                     className={classes.answer_buttons}
+                    style={{ backgroundColor: "#0065bd", color: "white" }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Button>
