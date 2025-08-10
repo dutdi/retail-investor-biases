@@ -327,7 +327,7 @@ const BiasTest = () => {
                 className={classes.options}
                 style={{ display: hideButtons ? "none" : "flex" }}
               >
-                <Grid item xs={5} className={classes.text5}>
+                <Grid item sm={5} className={classes.text5}>
                   <Button
                     fullWidth
                     onClick={handle_key_green}
@@ -340,7 +340,7 @@ const BiasTest = () => {
                     {BiasEducationCenter[biasIndex].questions[questionIndex].A}
                   </Button>
                 </Grid>
-                <Grid item xs={5} className={classes.text5}>
+                <Grid item sm={5} className={classes.text5}>
                   <Button
                     fullWidth
                     onClick={handle_key_red}
