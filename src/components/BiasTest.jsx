@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   wrong_answer_text: {
-    fontSize: "20x",
+    fontSize: "20px",
     [theme.breakpoints.up("md")]: {
       fontSize: "20px",
     },

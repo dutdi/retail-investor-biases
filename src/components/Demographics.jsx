@@ -61,7 +61,10 @@ const MenuProps = {
   },
 };
 
-const Demographics = () => {
+const Demographics = ({ sendFormIsOk }) => {
+  const sendData = () => {
+    sendFormIsOk(hasError); // send parent form is ok or not
+  };
   const classes = useStyles();
   const { setSubmissionId } = useContext(Context);
   const [details, setDetails] = useState({
@@ -387,7 +390,7 @@ const Demographics = () => {
             component={Link}
             to="/test"
             variant="contained"
-            onClick={submitForm}
+            onClick={(submitForm, sendData)}
           >
             Next
           </Button>

@@ -15,6 +15,7 @@ import "./App.css";
 
 function App() {
   const [submissionId, setSubmissionId] = useState("");
+  const [hasError, setHasError] = useState(false);
   return (
     <HashRouter>
       <Box className="UnderHashRouter">
@@ -26,43 +27,38 @@ function App() {
           <Context.Provider value={{ submissionId, setSubmissionId }}>
             <Box className="App">
               <Routes>
-                <Route exact path="/" element={<Landing></Landing>}></Route>
-                <Route
-                  exact
-                  path="study-info"
-                  element={<StudyInfo></StudyInfo>}
-                ></Route>
+                <Route exact path="/" element={<Landing />}></Route>
+                <Route exact path="study-info" element={<StudyInfo />}></Route>
                 <Route
                   exact
                   path="/demographics"
-                  element={<Demographics></Demographics>}
+                  element={
+                    <Demographics
+                      sendFormIsOk={(data) => {
+                        setHasError(!data);
+                      }}
+                    />
+                  }
                 ></Route>
-                <Route
-                  exact
-                  path="/test"
-                  element={<BiasTest></BiasTest>}
-                ></Route>
-                <Route
-                  exact
-                  path="/imprint"
-                  element={<Imprint></Imprint>}
-                ></Route>
-                <Route
-                  exact
-                  path="/privacy"
-                  element={<Privacy></Privacy>}
-                ></Route>
-                <Route
-                  exact
-                  path="/contact-us"
-                  element={<ContactUs></ContactUs>}
-                ></Route>
+                {hasError ? (
+                  <Route
+                    exact
+                    path="/test"
+                    element={<BiasTest onEnter={() => console.log("salam")} />}
+                  ></Route>
+                ) : (
+                  ""
+                )}
+
+                <Route exact path="/imprint" element={<Imprint />}></Route>
+                <Route exact path="/privacy" element={<Privacy />}></Route>
+                <Route exact path="/contact-us" element={<ContactUs />}></Route>
               </Routes>
             </Box>
           </Context.Provider>
         </Box>
         <Box>
-          <Footer></Footer>
+          <Footer />
         </Box>
       </Box>
     </HashRouter>
