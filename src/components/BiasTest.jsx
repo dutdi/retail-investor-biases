@@ -322,6 +322,7 @@ const BiasTest = () => {
                 </h2>
               )}
               <Grid
+                container
                 alignItems="stretch"
                 spacing={2}
                 className={classes.options}
@@ -333,7 +334,7 @@ const BiasTest = () => {
                     onClick={handle_key_green}
                     className={classes.answer_buttons}
                     style={{
-                      backgroundColor: "#0065bd",
+                      backgroundColor: "green",
                       color: "white",
                     }}
                   >
@@ -345,7 +346,7 @@ const BiasTest = () => {
                     fullWidth
                     onClick={handle_key_red}
                     className={classes.answer_buttons}
-                    style={{ backgroundColor: "#0065bd", color: "white" }}
+                    style={{ backgroundColor: "red", color: "white" }}
                   >
                     {BiasEducationCenter[biasIndex].questions[questionIndex].B}
                   </Button>
@@ -396,10 +397,6 @@ const BiasTest = () => {
               <Typography variant="h6" gutterBottom className={classes.text3}>
                 Please, make sure you understand what this bias means, you will
                 be needing this moving forward.
-              </Typography>
-              <Typography variant="h6" gutterBottom className={classes.text2}>
-                For this test you will use E and I to categorize items as fast
-                as you can.
               </Typography>
               <Paper>
                 <img
