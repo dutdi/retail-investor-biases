@@ -7,6 +7,7 @@ import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
 import { Context } from "../helpers/Context";
 import { db } from "../helpers/Firebase";
+import MyContext from "../react_context/MyContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,6 +95,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 const BiasTest = () => {
   const classes = useStyles();
+
+  const { detailsButton, setDetailsButton } = useContext(MyContext);
   const { submissionId } = useContext(Context);
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -134,6 +137,7 @@ const BiasTest = () => {
 
   const nextButtonClicked = () => {
     setShowQuestion(true);
+    setDetailsButton(true);
   };
 
   const continueButtonClicked = () => {
@@ -286,7 +290,9 @@ const BiasTest = () => {
 
   return (
     <>
-      {showResult ? (
+      {!detailsButton ? (
+        <p>Salam</p>
+      ) : showResult ? (
         <Result biases={biases}></Result>
       ) : (
         <div className={classes.root}>

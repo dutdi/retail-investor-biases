@@ -25,6 +25,7 @@ import { totalInvestments } from "../helpers/lists/TotalInvestmentList";
 import { ibts } from "../helpers/lists/IBTList";
 import { Context } from "../helpers/Context";
 import { db } from "../helpers/Firebase";
+import MyContext from "../react_context/MyContext";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -61,9 +62,11 @@ const MenuProps = {
   },
 };
 
-const Demographics = ({ sendFormIsOk }) => {
+const Demographics = () => {
+  const { setDetailsButton } = useContext(MyContext);
   const sendData = () => {
-    sendFormIsOk(hasError); // send parent form is ok or not
+    setDetailsButton(hasError);
+    console.log();
   };
   const classes = useStyles();
   const { setSubmissionId } = useContext(Context);
@@ -390,7 +393,7 @@ const Demographics = ({ sendFormIsOk }) => {
             component={Link}
             to="/test"
             variant="contained"
-            onClick={(submitForm, sendData)}
+            onClick={(submitForm(), sendData())}
           >
             Next
           </Button>
