@@ -7,7 +7,7 @@ import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
 import { Context } from "../helpers/Context";
 import { db } from "../helpers/Firebase";
-import MyContext from "../react_context/MyContext";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "11px",
     [theme.breakpoints.up("md")]: { fontWeight: 600, fontSize: "15px" },
     [theme.breakpoints.up("lg")]: { fontWeight: 600, fontSize: "20px" },
+  },
+  text6: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "30px",
+    [theme.breakpoints.up("lg")]: { fontSize: "40px" },
   },
   options: {
     spacing: 0,
@@ -86,17 +92,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: { fontSize: "18px" },
     [theme.breakpoints.down("sm")]: { whiteSpace: "nowrap", width: "auto" },
   },
-  part_text: {
-    backgroundColor: "#0065bd",
-    color: "white",
-    fontSize: "30px",
-    [theme.breakpoints.up("lg")]: { fontSize: "40px" },
-  },
 }));
 const BiasTest = () => {
   const classes = useStyles();
-
-  const { detailsButton, setDetailsButton } = useContext(MyContext);
+  const { detailsButton } = useContext(Context);
   const { submissionId } = useContext(Context);
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -107,7 +106,11 @@ const BiasTest = () => {
   const [startTime, setStartTime] = useState(false);
   const [biases, setBiases] = useState([]);
   const [hideButtons, setHideButtons] = useState(false);
+  const navigate = useNavigate();
 
+  const GoDemographics = () => {
+    navigate("/demographics", { state: { from: "/test" } });
+  };
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
       shuffle(BiasEducationCenter[i].questions);
@@ -137,7 +140,6 @@ const BiasTest = () => {
 
   const nextButtonClicked = () => {
     setShowQuestion(true);
-    setDetailsButton(true);
   };
 
   const continueButtonClicked = () => {
@@ -290,19 +292,29 @@ const BiasTest = () => {
 
   return (
     <>
-      {!detailsButton ? (
-        <p>Salam</p>
+      {detailsButton ? (
+        <>
+          <Typography className={classes.text1}>
+            You should enter your details first to proceed.
+          </Typography>
+          <Button
+            onClick={GoDemographics}
+            style={{
+              backgroundColor: "#0065bd",
+              color: "white",
+              margin: "12px",
+            }}
+          >
+            Go back
+          </Button>
+        </>
       ) : showResult ? (
         <Result biases={biases}></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (
             <div tabIndex="0">
-              <Typography
-                variant="h4"
-                gutterBottom
-                className={classes.part_text}
-              >
+              <Typography variant="h4" gutterBottom className={classes.text6}>
                 {BiasEducationCenter[biasIndex].questions[questionIndex].part}
               </Typography>
               {BiasEducationCenter[biasIndex].questions[questionIndex]

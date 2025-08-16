@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Box, CssBaseline } from "@material-ui/core";
 import Navbar from "./components/Navbar";
@@ -12,55 +12,46 @@ import Footer from "./components/Footer";
 import Imprint from "./components/Imprint";
 import { Context } from "./helpers/Context";
 import "./App.css";
-/* import ProtectedRoutes from "./utils/ProtectedRoutes"; */
-import MyContext from "./react_context/MyContext";
+import RouteChangeListener from "./helpers/RouteChangeListener";
 
 function App() {
   const [submissionId, setSubmissionId] = useState("");
-  const [detailsButton, setDetailsButton] = useState(false);
+  const [detailsButton, setDetailsButton] = useState(true);
+
   return (
-    <MyContext.Provider value={{ detailsButton, setDetailsButton }}>
+    <Context.Provider
+      value={{ detailsButton, setDetailsButton, submissionId, setSubmissionId }}
+    >
       <HashRouter>
         <Box className="UnderHashRouter">
+          <RouteChangeListener />
           <CssBaseline />
           <Box>
             <Navbar></Navbar>
           </Box>
           <Box className="AppMain">
-            <Context.Provider value={{ submissionId, setSubmissionId }}>
-              <Box className="App">
-                <Routes>
-                  <Route exact path="/" element={<Landing />}></Route>
-                  <Route
-                    exact
-                    path="study-info"
-                    element={<StudyInfo />}
-                  ></Route>
-                  <Route
-                    exact
-                    path="/demographics"
-                    element={<Demographics />}
-                  ></Route>
-                  {/* <Route element={<ProtectedRoutes />}> */}
-                  <Route exact path="/test" element={<BiasTest />}></Route>
-                  {/* </Route> */}
-                  <Route exact path="/imprint" element={<Imprint />}></Route>
-                  <Route exact path="/privacy" element={<Privacy />}></Route>
-                  <Route
-                    exact
-                    path="/contact-us"
-                    element={<ContactUs />}
-                  ></Route>
-                </Routes>
-              </Box>
-            </Context.Provider>
+            <Box className="App">
+              <Routes>
+                <Route exact path="/" element={<Landing />}></Route>
+                <Route exact path="study-info" element={<StudyInfo />}></Route>
+                <Route
+                  exact
+                  path="/demographics"
+                  element={<Demographics />}
+                ></Route>
+                <Route exact path="/test" element={<BiasTest />}></Route>
+                <Route exact path="/imprint" element={<Imprint />}></Route>
+                <Route exact path="/privacy" element={<Privacy />}></Route>
+                <Route exact path="/contact-us" element={<ContactUs />}></Route>
+              </Routes>
+            </Box>
           </Box>
           <Box>
             <Footer />
           </Box>
         </Box>
       </HashRouter>
-    </MyContext.Provider>
+    </Context.Provider>
   );
 }
 
