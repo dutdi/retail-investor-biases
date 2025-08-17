@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from "react";
-import { doc, setDoc } from "firebase/firestore";
+import { useState, useEffect /* useContext */ } from "react";
+/* import { doc, setDoc } from "firebase/firestore"; */
 import { Button, Grid, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Result from "./Result";
 import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
-import { Context } from "../helpers/Context";
-import { db } from "../helpers/Firebase";
-import { useNavigate } from "react-router-dom";
+/* import { Context } from "../helpers/Context";
+import { db } from "../helpers/Firebase"; */
+/* import { useNavigate } from "react-router-dom"; */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -95,8 +95,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 const BiasTest = () => {
   const classes = useStyles();
-  const { detailsButton } = useContext(Context);
-  const { submissionId } = useContext(Context);
+  /*   const { detailsButton } = useContext(Context);
+  const { submissionId } = useContext(Context); */
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
@@ -106,11 +106,11 @@ const BiasTest = () => {
   const [startTime, setStartTime] = useState(false);
   const [biases, setBiases] = useState([]);
   const [hideButtons, setHideButtons] = useState(false);
-  const navigate = useNavigate();
+  /*   const navigate = useNavigate(); */
 
-  const GoDemographics = () => {
+  /*   const GoDemographics = () => {
     navigate("/demographics", { state: { from: "/test" } });
-  };
+  }; */
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
       shuffle(BiasEducationCenter[i].questions);
@@ -175,7 +175,7 @@ const BiasTest = () => {
     }
   };
 
-  const setSelectedAnswer = (answer) => {
+  const setSelectedAnswer = async (answer) => {
     const timeSpent = time;
     //Check if chose correct answer
     if (
@@ -227,7 +227,7 @@ const BiasTest = () => {
         setQuestionIndex(0);
         setBiasIndex(biasIndex + 1);
       } else {
-        saveToDB();
+        //await saveToDB();
         setStartTime(false);
         checkBiases();
         setBiasIndex(0);
@@ -237,7 +237,7 @@ const BiasTest = () => {
     }
   };
 
-  const saveToDB = async () => {
+  /*   const saveToDB = async () => {
     const submissionDoc = doc(db, "submissions", submissionId);
     const biasFields = {
       biasDetails: {},
@@ -258,7 +258,7 @@ const BiasTest = () => {
     }
 
     await setDoc(submissionDoc, biasFields, { merge: true });
-  };
+  }; */
 
   function shuffle(array) {
     var start = 1;
@@ -292,23 +292,7 @@ const BiasTest = () => {
 
   return (
     <>
-      {detailsButton ? (
-        <>
-          <Typography className={classes.text1}>
-            You should enter your details first to proceed.
-          </Typography>
-          <Button
-            onClick={GoDemographics}
-            style={{
-              backgroundColor: "#0065bd",
-              color: "white",
-              margin: "12px",
-            }}
-          >
-            Go back
-          </Button>
-        </>
-      ) : showResult ? (
+      {showResult ? (
         <Result biases={biases}></Result>
       ) : (
         <div className={classes.root}>

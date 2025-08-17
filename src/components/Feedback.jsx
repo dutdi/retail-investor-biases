@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { doc, setDoc } from 'firebase/firestore';
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
+/* import { doc, setDoc } from "firebase/firestore"; */
 import {
   Box,
   Button,
@@ -10,22 +10,22 @@ import {
   makeStyles,
   Select,
   Typography,
-} from '@material-ui/core';
-import { feedbackAccuracies } from '../helpers/lists/FeedbackAccuracyList';
-import { feedbackRecommendations } from '../helpers/lists/FeedbackRecommendationList';
-import { Context } from '../helpers/Context';
-import { db } from '../helpers/Firebase';
+} from "@material-ui/core";
+import { feedbackAccuracies } from "../helpers/lists/FeedbackAccuracyList";
+import { feedbackRecommendations } from "../helpers/lists/FeedbackRecommendationList";
+import { Context } from "../helpers/Context";
+/* import { db } from "../helpers/Firebase"; */
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: '1200px',
-    height: '700px',
-    margin: '30px',
-    backgroundColor: 'white',
-    textAlign: 'center',
+    width: "1200px",
+    height: "700px",
+    margin: "30px",
+    backgroundColor: "white",
+    textAlign: "center",
   },
   formControl: {
     margin: theme.spacing(3),
@@ -35,18 +35,18 @@ const useStyles = makeStyles((theme) => ({
 
 const Feedback = () => {
   const classes = useStyles();
-  const { submissionId, setSubmissionId } = useContext(Context);
+  const { /* submissionId, */ setSubmissionId } = useContext(Context);
   const [feedback, setFeedback] = useState({
-    feedbackAccuracy: '',
-    feedbackRecommendation: '',
+    feedbackAccuracy: "",
+    feedbackRecommendation: "",
   });
   const [hasError, setHasError] = useState(true);
 
   useEffect(() => {
     const checkAllEntered = () => {
       if (
-        feedback.feedbackAccuracy === '' ||
-        feedback.feedbackRecommendation === ''
+        feedback.feedbackAccuracy === "" ||
+        feedback.feedbackRecommendation === ""
       ) {
         setHasError(true);
       } else {
@@ -64,17 +64,17 @@ const Feedback = () => {
     });
   };
 
-  const sendFeedback = () => {
-    saveToDB();
+  const sendFeedback = async () => {
+    //await saveToDB();
     setFeedback({
-      feedbackAccuracy: '',
-      feedbackRecommendation: '',
+      feedbackAccuracy: "",
+      feedbackRecommendation: "",
     });
-    setSubmissionId('');
+    setSubmissionId("");
   };
 
-  const saveToDB = async () => {
-    const submissionDoc = doc(db, 'submissions', submissionId);
+  /*   const saveToDB = async () => {
+    const submissionDoc = doc(db, "submissions", submissionId);
     const feedbackFields = {
       feedbackDetails: {
         accuracy: feedback.feedbackAccuracy,
@@ -82,42 +82,42 @@ const Feedback = () => {
       },
     };
     await setDoc(submissionDoc, feedbackFields, { merge: true });
-  };
+  }; */
 
   return (
     <div className={classes.root}>
       <Typography
-        variant='h4'
+        variant="h4"
         gutterBottom
-        style={{ backgroundColor: '#0065bd', color: 'white' }}
+        style={{ backgroundColor: "#0065bd", color: "white" }}
       >
         Give us a feedback
       </Typography>
       <Box pt={8}>
         <Grid
           container
-          direction='column'
-          justifyContent='center'
-          alignItems='stretch'
+          direction="column"
+          justifyContent="center"
+          alignItems="stretch"
         >
           <Grid item>
-            <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
+            <Typography variant="h6" gutterBottom style={{ fontWeight: 600 }}>
               On a scale of 1-10 how accurate do you think your result was?
             </Typography>
           </Grid>
           <Grid item>
             <FormControl required className={classes.formControl}>
-              <InputLabel htmlFor='feedbackAccuracy'>Accuracy</InputLabel>
+              <InputLabel htmlFor="feedbackAccuracy">Accuracy</InputLabel>
               <Select
                 native
                 value={feedback.feedbackAccuracy}
                 onChange={handleChange}
                 inputProps={{
-                  name: 'feedbackAccuracy',
-                  id: 'feedbackAccuracy',
+                  name: "feedbackAccuracy",
+                  id: "feedbackAccuracy",
                 }}
               >
-                <option aria-label='None' value='' />
+                <option aria-label="None" value="" />
                 {feedbackAccuracies.map((feedbackAccuracy) => (
                   <option value={feedbackAccuracy}>{feedbackAccuracy}</option>
                 ))}
@@ -125,13 +125,13 @@ const Feedback = () => {
             </FormControl>
           </Grid>
           <Grid item>
-            <Typography variant='h6' gutterBottom style={{ fontWeight: 600 }}>
+            <Typography variant="h6" gutterBottom style={{ fontWeight: 600 }}>
               How likely are you to recommend this tool to someone else?
             </Typography>
           </Grid>
           <Grid item>
             <FormControl required className={classes.formControl}>
-              <InputLabel htmlFor='feedbackRecommendation'>
+              <InputLabel htmlFor="feedbackRecommendation">
                 Recommendation
               </InputLabel>
               <Select
@@ -139,11 +139,11 @@ const Feedback = () => {
                 value={feedback.feedbackRecommendation}
                 onChange={handleChange}
                 inputProps={{
-                  name: 'feedbackRecommendation',
-                  id: 'feedbackRecommendation',
+                  name: "feedbackRecommendation",
+                  id: "feedbackRecommendation",
                 }}
               >
-                <option aria-label='None' value='' />
+                <option aria-label="None" value="" />
                 {feedbackRecommendations.map((feedbackRecommendation) => (
                   <option value={feedbackRecommendation}>
                     {feedbackRecommendation}
@@ -155,15 +155,15 @@ const Feedback = () => {
         </Grid>
       </Box>
       {hasError ? (
-        <Typography variant='h6' gutterBottom style={{ color: 'red' }}>
+        <Typography variant="h6" gutterBottom style={{ color: "red" }}>
           Enter all the fields*
         </Typography>
       ) : (
         <Button
-          style={{ backgroundColor: '#0065bd', color: 'white' }}
+          style={{ backgroundColor: "#0065bd", color: "white" }}
           component={Link}
-          to='/'
-          variant='contained'
+          to="/"
+          variant="contained"
           onClick={sendFeedback}
         >
           Send
@@ -171,9 +171,9 @@ const Feedback = () => {
       )}
       <Box pt={18}>
         <Typography
-          variant='h5'
+          variant="h5"
           gutterBottom
-          style={{ backgroundColor: '#0065bd', color: 'white' }}
+          style={{ backgroundColor: "#0065bd", color: "white" }}
         >
           Thank you!
         </Typography>

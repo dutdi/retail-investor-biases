@@ -39,7 +39,11 @@ function App() {
                   path="/demographics"
                   element={<Demographics />}
                 ></Route>
-                <Route exact path="/test" element={<BiasTest />}></Route>
+                <Route
+                  exact
+                  path="/test"
+                  element={detailsButton ? <Demographics /> : <BiasTest />}
+                ></Route>
                 <Route exact path="/imprint" element={<Imprint />}></Route>
                 <Route exact path="/privacy" element={<Privacy />}></Route>
                 <Route exact path="/contact-us" element={<ContactUs />}></Route>

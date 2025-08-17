@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { doc, setDoc } from 'firebase/firestore';
+import React, { useState, useEffect, useContext } from "react";
+import { doc, setDoc } from "firebase/firestore";
 import {
   Button,
   makeStyles,
@@ -11,28 +11,28 @@ import {
   TableHead,
   TableRow,
   Typography,
-} from '@material-ui/core';
-import { Context } from '../helpers/Context';
-import { db } from '../helpers/Firebase';
-import Feedback from './Feedback';
-import { BiasEducationCenter } from '../data/BiasEducationCenter';
+} from "@material-ui/core";
+import { Context } from "../helpers/Context";
+import { db } from "../helpers/Firebase";
+import Feedback from "./Feedback";
+import { BiasEducationCenter } from "../data/BiasEducationCenter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
     },
-    width: '1200px',
-    height: '700px',
-    margin: '30px',
-    backgroundColor: 'white',
-    textAlign: 'center',
+    width: "1200px",
+    height: "700px",
+    margin: "30px",
+    backgroundColor: "white",
+    textAlign: "center",
   },
   paper: {
     height: 450,
-    width: '100%',
+    width: "100%",
     marginTop: theme.spacing.unit * 3,
-    overflow: 'auto',
+    overflow: "auto",
   },
 }));
 
@@ -47,19 +47,27 @@ const Result = ({ biases }) => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    removeDuplicates(biases);
-    setRows([]);
-    for (var i = 0; i < biases.length; i++) {
-      const name = BiasEducationCenter[biases[i]].bias.slice(
-        9,
-        BiasEducationCenter[biases[i]].bias.length
-      );
-      const tips = BiasEducationCenter[biases[i]].tips
-        .split('\n')
-        .map((str) => <p>{str}</p>);
-      setRows((rows) => [...rows, createData(name, tips)]);
-      saveToDB();
-    }
+    const run = async () => {
+      removeDuplicates(biases);
+      setRows([]);
+      console.log("biases", biases);
+      debugger;
+      for (let i = 0; i < biases.length; i++) {
+        const name = BiasEducationCenter[biases[i]].bias.slice(
+          9,
+          BiasEducationCenter[biases[i]].bias.length
+        );
+        console.log("name", name);
+        const tips = BiasEducationCenter[biases[i]].tips
+          .split("\n")
+          .map((str, idx) => <p key={idx}>{str}</p>);
+
+        setRows((rows) => [...rows, createData(name, tips)]);
+        await saveToDB(); // ✅ safe inside async fn
+      }
+    };
+
+    run();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -69,7 +77,7 @@ const Result = ({ biases }) => {
   };
 
   const saveToDB = async () => {
-    const submissionDoc = doc(db, 'submissions', submissionId);
+    const submissionDoc = doc(db, "submissions", submissionId);
     const resultFields = {
       resultDetails: {},
     };
@@ -79,7 +87,7 @@ const Result = ({ biases }) => {
         9,
         BiasEducationCenter[biases[i]].bias.length
       );
-      resultFields.resultDetails['result' + i] = biasName;
+      resultFields.resultDetails["result" + i] = biasName;
     }
     await setDoc(submissionDoc, resultFields, { merge: true });
   };
@@ -95,27 +103,27 @@ const Result = ({ biases }) => {
       ) : (
         <div className={classes.root}>
           <Typography
-            variant='h4'
+            variant="h4"
             gutterBottom
-            style={{ backgroundColor: '#0065bd', color: 'white' }}
+            style={{ backgroundColor: "#0065bd", color: "white" }}
           >
             Result
           </Typography>
-          <Typography variant='h5' gutterBottom>
+          <Typography variant="h5" gutterBottom>
             You tend to show the following biases:
           </Typography>
           <Paper className={classes.paper}>
             <TableContainer component={Paper}>
-              <Table sx={{ minWidth: 50 }} aria-label='simple table'>
+              <Table sx={{ minWidth: 50 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
                     <TableCell>
-                      <Typography style={{ color: 'black', fontWeight: 600 }}>
+                      <Typography style={{ color: "black", fontWeight: 600 }}>
                         Bias
                       </Typography>
                     </TableCell>
-                    <TableCell align='center'>
-                      <Typography style={{ color: 'black', fontWeight: 600 }}>
+                    <TableCell align="center">
+                      <Typography style={{ color: "black", fontWeight: 600 }}>
                         Tips to combat
                       </Typography>
                     </TableCell>
@@ -125,16 +133,16 @@ const Result = ({ biases }) => {
                   {rows.map((row) => (
                     <TableRow
                       key={row.biasName}
-                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
-                      <TableCell component='th' scope='row'>
+                      <TableCell component="th" scope="row">
                         {
-                          <Typography style={{ color: 'red', fontWeight: 600 }}>
+                          <Typography style={{ color: "red", fontWeight: 600 }}>
                             {row.biasName}
                           </Typography>
                         }
                       </TableCell>
-                      <TableCell align='left'>{row.biasTips}</TableCell>
+                      <TableCell align="left">{row.biasTips}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -144,8 +152,8 @@ const Result = ({ biases }) => {
           <br></br>
           <br></br>
           <Button
-            variant='text'
-            style={{ textDecoration: 'none', color: '#0065bd' }}
+            variant="text"
+            style={{ textDecoration: "none", color: "#0065bd" }}
             onClick={feedbackClicked}
           >
             Was this helpful? <b> Let us know what you think!</b>
