@@ -41,33 +41,26 @@ function createData(biasName, biasTips) {
 }
 
 const Result = ({ biases }) => {
+  console.log(biases);
   const classes = useStyles();
   const { submissionId } = useContext(Context);
   const [showFeedback, setShowFeedback] = useState(false);
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    const run = async () => {
-      removeDuplicates(biases);
-      setRows([]);
-      console.log("biases", biases);
-      debugger;
-      for (let i = 0; i < biases.length; i++) {
-        const name = BiasEducationCenter[biases[i]].bias.slice(
-          9,
-          BiasEducationCenter[biases[i]].bias.length
-        );
-        console.log("name", name);
-        const tips = BiasEducationCenter[biases[i]].tips
-          .split("\n")
-          .map((str, idx) => <p key={idx}>{str}</p>);
-
-        setRows((rows) => [...rows, createData(name, tips)]);
-        await saveToDB(); // ✅ safe inside async fn
-      }
-    };
-
-    run();
+    removeDuplicates(biases);
+    setRows([]);
+    for (var i = 0; i < biases.length; i++) {
+      const name = BiasEducationCenter[biases[i]].bias.slice(
+        9,
+        BiasEducationCenter[biases[i]].bias.length
+      );
+      const tips = BiasEducationCenter[biases[i]].tips
+        .split("\n")
+        .map((str) => <p>{str}</p>);
+      setRows((rows) => [...rows, createData(name, tips)]);
+      saveToDB();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

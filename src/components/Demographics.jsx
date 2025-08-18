@@ -63,12 +63,12 @@ const MenuProps = {
 
 const Demographics = () => {
   const { setDetailsButton } = useContext(Context);
-  /* const sendData = () => {
+  const sendData = () => {
     setDetailsButton(hasError);
-  }; */
-  useEffect(() => {
+  };
+  /*  useEffect(() => {
     setDetailsButton(hasError);
-  });
+  }); */
   const classes = useStyles();
   const { setSubmissionId } = useContext(Context);
   const [details, setDetails] = useState({
@@ -394,7 +394,10 @@ const Demographics = () => {
             component={Link}
             to="/test"
             variant="contained"
-            onClick={submitForm}
+            onClick={() => {
+              submitForm();
+              sendData();
+            }}
           >
             Next
           </Button>

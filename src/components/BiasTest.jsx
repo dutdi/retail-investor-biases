@@ -1,13 +1,12 @@
-import { useState, useEffect /* useContext */ } from "react";
-/* import { doc, setDoc } from "firebase/firestore"; */
+import { useState, useEffect, useContext } from "react";
+import { doc, setDoc } from "firebase/firestore";
 import { Button, Grid, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Result from "./Result";
 import { BiasEducationCenter } from "../data/BiasEducationCenter";
 import Expire from "../helpers/Expire";
-/* import { Context } from "../helpers/Context";
-import { db } from "../helpers/Firebase"; */
-/* import { useNavigate } from "react-router-dom"; */
+import { Context } from "../helpers/Context";
+import { db } from "../helpers/Firebase";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -95,8 +94,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const BiasTest = () => {
   const classes = useStyles();
-  /*   const { detailsButton } = useContext(Context);
-  const { submissionId } = useContext(Context); */
+  const { submissionId } = useContext(Context);
   const [biasIndex, setBiasIndex] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [showQuestion, setShowQuestion] = useState(false);
@@ -106,11 +104,7 @@ const BiasTest = () => {
   const [startTime, setStartTime] = useState(false);
   const [biases, setBiases] = useState([]);
   const [hideButtons, setHideButtons] = useState(false);
-  /*   const navigate = useNavigate(); */
 
-  /*   const GoDemographics = () => {
-    navigate("/demographics", { state: { from: "/test" } });
-  }; */
   useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
       shuffle(BiasEducationCenter[i].questions);
@@ -227,7 +221,7 @@ const BiasTest = () => {
         setQuestionIndex(0);
         setBiasIndex(biasIndex + 1);
       } else {
-        //await saveToDB();
+        saveToDB();
         setStartTime(false);
         checkBiases();
         setBiasIndex(0);
@@ -237,7 +231,7 @@ const BiasTest = () => {
     }
   };
 
-  /*   const saveToDB = async () => {
+  const saveToDB = async () => {
     const submissionDoc = doc(db, "submissions", submissionId);
     const biasFields = {
       biasDetails: {},
@@ -258,7 +252,7 @@ const BiasTest = () => {
     }
 
     await setDoc(submissionDoc, biasFields, { merge: true });
-  }; */
+  };
 
   function shuffle(array) {
     var start = 1;
@@ -279,6 +273,8 @@ const BiasTest = () => {
 
   function checkBiases() {
     for (var i = 0; i < BiasEducationCenter.length; i++) {
+      console.log("part3", BiasEducationCenter[i].part3TimeSpent);
+      console.log("part4", BiasEducationCenter[i].part4TimeSpent);
       if (
         BiasEducationCenter[i].part3TimeSpent >
           BiasEducationCenter[i].part4TimeSpent &&
@@ -289,7 +285,7 @@ const BiasTest = () => {
       }
     }
   }
-
+  //  useEventListener("keydown", handleKeyPress);
   return (
     <>
       {showResult ? (
