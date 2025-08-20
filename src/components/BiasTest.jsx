@@ -105,20 +105,20 @@ const BiasTest = () => {
   const [biases, setBiases] = useState([]);
   const [hideButtons, setHideButtons] = useState(false);
 
-  /*  useEffect(() => {
+  useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
       shuffle(BiasEducationCenter[i].questions);
     }
-  }, []); */
+  }, []);
 
-  /*   useEffect(() => {
+  useEffect(() => {
     const isInstruction =
       BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction;
 
     if (isInstruction) {
       setHideButtons(true);
     }
-  }, [biasIndex, questionIndex]); */
+  }, [biasIndex, questionIndex]);
 
   useEffect(() => {
     let interval = null;
@@ -261,9 +261,7 @@ const BiasTest = () => {
   }
 
   function checkBiases() {
-    for (var i = 0; i < BiasEducationCenter.length; i++) {
-      console.log("part3", BiasEducationCenter[i].part3TimeSpent);
-      console.log("part4", BiasEducationCenter[i].part4TimeSpent);
+    for (let i = 0; i < BiasEducationCenter.length; i++) {
       if (
         BiasEducationCenter[i].part3TimeSpent >
           BiasEducationCenter[i].part4TimeSpent &&
@@ -278,7 +276,7 @@ const BiasTest = () => {
   return (
     <>
       {showResult ? (
-        <Result biases={{ biases }}></Result>
+        <Result biases={biases}></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (

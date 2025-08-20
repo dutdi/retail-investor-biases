@@ -41,7 +41,6 @@ function createData(biasName, biasTips) {
 }
 
 const Result = ({ biases }) => {
-  console.log(biases);
   const classes = useStyles();
   const { submissionId } = useContext(Context);
   const [showFeedback, setShowFeedback] = useState(false);
@@ -130,7 +129,10 @@ const Result = ({ biases }) => {
                     >
                       <TableCell component="th" scope="row">
                         {
-                          <Typography style={{ color: "red", fontWeight: 600 }}>
+                          <Typography
+                            key={row.biasName}
+                            style={{ color: "red", fontWeight: 600 }}
+                          >
                             {row.biasName}
                           </Typography>
                         }
