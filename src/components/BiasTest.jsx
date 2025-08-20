@@ -105,20 +105,20 @@ const BiasTest = () => {
   const [biases, setBiases] = useState([]);
   const [hideButtons, setHideButtons] = useState(false);
 
-  useEffect(() => {
+  /*  useEffect(() => {
     for (let i = 0; i < BiasEducationCenter.length; i++) {
       shuffle(BiasEducationCenter[i].questions);
     }
-  }, []);
+  }, []); */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     const isInstruction =
       BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction;
 
     if (isInstruction) {
       setHideButtons(true);
     }
-  }, [biasIndex, questionIndex]);
+  }, [biasIndex, questionIndex]); */
 
   useEffect(() => {
     let interval = null;
@@ -147,12 +147,7 @@ const BiasTest = () => {
       showQuestion &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
-      if (
-        showQuestion &&
-        !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
-      ) {
-        setSelectedAnswer("A");
-      }
+      setSelectedAnswer("A");
     }
   };
   const handle_key_red = () => {
@@ -160,16 +155,11 @@ const BiasTest = () => {
       showQuestion &&
       !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
     ) {
-      if (
-        showQuestion &&
-        !BiasEducationCenter[biasIndex].questions[questionIndex].isInstruction
-      ) {
-        setSelectedAnswer("B");
-      }
+      setSelectedAnswer("B");
     }
   };
 
-  const setSelectedAnswer = async (answer) => {
+  const setSelectedAnswer = (answer) => {
     const timeSpent = time;
     //Check if chose correct answer
     if (
@@ -253,7 +243,6 @@ const BiasTest = () => {
 
     await setDoc(submissionDoc, biasFields, { merge: true });
   };
-
   function shuffle(array) {
     var start = 1;
     var end = 7;
@@ -285,11 +274,11 @@ const BiasTest = () => {
       }
     }
   }
-  //  useEventListener("keydown", handleKeyPress);
+  //   useEventListener("keydown", handleKeyPress);
   return (
     <>
       {showResult ? (
-        <Result biases={biases}></Result>
+        <Result biases={{ biases }}></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (

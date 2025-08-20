@@ -548,7 +548,7 @@ export const BiasEducationCenter = [
       },
     ],
   },
-  {
+  /*   {
     bias: "Bias #3: Overconfidence Bias",
     description:
       'The overconfidence bias refers to our belief or perception in our abilities to be higher than our `actual` or realized abilities. Investors with overconfidence bias often tend to believe that "they can pick the next big stock". This often results in ill-advised attempts to time the market or build concentrations in risky investments they consider a sure thing.',
@@ -1631,5 +1631,5 @@ export const BiasEducationCenter = [
         userSelection: "",
       },
     ],
-  },
+  }, */
 ];
