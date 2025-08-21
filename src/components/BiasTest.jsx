@@ -272,11 +272,11 @@ const BiasTest = () => {
       }
     }
   }
-  //   useEventListener("keydown", handleKeyPress);
+
   return (
     <>
-      {showResult ? (
-        <Result biases={biases}></Result>
+      {!showResult ? (
+        <Result biases={[0, 2]}></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (

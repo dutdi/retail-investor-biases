@@ -5,6 +5,7 @@ import Image from "../img/landing.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "80%",
+    margin: "30px",
     [theme.breakpoints.up("md")]: {
       width: "70%",
     },

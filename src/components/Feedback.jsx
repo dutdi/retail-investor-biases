@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-/* import { doc, setDoc } from "firebase/firestore"; */
+import { doc, setDoc } from "firebase/firestore";
 import {
   Box,
   Button,
@@ -14,28 +14,53 @@ import {
 import { feedbackAccuracies } from "../helpers/lists/FeedbackAccuracyList";
 import { feedbackRecommendations } from "../helpers/lists/FeedbackRecommendationList";
 import { Context } from "../helpers/Context";
-/* import { db } from "../helpers/Firebase"; */
+import { db } from "../helpers/Firebase";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
-      margin: theme.spacing(2, 0, 0, 0),
+    width: "80%",
+    [theme.breakpoints.up("md")]: {
+      width: "70%",
     },
-    width: "1200px",
+    [theme.breakpoints.up("lg")]: {
+      width: "50%",
+    },
     height: "700px",
     margin: "30px",
     backgroundColor: "white",
     textAlign: "center",
   },
+  text1: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "25px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "35px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "40px",
+    },
+  },
+  text2: {
+    fontWeight: "600",
+    fontSize: "0.75rem",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.25rem",
+    },
+  },
+  select: { width: "100%" },
   formControl: {
     margin: theme.spacing(3),
-    width: 500,
+    width: "50%",
   },
 }));
 
 const Feedback = () => {
   const classes = useStyles();
-  const { /* submissionId, */ setSubmissionId } = useContext(Context);
+  const { submissionId, setSubmissionId } = useContext(Context);
   const [feedback, setFeedback] = useState({
     feedbackAccuracy: "",
     feedbackRecommendation: "",
@@ -65,7 +90,7 @@ const Feedback = () => {
   };
 
   const sendFeedback = async () => {
-    //await saveToDB();
+    await saveToDB();
     setFeedback({
       feedbackAccuracy: "",
       feedbackRecommendation: "",
@@ -73,7 +98,7 @@ const Feedback = () => {
     setSubmissionId("");
   };
 
-  /*   const saveToDB = async () => {
+  const saveToDB = async () => {
     const submissionDoc = doc(db, "submissions", submissionId);
     const feedbackFields = {
       feedbackDetails: {
@@ -82,15 +107,11 @@ const Feedback = () => {
       },
     };
     await setDoc(submissionDoc, feedbackFields, { merge: true });
-  }; */
+  };
 
   return (
     <div className={classes.root}>
-      <Typography
-        variant="h4"
-        gutterBottom
-        style={{ backgroundColor: "#0065bd", color: "white" }}
-      >
+      <Typography gutterBottom className={classes.text1}>
         Give us a feedback
       </Typography>
       <Box pt={8}>
@@ -101,7 +122,7 @@ const Feedback = () => {
           alignItems="stretch"
         >
           <Grid item>
-            <Typography variant="h6" gutterBottom style={{ fontWeight: 600 }}>
+            <Typography variant="h6" gutterBottom className={classes.text2}>
               On a scale of 1-10 how accurate do you think your result was?
             </Typography>
           </Grid>
@@ -109,6 +130,7 @@ const Feedback = () => {
             <FormControl required className={classes.formControl}>
               <InputLabel htmlFor="feedbackAccuracy">Accuracy</InputLabel>
               <Select
+                className={classes.select}
                 native
                 value={feedback.feedbackAccuracy}
                 onChange={handleChange}
@@ -125,7 +147,7 @@ const Feedback = () => {
             </FormControl>
           </Grid>
           <Grid item>
-            <Typography variant="h6" gutterBottom style={{ fontWeight: 600 }}>
+            <Typography variant="h6" gutterBottom className={classes.text2}>
               How likely are you to recommend this tool to someone else?
             </Typography>
           </Grid>
@@ -135,6 +157,7 @@ const Feedback = () => {
                 Recommendation
               </InputLabel>
               <Select
+                className={classes.select}
                 native
                 value={feedback.feedbackRecommendation}
                 onChange={handleChange}
@@ -155,7 +178,12 @@ const Feedback = () => {
         </Grid>
       </Box>
       {hasError ? (
-        <Typography variant="h6" gutterBottom style={{ color: "red" }}>
+        <Typography
+          variant="h6"
+          gutterBottom
+          style={{ color: "red" }}
+          className={classes.text2}
+        >
           Enter all the fields*
         </Typography>
       ) : (

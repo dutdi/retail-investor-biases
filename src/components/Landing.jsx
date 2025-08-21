@@ -8,10 +8,6 @@ import Image from "../img/landing.png";
 
 const useStyles = makeStyles((theme) => ({
   imageDiv: {
-    /* backgroundImage: `url(${Image})`, */
-    /*  backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center", */
     width: "100%",
     height: "auto",
     display: "flex",

@@ -19,14 +19,66 @@ import { BiasEducationCenter } from "../data/BiasEducationCenter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
+    /*     "& > *": {
       margin: theme.spacing(2, 0, 0, 0),
-    },
-    width: "1200px",
-    height: "700px",
+    }, */
     margin: "30px",
+    width: "80%",
+    [theme.breakpoints.up("md")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "50%",
+    },
+    height: "auto",
     backgroundColor: "white",
     textAlign: "center",
+  },
+  text1: {
+    backgroundColor: "#0065bd",
+    color: "white",
+    fontSize: "25px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "35px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "40px",
+    },
+  },
+  text2: {
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    fontWeight: "400",
+    lineHeight: "1.334",
+    letterSspacing: "0em",
+  },
+  text3: {},
+  text4: {
+    color: "red",
+    fontWeight: "600",
+    fontSize: "0.7rem",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1rem",
+    },
+  },
+  text5: {
+    fontSize: "10px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "12px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "14px",
+    },
+  },
+  text6: {
+    textDecoration: "none",
+    color: "#0065bd",
+    fontSize: "0.7rem",
+    [theme.breakpoints.up("md")]: { fontSize: "1rem" },
   },
   paper: {
     height: 450,
@@ -94,14 +146,10 @@ const Result = ({ biases }) => {
         <Feedback></Feedback>
       ) : (
         <div className={classes.root}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            style={{ backgroundColor: "#0065bd", color: "white" }}
-          >
+          <Typography gutterBottom className={classes.text1}>
             Result
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          <Typography className={classes.text2} gutterBottom>
             You tend to show the following biases:
           </Typography>
           <Paper className={classes.paper}>
@@ -129,12 +177,14 @@ const Result = ({ biases }) => {
                     >
                       <TableCell component="th" scope="row">
                         {
-                          <Typography style={{ color: "red", fontWeight: 600 }}>
+                          <Typography className={classes.text4}>
                             {row.biasName}
                           </Typography>
                         }
                       </TableCell>
-                      <TableCell align="left">{row.biasTips}</TableCell>
+                      <TableCell className={classes.text5} align="left">
+                        {row.biasTips}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -144,8 +194,8 @@ const Result = ({ biases }) => {
           <br></br>
           <br></br>
           <Button
+            className={classes.text6}
             variant="text"
-            style={{ textDecoration: "none", color: "#0065bd" }}
             onClick={feedbackClicked}
           >
             Was this helpful? <b> Let us know what you think!</b>

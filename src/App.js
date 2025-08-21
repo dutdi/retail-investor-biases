@@ -16,7 +16,7 @@ import RouteChangeListener from "./helpers/RouteChangeListener";
 
 function App() {
   const [submissionId, setSubmissionId] = useState("");
-  const [detailsButton, setDetailsButton] = useState(true);
+  const [detailsButton, setDetailsButton] = useState(false);
 
   return (
     <Context.Provider
