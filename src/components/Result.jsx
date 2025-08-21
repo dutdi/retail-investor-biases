@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function createData(biasName, biasTips) {
-  return { biasName, biasTips };
+function createData(id, biasName, biasTips) {
+  return { id, biasName, biasTips };
 }
 
 const Result = ({ biases }) => {
@@ -49,15 +49,15 @@ const Result = ({ biases }) => {
   useEffect(() => {
     removeDuplicates(biases);
     setRows([]);
-    for (var i = 0; i < biases.length; i++) {
+    for (let i = 0; i < biases.length; i++) {
       const name = BiasEducationCenter[biases[i]].bias.slice(
         9,
         BiasEducationCenter[biases[i]].bias.length
       );
       const tips = BiasEducationCenter[biases[i]].tips
         .split("\n")
-        .map((str) => <p>{str}</p>);
-      setRows((rows) => [...rows, createData(name, tips)]);
+        .map((str, idx) => <p key={idx}>{str}</p>);
+      setRows((rows) => [...rows, createData(i, name, tips)]);
       saveToDB();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -124,15 +124,12 @@ const Result = ({ biases }) => {
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow
-                      key={row.biasName}
+                      key={row.id}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
                       <TableCell component="th" scope="row">
                         {
-                          <Typography
-                            key={row.biasName}
-                            style={{ color: "red", fontWeight: 600 }}
-                          >
+                          <Typography style={{ color: "red", fontWeight: 600 }}>
                             {row.biasName}
                           </Typography>
                         }
