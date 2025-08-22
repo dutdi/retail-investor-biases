@@ -102,15 +102,15 @@ const Result = ({ biases }) => {
     removeDuplicates(biases);
     setRows([]);
     for (let i = 0; i < biases.length; i++) {
-      const name = BiasEducationCenter[biases[i]].bias.slice(
-        9,
-        BiasEducationCenter[biases[i]].bias.length
-      );
-      const tips = BiasEducationCenter[biases[i]].tips
-        .split("\n")
-        .map((str, idx) => <p key={idx}>{str}</p>);
-      setRows((rows) => [...rows, createData(i, name, tips)]);
-      saveToDB();
+      const biasData = BiasEducationCenter[biases[i]];
+      if (biasData) {
+        const name = biasData.bias.slice(9, biasData.bias.length);
+        const tips = biasData.tips
+          .split("\n")
+          .map((str, idx) => <p key={idx}>{str}</p>);
+        setRows((rows) => [...rows, createData(i, name, tips)]);
+        saveToDB();
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

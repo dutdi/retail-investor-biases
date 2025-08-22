@@ -275,8 +275,8 @@ const BiasTest = () => {
 
   return (
     <>
-      {!showResult ? (
-        <Result biases={[0, 2]}></Result>
+      {showResult ? (
+        <Result biases={biases}></Result>
       ) : (
         <div className={classes.root}>
           {showQuestion ? (

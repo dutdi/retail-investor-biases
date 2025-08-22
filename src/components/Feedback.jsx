@@ -51,7 +51,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.25rem",
     },
   },
-  select: { width: "100%" },
+  select: {
+    width: "100%",
+  },
   formControl: {
     margin: theme.spacing(3),
     width: "50%",
@@ -140,8 +142,10 @@ const Feedback = () => {
                 }}
               >
                 <option aria-label="None" value="" />
-                {feedbackAccuracies.map((feedbackAccuracy) => (
-                  <option value={feedbackAccuracy}>{feedbackAccuracy}</option>
+                {feedbackAccuracies.map((feedbackAccuracy, index) => (
+                  <option key={index} value={feedbackAccuracy}>
+                    {feedbackAccuracy}
+                  </option>
                 ))}
               </Select>
             </FormControl>
@@ -167,11 +171,13 @@ const Feedback = () => {
                 }}
               >
                 <option aria-label="None" value="" />
-                {feedbackRecommendations.map((feedbackRecommendation) => (
-                  <option value={feedbackRecommendation}>
-                    {feedbackRecommendation}
-                  </option>
-                ))}
+                {feedbackRecommendations.map(
+                  (feedbackRecommendation, index) => (
+                    <option key={index} value={feedbackRecommendation}>
+                      {feedbackRecommendation}
+                    </option>
+                  )
+                )}
               </Select>
             </FormControl>
           </Grid>
